@@ -13,6 +13,7 @@ import {
   Container,
   Row,
   Col,
+  Alert,
 } from "reactstrap";
 
 // core components
@@ -49,13 +50,21 @@ class Login extends React.Component {
       alert("Please enter username and password")
     } else if (username !== admin && username !== banker && username !== user) {
       alert("User not found")
+      // Alert(){
+      //   document.documentElement="user not fount";
+      // }
     } else if ((username === admin && password !== admin)
       || (username === banker && password !== banker)
       || (username === user && password !== user)) {
       alert("Incorrect Password")
-    } else {
-      this.props.history.push('/profile-page') //should we do 3 different pages for every role?
+    } else if(username === user && password === user){
+        this.props.history.push('/profile-page')
+    } else if(username === banker && password === banker){
+        this.props.history.push('/profile-page')
+    } else{
+        this.props.history.push('/profile-page')
     }
+    
   }
 
   render() {
