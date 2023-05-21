@@ -13,8 +13,6 @@ import {
   Container,
   Row,
   Col,
-  Alert,
-  UncontrolledAlert
 } from "reactstrap";
 
 // core components
@@ -51,9 +49,9 @@ class Login extends React.Component {
       alert("Please enter username and password")
     } else if (username !== admin && username !== banker && username !== user) {
       alert("User not found")
-    } else if ((username == admin && password !== admin)
-      || (username == banker && password !== banker)
-      || (username == user && password !== user)) {
+    } else if ((username === admin && password !== admin)
+      || (username === banker && password !== banker)
+      || (username === user && password !== user)) {
       alert("Incorrect Password")
     } else {
       this.props.history.push('/profile-page') //should we do 3 different pages for every role?
