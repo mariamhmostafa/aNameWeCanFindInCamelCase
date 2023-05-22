@@ -48,6 +48,38 @@ class Register extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+  state = {
+    name: "",
+    username: "",
+    email: "",
+    password: "",
+  };
+
+  getName = (e) => {
+    this.setState({ name: e.target.value });
+  };
+  getUsername = (e) => {
+    this.setState({ username: e.target.value });
+  };
+  getEmail = (e) => {
+    this.setState({ email: e.target.value });
+  };
+
+  getPassword = (e) => {
+    this.setState({ password: e.target.value });
+  };
+
+  handleSignIn = (e) => {
+    const name = this.state.name;
+    const email = this.state.email;
+    const username = this.state.username;
+    const password = this.state.password;
+    if (name == "" || email == "" || username === "" || password === "") {
+      alert("Please enter all the details");
+    } else {
+      this.props.history.push("/login-page");
+    }
+  };
 
   render() {
     return (
@@ -81,7 +113,27 @@ class Register extends React.Component {
                                 <i className="ni ni-hat-3" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <input name="name" type="text" required />
+                            <Input
+                              placeholder="Name"
+                              type="name"
+                              autoComplete="off"
+                              onChange={this.getName}
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup>
+                          <InputGroup className="input-group-alternative mb-3">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-hat-3" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="Username"
+                              type="username"
+                              autoComplete="off"
+                              onChange={this.getUsername}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -91,7 +143,12 @@ class Register extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" />
+                            <Input
+                              placeholder="Email"
+                              type="email"
+                              autoComplete="off"
+                              onChange={this.getEmail}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -105,6 +162,7 @@ class Register extends React.Component {
                               placeholder="Password"
                               type="password"
                               autoComplete="off"
+                              onChange={this.getPassword}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -113,7 +171,7 @@ class Register extends React.Component {
                             className="mt-4"
                             color="primary"
                             type="button"
-                            href="./login-page"
+                            onClick={this.handleSignIn}
                           >
                             Create account
                           </Button>
