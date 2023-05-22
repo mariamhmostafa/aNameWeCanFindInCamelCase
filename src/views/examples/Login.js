@@ -56,7 +56,7 @@ class Login extends React.Component {
       || (username === user && password !== user)) {
       alert("Incorrect Password")
     } else if (username === user && password === user) {
-      this.props.history.push('/profile-page')
+      this.props.history.push('/client-page')
     } else if (username === banker && password === banker) {
       this.props.history.push('/profile-page')
     } else {

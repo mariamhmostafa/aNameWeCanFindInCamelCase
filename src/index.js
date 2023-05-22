@@ -13,6 +13,7 @@ import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
 import Service from "views/examples/Service.js";
 import AboutUs from "views/examples/AboutUs.js";
+import Client from "views/examples/Client.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -49,6 +50,11 @@ root.render(
         path="/aboutus-page"
         exact
         render={(props) => <AboutUs {...props} />}
+      />
+      <Route
+        path="/client-page"
+        exact
+        render={(props) => <Client {...props} />}
       />
       <Redirect to="/" />
     </Switch>
