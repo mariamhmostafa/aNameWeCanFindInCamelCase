@@ -99,7 +99,7 @@ class DemoNavbar extends React.Component {
                       <div className="dropdown-menu-inner">
                         <Media
                           className="d-flex align-items-center"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/overview?ref=adsr-navbar"
+                          href="/service-page"
                           target="_blank"
                         >
                           <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
@@ -107,17 +107,16 @@ class DemoNavbar extends React.Component {
                           </div>
                           <Media body className="ml-3">
                             <h6 className="heading text-primary mb-md-1">
-                              Getting started
+                              Our Services
                             </h6>
                             <p className="description d-none d-md-inline-block mb-0">
-                              Learn how to use Argon compiling Scss, change
-                              brand colors and more.
+                              Learn more about our services.
                             </p>
                           </Media>
                         </Media>
                         <Media
                           className="d-flex align-items-center"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/colors?ref=adsr-navbar"
+                          href="/aboutus-page"
                           target="_blank"
                         >
                           <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
@@ -125,11 +124,10 @@ class DemoNavbar extends React.Component {
                           </div>
                           <Media body className="ml-3">
                             <h6 className="heading text-primary mb-md-1">
-                              Foundation
+                              About Us
                             </h6>
                             <p className="description d-none d-md-inline-block mb-0">
-                              Learn more about colors, typography, icons and the
-                              grid system we used for Argon.
+                              Learn more about the amazing team.
                             </p>
                           </Media>
                         </Media>

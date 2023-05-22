@@ -157,7 +157,6 @@ class Login extends React.Component {
                       <a
                         className="text-light"
                         href="/register-page"
-
                       >
                         <small>Create new account</small>
                       </a>
