@@ -18,6 +18,7 @@ import {
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
+import SimpleFooter from "components/Footers/SimpleFooter.js";
 
 var admin = "admin";  //username and passowrd of admin is "admin"
 var banker = "banker";  //username and passowrd of banker is "banker"
@@ -54,14 +55,14 @@ class Login extends React.Component {
       || (username === banker && password !== banker)
       || (username === user && password !== user)) {
       alert("Incorrect Password")
-    } else if(username === user && password === user){
-        this.props.history.push('/profile-page')
-    } else if(username === banker && password === banker){
-        this.props.history.push('/profile-page')
-    } else{
-        this.props.history.push('/profile-page')
+    } else if (username === user && password === user) {
+      this.props.history.push('/profile-page')
+    } else if (username === banker && password === banker) {
+      this.props.history.push('/profile-page')
+    } else {
+      this.props.history.push('/profile-page')
     }
-    
+
   }
 
   render() {
@@ -167,6 +168,7 @@ class Login extends React.Component {
             </Container>
           </section>
         </main>
+        <SimpleFooter />
       </>
     );
   }
