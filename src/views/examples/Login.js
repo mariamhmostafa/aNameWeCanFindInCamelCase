@@ -50,9 +50,6 @@ class Login extends React.Component {
       alert("Please enter username and password")
     } else if (username !== admin && username !== banker && username !== user) {
       alert("User not found")
-      // Alert(){
-      //   document.documentElement="user not fount";
-      // }
     } else if ((username === admin && password !== admin)
       || (username === banker && password !== banker)
       || (username === user && password !== user)) {
