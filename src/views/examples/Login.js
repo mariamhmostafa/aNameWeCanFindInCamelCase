@@ -22,7 +22,7 @@ import SimpleFooter from "components/Footers/SimpleFooter.js";
 
 var admin = "admin";  //username and passowrd of admin is "admin"
 var banker = "banker";  //username and passowrd of banker is "banker"
-var user = "user";  //username and passowrd of user is "user"
+var client = "basboosa";  //username and passowrd of user is "user"
 
 class Login extends React.Component {
   componentDidMount() {
@@ -49,20 +49,19 @@ class Login extends React.Component {
     const password = this.state.password;
     if (username === '' || password === '') {
       alert("Please enter username and password")
-    } else if (username !== admin && username !== banker && username !== user) {
+    } else if (username !== admin && username !== banker && username !== client) {
       alert("User not found")
     } else if ((username === admin && password !== admin)
       || (username === banker && password !== banker)
-      || (username === user && password !== user)) {
+      || (username === client && password !== client)) {
       alert("Incorrect Password")
-    } else if (username === user && password === user) {
+    } else if (username === client && password === client) {
       this.props.history.push('/client-page')
     } else if (username === banker && password === banker) {
-      this.props.history.push('/profile-page')
+      this.props.history.push('/banker-page')
     } else {
-      this.props.history.push('/profile-page')
+      this.props.history.push('/admin-page')
     }
-
   }
 
   render() {
@@ -97,7 +96,11 @@ class Login extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input id="username" placeholder="Username" type="username" name="username" onChange={this.getUsername} />
+                            <Input id="username"
+                              placeholder="Username"
+                              type="username"
+                              name="username"
+                              onChange={this.getUsername} />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>

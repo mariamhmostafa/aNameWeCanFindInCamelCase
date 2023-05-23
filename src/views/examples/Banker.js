@@ -11,12 +11,6 @@ import {
     CardImg,
     FormGroup,
     Input,
-    Nav,
-    NavItem,
-    NavLink,
-    TabContent,
-    TabPane,
-    Modal,
     InputGroupAddon,
     InputGroupText,
     InputGroup,
@@ -28,32 +22,12 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
-import "assets/vendor/nucleo/css/nucleo.css";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
 
-class Client extends React.Component {
-
-    state = {
-        tabs: 1,
-        defaultModal: false
-    };
-
-
-    toggleModal = state => {
-        this.setState({
-            [state]: !this.state[state]
-        });
-    };
-
-    toggleNavs = (e, state, index) => {
-        e.preventDefault();
-        this.setState({
-            [state]: index
-        });
-    };
-
+class Banker extends React.Component {
+    state = {};
     componentDidMount() {
         document.documentElement.scrollTop = 0;
         document.scrollingElement.scrollTop = 0;
@@ -83,11 +57,48 @@ class Client extends React.Component {
                                     <Row>
                                         <Col lg="6">
                                             <h1 className="display-3 text-white">
-                                                Great to see you again, Basboosa{" "}
-                                                <span>^^</span>
+                                                Hello rayyes{" "}
+                                                <span>Here are your tasks for today</span>
                                             </h1>
-
-
+                                            <p className="lead text-white">
+                                                Finish them before leaving or moder fe khasm
+                                            </p>
+                                            <div className="btn-wrapper">
+                                                <Button
+                                                    className="btn-icon mb-3 mb-sm-0"
+                                                    color="default"
+                                                    onClick={this.props.history.push('/banker-loanReq')}
+                                                >
+                                                    <span className="btn-inner--icon mr-1">  //change icons
+                                                        <i className="fa fa-code" />
+                                                    </span>
+                                                    <span className="btn-inner--text">View Loan Requests</span>
+                                                </Button>
+                                                <Button
+                                                    className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
+                                                    color="default"
+                                                    onClick={this.props.history.push('/banker/CardReq')}
+                                                >
+                                                    <span className="btn-inner--icon mr-1">
+                                                        <i className="ni ni-cloud-download-95" />
+                                                    </span>
+                                                    <span className="btn-inner--text">
+                                                        View Credit Card Requests
+                                                    </span>
+                                                </Button>
+                                                <Button
+                                                    className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
+                                                    color="default"
+                                                    onClick={this.props.history.push('/banker/reports')}
+                                                >
+                                                    <span className="btn-inner--icon mr-1">
+                                                        <i className="ni ni-cloud-download-95" />
+                                                    </span>
+                                                    <span className="btn-inner--text">
+                                                        View Reports
+                                                    </span>
+                                                </Button>
+                                            </div>
                                         </Col>
                                     </Row>
                                 </div>
@@ -111,209 +122,201 @@ class Client extends React.Component {
                         </section>
                         {/* 1st Hero Variation */}
                     </div>
-                    <section>
-                        <div className="nav-wrapper">
-                            <Nav
-                                className="nav-fill flex-column flex-md-row"
-                                id="tabs-icons-text"
-                                pills
-                                role="tablist"
-                            >
-                                <NavItem>
-                                    <NavLink
-                                        aria-selected={this.state.tabs === 1}
-                                        className={classnames("mb-sm-3 mb-md-0", {
-                                            active: this.state.tabs === 1
-                                        })}
-                                        onClick={e => this.toggleNavs(e, "tabs", 1)}
-                                        href="#pablo"
-                                        role="tab"
-                                    >
-                                        <i className="ni ni-cloud-upload-96 mr-2" />
-                                        View credit cards
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        aria-selected={this.state.tabs === 2}
-                                        className={classnames("mb-sm-3 mb-md-0", {
-                                            active: this.state.tabs === 2
-                                        })}
-                                        onClick={e => this.toggleNavs(e, "tabs", 2)}
-                                        href="#pablo"
-                                        role="tab"
-                                    >
-                                        <i className="ni ni-bell-55 mr-2" />
-                                        Apply for a credit card
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        aria-selected={this.state.tabs === 3}
-                                        className={classnames("mb-sm-3 mb-md-0", {
-                                            active: this.state.tabs === 3
-                                        })}
-                                        onClick={e => this.toggleNavs(e, "tabs", 3)}
-                                        href="#pablo"
-                                        role="tab"
-                                    >
-                                        <i className="ni ni-calendar-grid-58 mr-2" />
-                                        View pending credit card requests
-                                    </NavLink>
-                                </NavItem>
-                            </Nav>
-                        </div>
-                        <Card className="shadow">
-                            <CardBody>
-                                <TabContent activeTab={"tabs" + this.state.tabs}>
-                                    <TabPane tabId="tabs1">
-                                        <Container>
-                                            <Row>
-                                                <Col xs="3">
-                                                    <span>Name</span>
-                                                </Col>
-                                                <Col xs="4">
-                                                    <span>Credit card number </span>
-                                                </Col>
-                                                <Col>
-                                                    <span>Expiry date </span>
-                                                </Col>
-                                                <Col>
-                                                    <p>
+                    <section className="section section-lg pt-lg-0 mt--200">
+                        <Container>
+                            <Row className="justify-content-center">
+                                <Col lg="12">
+                                    <Row className="row-grid">
+                                        <Col lg="4">
+                                            <Card className="card-lift--hover shadow border-0">
+                                                <CardBody className="py-5">
+                                                    <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
+                                                        <i className="ni ni-check-bold" />
+                                                    </div>
+                                                    <h6 className="text-primary text-uppercase">
+                                                        Download Argon
+                                                    </h6>
+                                                    <p className="description mt-3">
+                                                        Argon is a great free UI package based on Bootstrap
+                                                        4 that includes the most important components and
+                                                        features.
                                                     </p>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <p>
-
-                                                </p>
-                                            </Row>
-                                            <Row>
-                                                <Col xs="3">
-                                                    <span>Basboosa el amoora</span>
-                                                </Col>
-                                                <Col xs="4">
-                                                    <span>99999999999 </span>
-                                                </Col>
-                                                <Col>
-                                                    <span>06/23 </span>
-                                                </Col>
-                                                <Col>
+                                                    <div>
+                                                        <Badge color="primary" pill className="mr-1">
+                                                            design
+                                                        </Badge>
+                                                        <Badge color="primary" pill className="mr-1">
+                                                            system
+                                                        </Badge>
+                                                        <Badge color="primary" pill className="mr-1">
+                                                            creative
+                                                        </Badge>
+                                                    </div>
                                                     <Button
-                                                        block
-                                                        className="mb-3"
-                                                        size="sm"
+                                                        className="mt-4"
                                                         color="primary"
-                                                        type="button"
-                                                        onClick={() => this.toggleModal("defaultModal")}
+                                                        href="#pablo"
+                                                        onClick={(e) => e.preventDefault()}
                                                     >
-                                                        <i className="ni ni-basket"></i>
-                                                        {" "}View transcations
+                                                        Learn more
                                                     </Button>
-                                                    <Modal
-                                                        className="modal-dialog-centered"
-                                                        isOpen={this.state.defaultModal}
-                                                        toggle={() => this.toggleModal("defaultModal")}
-                                                    >
-                                                        <div className="modal-header">
-                                                            <h6 className="modal-title" id="modal-title-default">
-                                                                Basboosa el amoora
-                                                            </h6>
-                                                            <button
-                                                                aria-label="Close"
-                                                                className="close"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal")}
-                                                            >
-                                                                <span aria-hidden={true}>×</span>
-                                                            </button>
-                                                        </div>
-                                                        <div className="modal-body">
-                                                            {/* stsuff */}
-                                                        </div>
-                                                        <div className="modal-footer">
-                                                            <Button color="primary" type="button">
-                                                                Save changes
-                                                            </Button>
-                                                            <Button
-                                                                className="ml-auto"
-                                                                color="link"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal")}
-                                                            >
-                                                                Close
-                                                            </Button>
-                                                        </div>
-                                                    </Modal>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col xs="3">
-                                                    <span>Basboosa a7la ota fl denya</span>
-                                                </Col>
-                                                <Col xs="4">
-                                                    <span>100100100100 </span>
-                                                </Col>
-                                                <Col>
-                                                    <span>06/27 </span>
-                                                </Col>
-                                                <Col>
-                                                    <i className="ni ni-basket"></i>
-                                                    <a
-
+                                                </CardBody>
+                                            </Card>
+                                        </Col>
+                                        <Col lg="4">
+                                            <Card className="card-lift--hover shadow border-0">
+                                                <CardBody className="py-5">
+                                                    <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
+                                                        <i className="ni ni-istanbul" />
+                                                    </div>
+                                                    <h6 className="text-success text-uppercase">
+                                                        Build Something
+                                                    </h6>
+                                                    <p className="description mt-3">
+                                                        Argon is a great free UI package based on Bootstrap
+                                                        4 that includes the most important components and
+                                                        features.
+                                                    </p>
+                                                    <div>
+                                                        <Badge color="success" pill className="mr-1">
+                                                            business
+                                                        </Badge>
+                                                        <Badge color="success" pill className="mr-1">
+                                                            vision
+                                                        </Badge>
+                                                        <Badge color="success" pill className="mr-1">
+                                                            success
+                                                        </Badge>
+                                                    </div>
+                                                    <Button
+                                                        className="mt-4"
+                                                        color="success"
                                                         href="#pablo"
                                                         onClick={(e) => e.preventDefault()}
                                                     >
-                                                        <small> View card transactions</small>
-                                                    </a>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col xs="3">
-                                                    <span>Basboosy </span>
-                                                </Col>
-                                                <Col xs="4">
-                                                    <span>123456789 </span>
-                                                </Col>
-                                                <Col>
-                                                    <span>06/25 </span>
-                                                </Col>
-                                                <Col>
-                                                    <i className="ni ni-basket"></i>
-                                                    <a
-
+                                                        Learn more
+                                                    </Button>
+                                                </CardBody>
+                                            </Card>
+                                        </Col>
+                                        <Col lg="4">
+                                            <Card className="card-lift--hover shadow border-0">
+                                                <CardBody className="py-5">
+                                                    <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
+                                                        <i className="ni ni-planet" />
+                                                    </div>
+                                                    <h6 className="text-warning text-uppercase">
+                                                        Prepare Launch
+                                                    </h6>
+                                                    <p className="description mt-3">
+                                                        Argon is a great free UI package based on Bootstrap
+                                                        4 that includes the most important components and
+                                                        features.
+                                                    </p>
+                                                    <div>
+                                                        <Badge color="warning" pill className="mr-1">
+                                                            marketing
+                                                        </Badge>
+                                                        <Badge color="warning" pill className="mr-1">
+                                                            product
+                                                        </Badge>
+                                                        <Badge color="warning" pill className="mr-1">
+                                                            launch
+                                                        </Badge>
+                                                    </div>
+                                                    <Button
+                                                        className="mt-4"
+                                                        color="warning"
                                                         href="#pablo"
                                                         onClick={(e) => e.preventDefault()}
                                                     >
-                                                        <small> View card transactions</small>
-                                                    </a>
-                                                </Col>
-                                            </Row>
-                                        </Container>
-                                    </TabPane>
-                                    <TabPane tabId="tabs2">
-                                        <p className="description">
-                                            Cosby sweater eu banh mi, qui irure terry richardson ex
-                                            squid. Aliquip placeat salvia cillum iphone. Seitan aliquip
-                                            quis cardigan american apparel, butcher voluptate nisi qui.
-                                        </p>
-                                    </TabPane>
-                                    <TabPane tabId="tabs3">
-                                        <p className="description">
-                                            Raw denim you probably haven't heard of them jean shorts
-                                            Austin. Nesciunt tofu stumptown aliqua, retro synth master
-                                            cleanse. Mustache cliche tempor, williamsburg carles vegan
-                                            helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-                                            synth.
-                                        </p>
-                                    </TabPane>
-                                </TabContent>
-                            </CardBody>
-                        </Card>
+                                                        Learn more
+                                                    </Button>
+                                                </CardBody>
+                                            </Card>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </Container>
                     </section>
-
+                    <section className="section section-lg">
+                        <Container>
+                            <Row className="row-grid align-items-center">
+                                <Col className="order-md-2" md="6">
+                                    <img
+                                        alt="..."
+                                        className="img-fluid floating"
+                                        src={require("assets/img/theme/promo-1.png")}
+                                    />
+                                </Col>
+                                <Col className="order-md-1" md="6">
+                                    <div className="pr-md-5">
+                                        <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
+                                            <i className="ni ni-settings-gear-65" />
+                                        </div>
+                                        <h3>Awesome features</h3>
+                                        <p>
+                                            The kit comes with three pre-built pages to help you get
+                                            started faster. You can change the text and images and
+                                            you're good to go.
+                                        </p>
+                                        <ul className="list-unstyled mt-5">
+                                            <li className="py-2">
+                                                <div className="d-flex align-items-center">
+                                                    <div>
+                                                        <Badge
+                                                            className="badge-circle mr-3"
+                                                            color="success"
+                                                        >
+                                                            <i className="ni ni-settings-gear-65" />
+                                                        </Badge>
+                                                    </div>
+                                                    <div>
+                                                        <h6 className="mb-0">
+                                                            Carefully crafted components
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li className="py-2">
+                                                <div className="d-flex align-items-center">
+                                                    <div>
+                                                        <Badge
+                                                            className="badge-circle mr-3"
+                                                            color="success"
+                                                        >
+                                                            <i className="ni ni-html5" />
+                                                        </Badge>
+                                                    </div>
+                                                    <div>
+                                                        <h6 className="mb-0">Amazing page examples</h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li className="py-2">
+                                                <div className="d-flex align-items-center">
+                                                    <div>
+                                                        <Badge
+                                                            className="badge-circle mr-3"
+                                                            color="success"
+                                                        >
+                                                            <i className="ni ni-satisfied" />
+                                                        </Badge>
+                                                    </div>
+                                                    <div>
+                                                        <h6 className="mb-0">
+                                                            Super friendly support team
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </section>
                     <section className="section bg-secondary">
                         <Container>
                             <Row className="row-grid align-items-center">
@@ -860,4 +863,4 @@ class Client extends React.Component {
     }
 }
 
-export default Client;
+export default Banker;

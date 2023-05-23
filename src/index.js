@@ -14,7 +14,7 @@ import Register from "views/examples/Register.js";
 import Service from "views/examples/Service.js";
 import AboutUs from "views/examples/AboutUs.js";
 import Client from "views/examples/Client.js";
-
+import Banker from "views/examples/Banker.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -56,6 +56,12 @@ root.render(
         exact
         render={(props) => <Client {...props} />}
       />
+      <Route
+        path="/banker-page"
+        exact
+        render={(props) => <Banker {...props} />}
+      />
+
       <Redirect to="/" />
     </Switch>
   </BrowserRouter>

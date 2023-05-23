@@ -63,9 +63,8 @@ class Landing extends React.Component {
                                             </h1>
                                             <p className="lead text-white">
                                                 Mahfaztak was established in 2023 as an online
-                                                banking system by 5 young smart women.
+                                                banking system by 5 smart young women.
                                                 With over 0 branches worldwide!
-
                                                 Learn more about our services.
                                             </p>
                                             <div className="btn-wrapper">
