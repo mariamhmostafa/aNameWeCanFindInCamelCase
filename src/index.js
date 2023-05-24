@@ -14,6 +14,7 @@ import Register from "views/examples/Register.js";
 import Service from "views/examples/Service.js";
 import AboutUs from "views/examples/AboutUs.js";
 import Client from "views/examples/Client.js";
+import Admin from "views/examples/Admin.js";
 import Banker from "views/examples/Banker.js";
 import TechnicalIssue from "views/examples/TechnicalIssue.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -66,6 +67,11 @@ root.render(
         path="/technical-issue-page"
         exact
         render={(props) => <TechnicalIssue {...props} />}
+      />
+      <Route
+        path="/admin-page"
+        exact
+        render={(props) => <Admin {...props} />}
       />
 
       <Redirect to="/" />
