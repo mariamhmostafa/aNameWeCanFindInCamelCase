@@ -8,7 +8,7 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  UncontrolledTooltip,
 } from "reactstrap";
 
 class SimpleFooter extends React.Component {
@@ -26,6 +26,7 @@ class SimpleFooter extends React.Component {
                   Let's get in touch on any of these platforms.
                 </h4>
               </Col>
+
               <Col className="text-lg-center btn-wrapper" lg="6">
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
@@ -43,15 +44,21 @@ class SimpleFooter extends React.Component {
                 </UncontrolledTooltip>
               </Col>
             </Row>
+            <Row>
+              <Col xs="6">
+                <a
+                  className="mb-0 font-weight-light"
+                  href="/technical-issue-page"
+                >
+                  <small>Report technical issue</small>
+                </a>
+              </Col>
+            </Row>
             <hr />
             <Row className=" align-items-center justify-content-md-between">
               <Col md="6">
                 <div className=" copyright">
-                  © {new Date().getFullYear()}{" "}
-                  <a>
-                    Mahfaztak
-                  </a>
-                  .
+                  © {new Date().getFullYear()} <a>Mahfaztak</a>.
                 </div>
               </Col>
             </Row>

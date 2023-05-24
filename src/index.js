@@ -15,6 +15,7 @@ import Service from "views/examples/Service.js";
 import AboutUs from "views/examples/AboutUs.js";
 import Client from "views/examples/Client.js";
 import Banker from "views/examples/Banker.js";
+import TechnicalIssue from "views/examples/TechnicalIssue.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -60,6 +61,11 @@ root.render(
         path="/banker-page"
         exact
         render={(props) => <Banker {...props} />}
+      />
+      <Route
+        path="/technical-issue-page"
+        exact
+        render={(props) => <TechnicalIssue {...props} />}
       />
 
       <Redirect to="/" />
