@@ -3,7 +3,7 @@
 
     &:hover,
     &.active {
-      color: theme-color("primary");
+        color: theme-color("primary");
     }
 
     i:not(.fa) {
@@ -20,7 +20,7 @@
     }
 
     .nav-link {
-    	padding: $nav-pills-padding-y $nav-pills-padding-x;
+        padding: $nav-pills-padding-y $nav-pills-padding-x;
         color: $nav-pills-link-color;
         font-weight: 500;
         font-size: $font-size-sm;
@@ -29,14 +29,14 @@
         transition: $transition-base;
 
         &:hover {
-        	color: $nav-pills-link-hover-color;
+            color: $nav-pills-link-hover-color;
         }
     }
 
     .nav-link.active,
-    .show > .nav-link {
-        color: #ced4da;
-        background-color: #ced4da;
+    .show>.nav-link {
+        color: #FFF;
+        background-color: default;
     }
 
     @include media-breakpoint-down(xs) {
@@ -67,7 +67,9 @@
     }
 
     .nav-link-icon {
-        i, svg {
+
+        i,
+        svg {
             font-size: 1rem;
         }
     }
@@ -78,7 +80,7 @@
     padding: 1rem 0;
     @include border-top-radius($card-border-radius);
 
-    + .card {
+    +.card {
         @include border-top-radius(0);
         @include border-bottom-radius($card-border-radius);
     }

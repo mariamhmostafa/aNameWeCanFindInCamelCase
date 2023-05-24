@@ -1,6 +1,7 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
+import ReactDatetime from "react-datetime";
 
 // reactstrap components
 import {
@@ -39,14 +40,12 @@ import "assets/vendor/nucleo/css/nucleo.css";
 import Download from "../IndexSections/Download.js";
 
 class Client extends React.Component {
-
     state = {
         tabs: 1,
         defaultModal1: false,
         defaultModal2: false,
         defaultModal3: false
     };
-
 
     toggleModal = state => {
         this.setState({
@@ -99,6 +98,7 @@ class Client extends React.Component {
                                             </h1>
                                         </Col>
                                     </Row>
+
                                 </div>
                             </Container>
                             {/* SVG separator */}
@@ -120,704 +120,6 @@ class Client extends React.Component {
                         </section>
                         {/* 1st Hero Variation */}
                     </div>
-                    <section>
-                        <div className="nav-wrapper">
-                            <Nav
-                                className="nav-fill flex-column flex-md-row"
-                                id="tabs-icons-text"
-                                pills
-                                role="tablist"
-                            >
-                                <NavItem>
-                                    <NavLink
-                                        aria-selected={this.state.tabs === 1}
-                                        className={classnames("mb-sm-3 mb-md-0", {
-                                            active: this.state.tabs === 1
-                                        })}
-                                        onClick={e => this.toggleNavs(e, "tabs", 1)}
-                                        href="#pablo"
-                                        role="tab"
-                                    >
-                                        <i className="ni ni-cloud-upload-96 mr-2" />
-                                        View credit cards
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        aria-selected={this.state.tabs === 2}
-                                        className={classnames("mb-sm-3 mb-md-0", {
-                                            active: this.state.tabs === 2
-                                        })}
-                                        onClick={e => this.toggleNavs(e, "tabs", 2)}
-                                        href="#pablo"
-                                        role="tab"
-                                    >
-                                        <i className="ni ni-bell-55 mr-2" />
-                                        Apply for a credit card
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        aria-selected={this.state.tabs === 3}
-                                        className={classnames("mb-sm-3 mb-md-0", {
-                                            active: this.state.tabs === 3
-                                        })}
-                                        onClick={e => this.toggleNavs(e, "tabs", 3)}
-                                        href="#pablo"
-                                        role="tab"
-                                    >
-                                        <i className="ni ni-calendar-grid-58 mr-2" />
-                                        View pending credit card requests
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        aria-selected={this.state.tabs === 4}
-                                        className={classnames("mb-sm-3 mb-md-0", {
-                                            active: this.state.tabs === 4
-                                        })}
-                                        onClick={e => this.toggleNavs(e, "tabs", 4)}
-                                        href="#pablo"
-                                        role="tab"
-                                    >
-                                        <i className="ni ni-calendar-grid-58 mr-2" />
-                                        Pay bills
-                                    </NavLink>
-                                </NavItem>
-                            </Nav>
-                        </div>
-                        <Card className="shadow">
-                            <CardBody>
-                                <TabContent activeTab={"tabs" + this.state.tabs}>
-                                    <TabPane tabId="tabs1">
-                                        <Container>
-                                            <Row>
-                                                <Col xs="3">
-                                                    <span>Name</span>
-                                                </Col>
-                                                <Col xs="4">
-                                                    <span>Credit card number </span>
-                                                </Col>
-                                                <Col>
-                                                    <span>Expiry date </span>
-                                                </Col>
-                                                <Col>
-                                                    <p>
-                                                    </p>
-                                                    <p>
-                                                    </p>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <p>
-                                                </p>
-                                            </Row>
-                                            <Row>
-                                                <Col xs="3">
-                                                    <span>Basboosa el amoora</span>
-                                                </Col>
-                                                <Col xs="4">
-                                                    <span>99999999999 </span>
-                                                </Col>
-                                                <Col>
-                                                    <span>06/23 </span>
-                                                </Col>
-                                                <Col>
-                                                    <Button
-                                                        block
-                                                        className="mb-3"
-                                                        size="sm"
-                                                        color="primary"
-                                                        type="button"
-                                                        onClick={() => this.toggleModal("defaultModal1")}
-                                                    >
-                                                        <i className="ni ni-basket"></i>
-                                                        {" "}View transcations
-                                                    </Button>
-                                                    <Modal
-                                                        className="modal-dialog-centered"
-                                                        isOpen={this.state.defaultModal1}
-                                                        toggle={() => this.toggleModal("defaultModal1")}
-                                                    >
-                                                        <div className="modal-header">
-                                                            <h6 className="modal-title" id="modal-title-default">
-                                                                Basboosa el amoora
-                                                            </h6>
-                                                            <button
-                                                                aria-label="Close"
-                                                                className="close"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal1")}
-                                                            >
-                                                                <span aria-hidden={true}>×</span>
-                                                            </button>
-                                                        </div>
-                                                        <div className="modal-body">
-                                                            <Container>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>Transaction number</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>Amount </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>Date </span>
-                                                                    </Col>
-                                                                </Row>
-                                                                <Row>
-                                                                    <p>
-
-                                                                    </p>
-                                                                </Row>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>19843</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>150.00 </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>18/05/2022 </span>
-                                                                    </Col>
-                                                                </Row>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>297023</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>7500.00 </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>15/05/2023 </span>
-                                                                    </Col>
-                                                                </Row>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>98245</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>90.00 </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>23/05/2023 </span>
-                                                                    </Col>
-                                                                </Row>
-
-                                                            </Container>
-                                                        </div>
-                                                        <div className="modal-footer">
-                                                            <Button
-                                                                className="ml-auto"
-                                                                color="link"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal1")}
-                                                            >
-                                                                Close
-                                                            </Button>
-                                                        </div>
-                                                    </Modal>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col xs="3">
-                                                    <span>Basboosa a7la ota fl denya</span>
-                                                </Col>
-                                                <Col xs="4">
-                                                    <span>100100100100 </span>
-                                                </Col>
-                                                <Col>
-                                                    <span>02/27 </span>
-                                                </Col>
-                                                <Col>
-                                                    <Button
-                                                        block
-                                                        className="mb-3"
-                                                        size="sm"
-                                                        color="primary"
-                                                        type="button"
-                                                        onClick={() => this.toggleModal("defaultModal2")}
-                                                    >
-                                                        <i className="ni ni-basket"></i>
-                                                        {" "}View transcations
-                                                    </Button>
-                                                    <Modal
-                                                        className="modal-dialog-centered"
-                                                        isOpen={this.state.defaultModal2}
-                                                        toggle={() => this.toggleModal("defaultModal2")}
-                                                    >
-                                                        <div className="modal-header">
-                                                            <h6 className="modal-title" id="modal-title-default">
-                                                                Basboosa a7la ota fl denya
-                                                            </h6>
-                                                            <button
-                                                                aria-label="Close"
-                                                                className="close"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal2")}
-                                                            >
-                                                                <span aria-hidden={true}>×</span>
-                                                            </button>
-                                                        </div>
-                                                        <div className="modal-body">
-                                                            <Container>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>Transaction number</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>Amount </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>Date </span>
-                                                                    </Col>
-                                                                </Row>
-                                                                <Row>
-                                                                    <p>
-
-                                                                    </p>
-                                                                </Row>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>987432</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>340.00 </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>12/03/2019 </span>
-                                                                    </Col>
-                                                                </Row>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>47629</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>709.99 </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>20/07/2020 </span>
-                                                                    </Col>
-                                                                </Row>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>27846</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>5.50 </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>28/05/2022 </span>
-                                                                    </Col>
-                                                                </Row>
-
-                                                            </Container>
-                                                        </div>
-                                                        <div className="modal-footer">
-                                                            <Button
-                                                                className="ml-auto"
-                                                                color="link"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal2")}
-                                                            >
-                                                                Close
-                                                            </Button>
-                                                        </div>
-                                                    </Modal>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col xs="3">
-                                                    <span>Basboosy </span>
-                                                </Col>
-                                                <Col xs="4">
-                                                    <span>123456789 </span>
-                                                </Col>
-                                                <Col>
-                                                    <span>11/25 </span>
-                                                </Col>
-                                                <Col>
-                                                    <Button
-                                                        block
-                                                        className="mb-3"
-                                                        size="sm"
-                                                        color="primary"
-                                                        type="button"
-                                                        onClick={() => this.toggleModal("defaultModal3")}
-                                                    >
-                                                        <i className="ni ni-basket"></i>
-                                                        {" "}View transcations
-                                                    </Button>
-                                                    <Modal
-                                                        className="modal-dialog-centered"
-                                                        isOpen={this.state.defaultModal3}
-                                                        toggle={() => this.toggleModal("defaultModal3")}
-                                                    >
-                                                        <div className="modal-header">
-                                                            <h6 className="modal-title" id="modal-title-default">
-                                                                Basboosa el amoora
-                                                            </h6>
-                                                            <button
-                                                                aria-label="Close"
-                                                                className="close"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal3")}
-                                                            >
-                                                                <span aria-hidden={true}>×</span>
-                                                            </button>
-                                                        </div>
-                                                        <div className="modal-body">
-                                                            <Container>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>Transaction number</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>Amount </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>Date </span>
-                                                                    </Col>
-                                                                </Row>
-                                                                <Row>
-                                                                    <p>
-
-                                                                    </p>
-                                                                </Row>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>87524</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>983.07 </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>06/03/2018 </span>
-                                                                    </Col>
-                                                                </Row>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>34683</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>1950.34 </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>5/11/2020 </span>
-                                                                    </Col>
-                                                                </Row>
-                                                                <Row>
-                                                                    <Col xs="6">
-                                                                        <span>25836</span>
-                                                                    </Col>
-                                                                    <Col xs="3">
-                                                                        <span>7389.50 </span>
-                                                                    </Col>
-                                                                    <Col xs="2">
-                                                                        <span>27/08/2021 </span>
-                                                                    </Col>
-                                                                </Row>
-
-                                                            </Container>
-                                                        </div>
-                                                        <div className="modal-footer">
-                                                            <Button
-                                                                className="ml-auto"
-                                                                color="link"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal3")}
-                                                            >
-                                                                Close
-                                                            </Button>
-                                                        </div>
-                                                    </Modal>
-                                                </Col>
-                                            </Row>
-                                        </Container>
-                                    </TabPane>
-                                    <TabPane tabId="tabs2">
-                                        <Form>
-                                            <Row>
-                                                <Col md="6">
-                                                    <FormGroup>
-                                                        Email:
-                                                        <Input
-                                                            id="exampleFormControlInput1"
-                                                            placeholder="name@example.com"
-                                                            type="email"
-                                                        />
-                                                    </FormGroup>
-                                                </Col>
-                                                <Col md="6">
-                                                    <FormGroup>
-                                                        Your monthly salary:
-                                                        <Input
-                                                            id="exampleFormControlInput1"
-                                                            placeholder="$XXXX.XX"
-                                                            type="email"
-                                                        />
-                                                    </FormGroup>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col md="6">
-                                                    <FormGroup>
-                                                        Card Name:
-                                                        <Input
-                                                            id="exampleFormControlInput1"
-                                                            placeholder="enter your name"
-                                                            type="email"
-                                                        />
-                                                    </FormGroup>
-                                                </Col>
-                                                <Col md="6">
-                                                    <FormGroup>
-                                                        <p>
-
-                                                        </p>
-                                                        <Button block color="primary" size="lg" type="button">
-                                                            Apply Now!
-                                                        </Button>
-                                                    </FormGroup>
-                                                </Col>
-                                            </Row>
-                                        </Form>
-                                    </TabPane>
-                                    <TabPane tabId="tabs3">
-                                        <Container>
-                                            <Row>
-                                                <Col>
-                                                    <span>Application Number</span>
-                                                </Col>
-                                                <Col >
-                                                    <span>Issue Date </span>
-                                                </Col>
-                                                <Col>
-                                                    <span>Status </span>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <p>
-
-                                                </p>
-                                            </Row>
-                                            <Row>
-                                                <Col>
-                                                    <span>874</span>
-                                                </Col>
-                                                <Col>
-                                                    <span>10/11/2020 </span>
-                                                </Col>
-                                                <Col>
-                                                    <span> Accepted</span>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col>
-                                                    <span>2593</span>
-                                                </Col>
-                                                <Col>
-                                                    <span>19/07/2022 </span>
-                                                </Col>
-                                                <Col>
-                                                    <span> Rejected</span>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col>
-                                                    <span>46239</span>
-                                                </Col>
-                                                <Col>
-                                                    <span> 23/05/2023</span>
-                                                </Col>
-                                                <Col>
-                                                    <span> Pending</span>
-                                                </Col>
-                                            </Row>
-                                        </Container>
-                                    </TabPane>
-                                    <TabPane tabId="tabs4">
-                                        <Container>
-                                            <Row>
-                                                <Col xs="3">
-                                                    <span>Bill Type</span>
-                                                </Col>
-                                                <Col xs="3">
-                                                    <span>Amount </span>
-                                                </Col>
-                                                <Col xs="3">
-                                                    <span>Card</span>
-                                                </Col>
-                                                <Col>
-                                                    <span></span>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <p>
-
-                                                </p>
-                                            </Row>
-                                            <Row>
-                                                <Col>
-                                                    <span>Water</span>
-                                                </Col>
-                                                <Col>
-                                                    <span>1900.00 </span>
-                                                </Col>
-                                                <Col>
-                                                    <UncontrolledDropdown>
-                                                        <DropdownToggle caret color="secondary" placeholder="Choose">
-                                                            Choose card
-                                                        </DropdownToggle>
-                                                        <DropdownMenu>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosa el amoora
-                                                            </DropdownItem>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosa a7la ota fl denya
-                                                            </DropdownItem>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosy
-                                                            </DropdownItem>
-                                                        </DropdownMenu>
-                                                    </UncontrolledDropdown>
-                                                </Col>
-                                                <Col>
-                                                    <Button
-                                                        className="ml-auto"
-                                                        color="link"
-                                                        data-dismiss="modal"
-                                                        type="button"
-                                                        onClick={() => this.handlePay()}
-                                                    >
-                                                        Pay Now
-                                                    </Button>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col>
-                                                    <span>Electricity</span>
-                                                </Col>
-                                                <Col>
-                                                    <span>3207.50 </span>
-                                                </Col>
-                                                <Col>
-                                                    <UncontrolledDropdown>
-                                                        <DropdownToggle caret color="secondary" placeholder="Choose">
-                                                            Choose card
-                                                        </DropdownToggle>
-                                                        <DropdownMenu>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosa el amoora
-                                                            </DropdownItem>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosa a7la ota fl denya
-                                                            </DropdownItem>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosy
-                                                            </DropdownItem>
-                                                        </DropdownMenu>
-                                                    </UncontrolledDropdown>
-                                                </Col>
-                                                <Col>
-                                                    <Button
-                                                        className="ml-auto"
-                                                        color="link"
-                                                        data-dismiss="modal"
-                                                        type="button"
-                                                        onClick={() => this.handlePay()}
-                                                    >
-                                                        Pay Now
-                                                    </Button>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col>
-                                                    <span>Gas</span>
-                                                </Col>
-                                                <Col>
-                                                    <span>30.50 </span>
-                                                </Col>
-                                                <Col>
-                                                    <UncontrolledDropdown>
-                                                        <DropdownToggle caret color="secondary" placeholder="Choose">
-                                                            Choose card
-                                                        </DropdownToggle>
-                                                        <DropdownMenu>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosa el amoora
-                                                            </DropdownItem>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosa a7la ota fl denya
-                                                            </DropdownItem>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosy
-                                                            </DropdownItem>
-                                                        </DropdownMenu>
-                                                    </UncontrolledDropdown>
-                                                </Col>
-                                                <Col>
-                                                    <Button
-                                                        className="ml-auto"
-                                                        color="link"
-                                                        data-dismiss="modal"
-                                                        type="button"
-                                                        onClick={() => this.handlePay()}
-                                                    >
-                                                        Pay Now
-                                                    </Button>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col>
-                                                    <span>Telephone</span>
-                                                </Col>
-                                                <Col>
-                                                    <span>999.99 </span>
-                                                </Col>
-                                                <Col>
-                                                    <UncontrolledDropdown>
-                                                        <DropdownToggle caret color="secondary" placeholder="Choose">
-                                                            Choose card
-                                                        </DropdownToggle>
-                                                        <DropdownMenu>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosa el amoora
-                                                            </DropdownItem>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosa a7la ota fl denya
-                                                            </DropdownItem>
-                                                            <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                                                                Basboosy
-                                                            </DropdownItem>
-                                                        </DropdownMenu>
-                                                    </UncontrolledDropdown>
-                                                </Col>
-                                                <Col>
-                                                    <Button
-                                                        className="ml-auto"
-                                                        color="link"
-                                                        data-dismiss="modal"
-                                                        type="button"
-                                                        onClick={() => this.handlePay()}
-                                                    >
-                                                        Pay Now
-                                                    </Button>
-                                                </Col>
-                                            </Row>
-                                        </Container>
-                                    </TabPane>
-                                </TabContent>
-                            </CardBody>
-                        </Card>
-                    </section>
-
                     <section className="section bg-secondary">
                         <Container>
                             <Row className="row-grid align-items-center">
@@ -892,88 +194,809 @@ class Client extends React.Component {
                     <section className="section pb-0 bg-gradient-warning">
                         <Container>
                             <Row className="row-grid align-items-center">
-                                <Col className="order-lg-2 ml-lg-auto" md="6">
-                                    <div className="position-relative pl-md-5">
-                                        <img
-                                            alt="..."
-                                            className="img-center img-fluid"
-                                            src={require("assets/img/ill/ill-2.svg")}
-                                        />
-                                    </div>
-                                </Col>
-                                <Col className="order-lg-1" lg="6">
-                                    <div className="d-flex px-3">
-                                        <div>
-                                            <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                                                <i className="ni ni-building text-primary" />
-                                            </div>
-                                        </div>
-                                        <div className="pl-4">
-                                            <h4 className="display-3 text-white">Modern Interface</h4>
-                                            <p className="text-white">
-                                                The Arctic Ocean freezes every winter and much of the
-                                                sea-ice then thaws every summer, and that process will
-                                                continue whatever.
-                                            </p>
+                                <div className="d-flex px-3">
+                                    <div>
+                                        <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                                            <i className="fa fa-credit-card text-primary" />
                                         </div>
                                     </div>
-                                    <Card className="shadow shadow-lg--hover mt-5">
+                                    <div className="pl-4">
+                                        <h4 className="display-3 text-white">Credit Cards</h4>
+                                        <p className="text-white">
+                                            Credit cards are versatile tools that offer numerous benefits.
+                                            They provide a convenient and secure way to make purchases,
+                                            both online and in-person, without the need for cash. Credit cards
+                                            also offer rewards programs, allowing users to earn cashback,
+                                            points, or miles on their transactions. They help build credit history and
+                                            improve credit scores through responsible usage and timely payments.
+                                            Additionally, credit cards provide financial protection against
+                                            fraud and unauthorized transactions. Overall, credit cards are invaluable
+                                            for efficient and secure financial management.
+                                        </p>
+                                    </div>
+                                </div>
+                                <section>
+                                    <div className="nav-wrapper">
+                                        <Nav
+                                            className="nav-fill flex-column flex-md-row"
+                                            id="tabs-icons-text"
+                                            pills
+                                            role="tablist"
+                                        >
+                                            <NavItem>
+                                                <NavLink
+                                                    aria-selected={this.state.tabs === 1}
+                                                    className={classnames("mb-sm-3 mb-md-0", {
+                                                        active: this.state.tabs === 1
+                                                    })}
+                                                    onClick={e => this.toggleNavs(e, "tabs", 1)}
+                                                    href="#pablo"
+                                                    role="tab"
+                                                >
+                                                    <i className="fa fa-credit-card-alt mr-2" />
+                                                    View credit cards
+                                                </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink
+                                                    aria-selected={this.state.tabs === 2}
+                                                    className={classnames("mb-sm-3 mb-md-0", {
+                                                        active: this.state.tabs === 2
+                                                    })}
+                                                    onClick={e => this.toggleNavs(e, "tabs", 2)}
+                                                    href="#pablo"
+                                                    role="tab"
+                                                >
+                                                    <i className="fa fa-user mr-2" />
+                                                    Apply for a credit card
+                                                </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink
+                                                    aria-selected={this.state.tabs === 3}
+                                                    className={classnames("mb-sm-3 mb-md-0", {
+                                                        active: this.state.tabs === 3
+                                                    })}
+                                                    onClick={e => this.toggleNavs(e, "tabs", 3)}
+                                                    href="#pablo"
+                                                    role="tab"
+                                                >
+                                                    <i className="fa fa-eye mr-2" />
+                                                    View credit card requests
+                                                </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink
+                                                    aria-selected={this.state.tabs === 4}
+                                                    className={classnames("mb-sm-3 mb-md-0", {
+                                                        active: this.state.tabs === 4
+                                                    })}
+                                                    onClick={e => this.toggleNavs(e, "tabs", 4)}
+                                                    href="#pablo"
+                                                    role="tab"
+                                                >
+                                                    <i className="fa fa-money mr-2" />
+                                                    Pay bills
+                                                </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink
+                                                    aria-selected={this.state.tabs === 5}
+                                                    className={classnames("mb-sm-3 mb-md-0", {
+                                                        active: this.state.tabs === 5
+                                                    })}
+                                                    onClick={e => this.toggleNavs(e, "tabs", 5)}
+                                                    href="#pablo"
+                                                    role="tab"
+                                                >
+                                                    <i className="fa fa-flag mr-2" />
+                                                    Report
+                                                </NavLink>
+                                            </NavItem>
+                                        </Nav>
+                                    </div>
+                                    <Card className="shadow">
                                         <CardBody>
-                                            <div className="d-flex px-3">
-                                                <div>
-                                                    <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
-                                                        <i className="ni ni-satisfied" />
-                                                    </div>
-                                                </div>
-                                                <div className="pl-4">
-                                                    <h5 className="title text-success">
-                                                        Awesome Support
-                                                    </h5>
-                                                    <p>
-                                                        The Arctic Ocean freezes every winter and much of
-                                                        the sea-ice then thaws every summer, and that
-                                                        process will continue whatever.
-                                                    </p>
-                                                    <a
-                                                        className="text-success"
-                                                        href="#pablo"
-                                                        onClick={(e) => e.preventDefault()}
-                                                    >
-                                                        Learn more
-                                                    </a>
-                                                </div>
-                                            </div>
+                                            <TabContent activeTab={"tabs" + this.state.tabs}>
+                                                <TabPane tabId="tabs1">
+                                                    <Container>
+                                                        <Row>
+                                                            <Col xs="3">
+                                                                <span>Name</span>
+                                                            </Col>
+                                                            <Col xs="4">
+                                                                <span>Credit card number </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>Expiry date </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <p>
+                                                                </p>
+                                                                <p>
+                                                                </p>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <p>
+                                                            </p>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col xs="3">
+                                                                <span>Basboosa el amoora</span>
+                                                            </Col>
+                                                            <Col xs="4">
+                                                                <span>99999999999 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>06/23 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    block
+                                                                    className="mb-3"
+                                                                    size="sm"
+                                                                    color="primary"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal1")}
+                                                                >
+                                                                    <i className="ni ni-basket"></i>
+                                                                    {" "}View transcations
+                                                                </Button>
+                                                                <Modal
+                                                                    className="modal-dialog-centered"
+                                                                    isOpen={this.state.defaultModal1}
+                                                                    toggle={() => this.toggleModal("defaultModal1")}
+                                                                >
+                                                                    <div className="modal-header">
+                                                                        <h6 className="modal-title" id="modal-title-default">
+                                                                            Basboosa el amoora
+                                                                        </h6>
+                                                                        <button
+                                                                            aria-label="Close"
+                                                                            className="close"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal1")}
+                                                                        >
+                                                                            <span aria-hidden={true}>×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className="modal-body">
+                                                                        <Container>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>Transaction number</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>Amount </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>Date </span>
+                                                                                </Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <p>
+
+                                                                                </p>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>19843</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>150.00 </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>18/05/2022 </span>
+                                                                                </Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>297023</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>7500.00 </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>15/05/2023 </span>
+                                                                                </Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>98245</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>90.00 </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>23/05/2023 </span>
+                                                                                </Col>
+                                                                            </Row>
+
+                                                                        </Container>
+                                                                    </div>
+                                                                    <div className="modal-footer">
+                                                                        <Button
+                                                                            className="ml-auto"
+                                                                            color="link"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal1")}
+                                                                        >
+                                                                            Close
+                                                                        </Button>
+                                                                    </div>
+                                                                </Modal>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col xs="3">
+                                                                <span>Basboosa a7la ota fl denya</span>
+                                                            </Col>
+                                                            <Col xs="4">
+                                                                <span>100100100100 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>02/27 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    block
+                                                                    className="mb-3"
+                                                                    size="sm"
+                                                                    color="primary"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal2")}
+                                                                >
+                                                                    <i className="ni ni-basket"></i>
+                                                                    {" "}View transcations
+                                                                </Button>
+                                                                <Modal
+                                                                    className="modal-dialog-centered"
+                                                                    isOpen={this.state.defaultModal2}
+                                                                    toggle={() => this.toggleModal("defaultModal2")}
+                                                                >
+                                                                    <div className="modal-header">
+                                                                        <h6 className="modal-title" id="modal-title-default">
+                                                                            Basboosa a7la ota fl denya
+                                                                        </h6>
+                                                                        <button
+                                                                            aria-label="Close"
+                                                                            className="close"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal2")}
+                                                                        >
+                                                                            <span aria-hidden={true}>×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className="modal-body">
+                                                                        <Container>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>Transaction number</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>Amount </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>Date </span>
+                                                                                </Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <p>
+
+                                                                                </p>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>987432</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>340.00 </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>12/03/2019 </span>
+                                                                                </Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>47629</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>709.99 </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>20/07/2020 </span>
+                                                                                </Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>27846</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>5.50 </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>28/05/2022 </span>
+                                                                                </Col>
+                                                                            </Row>
+
+                                                                        </Container>
+                                                                    </div>
+                                                                    <div className="modal-footer">
+                                                                        <Button
+                                                                            className="ml-auto"
+                                                                            color="link"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal2")}
+                                                                        >
+                                                                            Close
+                                                                        </Button>
+                                                                    </div>
+                                                                </Modal>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col xs="3">
+                                                                <span>Basboosy </span>
+                                                            </Col>
+                                                            <Col xs="4">
+                                                                <span>123456789 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>11/25 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    block
+                                                                    className="mb-3"
+                                                                    size="sm"
+                                                                    color="primary"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal3")}
+                                                                >
+                                                                    <i className="ni ni-basket"></i>
+                                                                    {" "}View transcations
+                                                                </Button>
+                                                                <Modal
+                                                                    className="modal-dialog-centered"
+                                                                    isOpen={this.state.defaultModal3}
+                                                                    toggle={() => this.toggleModal("defaultModal3")}
+                                                                >
+                                                                    <div className="modal-header">
+                                                                        <h6 className="modal-title" id="modal-title-default">
+                                                                            Basboosa el amoora
+                                                                        </h6>
+                                                                        <button
+                                                                            aria-label="Close"
+                                                                            className="close"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal3")}
+                                                                        >
+                                                                            <span aria-hidden={true}>×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className="modal-body">
+                                                                        <Container>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>Transaction number</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>Amount </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>Date </span>
+                                                                                </Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <p>
+
+                                                                                </p>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>87524</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>983.07 </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>06/03/2018 </span>
+                                                                                </Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>34683</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>1950.34 </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>5/11/2020 </span>
+                                                                                </Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col xs="6">
+                                                                                    <span>25836</span>
+                                                                                </Col>
+                                                                                <Col xs="3">
+                                                                                    <span>7389.50 </span>
+                                                                                </Col>
+                                                                                <Col xs="2">
+                                                                                    <span>27/08/2021 </span>
+                                                                                </Col>
+                                                                            </Row>
+
+                                                                        </Container>
+                                                                    </div>
+                                                                    <div className="modal-footer">
+                                                                        <Button
+                                                                            className="ml-auto"
+                                                                            color="link"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal3")}
+                                                                        >
+                                                                            Close
+                                                                        </Button>
+                                                                    </div>
+                                                                </Modal>
+                                                            </Col>
+                                                        </Row>
+                                                    </Container>
+                                                </TabPane>
+                                                <TabPane tabId="tabs2">
+                                                    <Form>
+                                                        <Row>
+                                                            <Col md="6">
+                                                                <FormGroup>
+                                                                    Email:
+                                                                    <Input
+                                                                        id="exampleFormControlInput1"
+                                                                        placeholder="name@example.com"
+                                                                        type="email"
+                                                                    />
+                                                                </FormGroup>
+                                                            </Col>
+                                                            <Col md="6">
+                                                                <FormGroup>
+                                                                    Your monthly salary:
+                                                                    <Input
+                                                                        id="exampleFormControlInput1"
+                                                                        placeholder="$XXXX.XX"
+                                                                        type="email"
+                                                                    />
+                                                                </FormGroup>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col md="6">
+                                                                <FormGroup>
+                                                                    Card Name:
+                                                                    <Input
+                                                                        id="exampleFormControlInput1"
+                                                                        placeholder="enter your name"
+                                                                        type="email"
+                                                                    />
+                                                                </FormGroup>
+                                                            </Col>
+                                                            <Col md="6">
+                                                                <FormGroup>
+                                                                    <p>
+
+                                                                    </p>
+                                                                    <Button block color="primary" size="lg" type="button">
+                                                                        Apply Now!
+                                                                    </Button>
+                                                                </FormGroup>
+                                                            </Col>
+                                                        </Row>
+                                                    </Form>
+                                                </TabPane>
+                                                <TabPane tabId="tabs3">
+                                                    <Container>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>Application Number</span>
+                                                            </Col>
+                                                            <Col >
+                                                                <span>Issue Date </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>Status </span>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <p>
+
+                                                            </p>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>874</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>10/11/2020 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span> Accepted</span>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>2593</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>19/07/2022 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span> Rejected</span>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>46239</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span> 23/05/2023</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span> Pending</span>
+                                                            </Col>
+                                                        </Row>
+                                                    </Container>
+                                                </TabPane>
+                                                <TabPane tabId="tabs4">
+                                                    <Container>
+                                                        <Row>
+                                                            <Col xs="3">
+                                                                <span>Bill Type</span>
+                                                            </Col>
+                                                            <Col xs="3">
+                                                                <span>Amount </span>
+                                                            </Col>
+                                                            <Col xs="3">
+                                                                <span>Card</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span></span>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <p>
+
+                                                            </p>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>Water</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>1900.00 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                        Choose card
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosa el amoora
+                                                                        </DropdownItem>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosa a7la ota fl denya
+                                                                        </DropdownItem>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosy
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    className="ml-auto"
+                                                                    color="link"
+                                                                    data-dismiss="modal"
+                                                                    type="button"
+                                                                    onClick={() => this.handlePay()}
+                                                                >
+                                                                    Pay Now
+                                                                </Button>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>Electricity</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>3207.50 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                        Choose card
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosa el amoora
+                                                                        </DropdownItem>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosa a7la ota fl denya
+                                                                        </DropdownItem>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosy
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    className="ml-auto"
+                                                                    color="link"
+                                                                    data-dismiss="modal"
+                                                                    type="button"
+                                                                    onClick={() => this.handlePay()}
+                                                                >
+                                                                    Pay Now
+                                                                </Button>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>Gas</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>30.50 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                        Choose card
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosa el amoora
+                                                                        </DropdownItem>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosa a7la ota fl denya
+                                                                        </DropdownItem>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosy
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    className="ml-auto"
+                                                                    color="link"
+                                                                    data-dismiss="modal"
+                                                                    type="button"
+                                                                    onClick={() => this.handlePay()}
+                                                                >
+                                                                    Pay Now
+                                                                </Button>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>Telephone</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>999.99 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                        Choose card
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosa el amoora
+                                                                        </DropdownItem>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosa a7la ota fl denya
+                                                                        </DropdownItem>
+                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                            Basboosy
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    className="ml-auto"
+                                                                    color="link"
+                                                                    data-dismiss="modal"
+                                                                    type="button"
+                                                                    onClick={() => this.handlePay()}
+                                                                >
+                                                                    Pay Now
+                                                                </Button>
+                                                            </Col>
+                                                        </Row>
+                                                    </Container>
+                                                </TabPane>
+                                                <TabPane tabId="tabs5">
+                                                    <Container>
+                                                        <Card className="bg-gradient-secondary shadow">
+                                                            <CardBody className="p-lg-5">
+                                                                <h4 className="mb-1">Report credit card</h4>
+                                                                <p className="mt-0">
+                                                                    Your issue is very important to us.
+                                                                </p>
+                                                                <FormGroup
+                                                                    className={classnames("mt-5", {
+                                                                        focused: this.state.nameFocused
+                                                                    })}
+                                                                >
+                                                                    <InputGroup className="input-group-alternative">
+                                                                        <InputGroupAddon addonType="prepend">
+                                                                            <InputGroupText>
+                                                                                <i className="ni ni-user-run" />
+                                                                            </InputGroupText>
+                                                                        </InputGroupAddon>
+                                                                        <Input
+                                                                            placeholder="Credit Card number"
+                                                                            type="text"
+                                                                            onFocus={(e) =>
+                                                                                this.setState({ nameFocused: true })
+                                                                            }
+                                                                            onBlur={(e) =>
+                                                                                this.setState({ nameFocused: false })
+                                                                            }
+                                                                        />
+                                                                    </InputGroup>
+                                                                </FormGroup>
+                                                                <FormGroup>
+                                                                    <InputGroup className="input-group-alternative">
+                                                                        <InputGroupAddon addonType="prepend">
+                                                                            <InputGroupText>
+                                                                                <i className="ni ni-calendar-grid-58" />
+                                                                            </InputGroupText>
+                                                                        </InputGroupAddon>
+                                                                        <ReactDatetime
+                                                                            inputProps={{
+                                                                                placeholder: "Issue Date"
+                                                                            }}
+                                                                            timeFormat={false}
+                                                                        />
+                                                                    </InputGroup>
+                                                                </FormGroup>
+                                                                <FormGroup className="mb-4">
+                                                                    <Input
+                                                                        className="form-control-alternative"
+                                                                        cols="80"
+                                                                        name="name"
+                                                                        placeholder="Type a message..."
+                                                                        rows="4"
+                                                                        type="textarea"
+                                                                    />
+                                                                </FormGroup>
+                                                                <div>
+                                                                    <Button
+                                                                        block
+                                                                        className="btn-round"
+                                                                        color="default"
+                                                                        size="lg"
+                                                                        type="button"
+                                                                    >
+                                                                        Send Report
+                                                                    </Button>
+                                                                </div>
+                                                            </CardBody>
+                                                        </Card>
+                                                    </Container>
+                                                </TabPane>
+                                            </TabContent>
                                         </CardBody>
                                     </Card>
-                                    <Card className="shadow shadow-lg--hover mt-5">
-                                        <CardBody>
-                                            <div className="d-flex px-3">
-                                                <div>
-                                                    <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                                                        <i className="ni ni-active-40" />
-                                                    </div>
-                                                </div>
-                                                <div className="pl-4">
-                                                    <h5 className="title text-warning">
-                                                        Modular Components
-                                                    </h5>
-                                                    <p>
-                                                        The Arctic Ocean freezes every winter and much of
-                                                        the sea-ice then thaws every summer, and that
-                                                        process will continue whatever.
-                                                    </p>
-                                                    <a
-                                                        className="text-warning"
-                                                        href="#pablo"
-                                                        onClick={(e) => e.preventDefault()}
-                                                    >
-                                                        Learn more
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </CardBody>
-                                    </Card>
-                                </Col>
+                                </section>
                             </Row>
                         </Container>
                         {/* SVG separator */}

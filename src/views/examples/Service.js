@@ -74,11 +74,22 @@ class Landing extends React.Component {
                                                     href="/login-page"
                                                 >
                                                     <span className="btn-inner--icon mr-1">
-                                                        <i className="fa fa-code" />
+                                                        <i className="fa fa-sign-in" />
                                                     </span>
                                                     <span className="btn-inner--text">Sign In</span>
                                                 </Button>
-
+                                                <Button
+                                                    className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
+                                                    color="default"
+                                                    href="/register-page"
+                                                >
+                                                    <span className="btn-inner--icon mr-1">
+                                                        <i className="fa fa-plus-square-o " />
+                                                    </span>
+                                                    <span className="btn-inner--text">
+                                                        Register
+                                                    </span>
+                                                </Button>
                                             </div>
                                         </Col>
                                     </Row>
