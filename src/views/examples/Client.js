@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 import ReactDatetime from "react-datetime";
@@ -31,6 +31,7 @@ import {
     Col
 } from "reactstrap";
 
+
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
@@ -39,13 +40,23 @@ import "assets/vendor/nucleo/css/nucleo.css";
 // index page sections
 import Download from "../IndexSections/Download.js";
 
+
 class Client extends React.Component {
+    constructor(props) {
+        super(props);
+        this.scollToRef1 = createRef();
+        this.scollToRef2 = createRef();
+    }
+
+
     state = {
         tabs: 1,
         defaultModal1: false,
         defaultModal2: false,
         defaultModal3: false
     };
+
+
 
     toggleModal = state => {
         this.setState({
@@ -98,7 +109,6 @@ class Client extends React.Component {
                                             </h1>
                                         </Col>
                                     </Row>
-
                                 </div>
                             </Container>
                             {/* SVG separator */}
@@ -120,6 +130,68 @@ class Client extends React.Component {
                         </section>
                         {/* 1st Hero Variation */}
                     </div>
+                    <section className="section section-lg pt-lg-0 mt--200">
+                        <Container>
+                            <Row className="justify-content-center">
+                                <Col lg="12">
+                                    <Row className="row-grid">
+
+                                        <Col lg="12">
+                                            <Card className="card-lift--hover shadow border-0">
+                                                <CardBody className="py-5">
+                                                    <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
+                                                        <i className="fa fa-bullhorn" />
+                                                    </div>
+                                                    <h6 className="text-warning text-uppercase">
+                                                        Important Announcement
+                                                    </h6>
+                                                    <p className="description mt-3">
+                                                        Dear Valued Customers,
+                                                    </p>
+                                                    <p className="description mt-3">
+                                                        We are excited to announce that Mahfaztak will be implementing
+                                                        a service upgrade to enhance your banking experience. This upgrade
+                                                        is scheduled to take place on 20/6/2023 and will involve improvements to
+                                                        our digital banking platform and additional features for your convenience.
+                                                    </p>
+                                                    <p className="description mt-3">
+                                                        During the upgrade, there will be a temporary
+                                                        interruption in some of our services. Online and mobile banking
+                                                        services may be temporarily unavailable on 20/6/2023 from 22:00
+                                                        to 23:00. We apologize for any inconvenience this may cause and
+                                                        assure you that our team is working diligently to minimize the downtime and
+                                                        complete the upgrade as quickly as possible.
+                                                    </p>
+                                                    <p className="description mt-3">
+                                                        Once the upgrade is complete, you can look forward to a more seamless
+                                                        and user-friendly online banking experience. The enhanced platform will provide
+                                                        improved navigation, enhanced security measures, and additional functionalities
+                                                        designed to simplify your financial management.
+                                                    </p>
+                                                    <p className="description mt-3">
+                                                        Sincerely,
+                                                        <br></br>
+                                                        Mahfaztak.
+                                                    </p>
+                                                    <div>
+                                                        <Badge color="warning" pill className="mr-1">
+                                                            announcement
+                                                        </Badge>
+                                                        <Badge color="warning" pill className="mr-1">
+                                                            upgrade
+                                                        </Badge>
+                                                        <Badge color="warning" pill className="mr-1">
+                                                            launch
+                                                        </Badge>
+                                                    </div>
+                                                </CardBody>
+                                            </Card>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </section>
                     <section className="section bg-secondary">
                         <Container>
                             <Row className="row-grid align-items-center">
@@ -127,7 +199,7 @@ class Client extends React.Component {
                                     <Card className="bg-default shadow border-0">
                                         <CardImg
                                             alt="..."
-                                            src={require("assets/img/theme/img-1-1200x1000.jpg")}
+                                            src={require("assets/img/theme/bankoldppl.jpeg")}
                                             top
                                         />
                                         <blockquote className="card-blockquote">
@@ -148,37 +220,64 @@ class Client extends React.Component {
                                                 />
                                             </svg>
                                             <h4 className="display-3 font-weight-bold text-white">
-                                                Design System
+                                                What would you like to do today?
                                             </h4>
-                                            <p className="lead text-italic text-white">
-                                                The Arctic Ocean freezes every winter and much of the
-                                                sea-ice then thaws every summer, and that process will
-                                                continue whatever happens.
-                                            </p>
+
                                         </blockquote>
                                     </Card>
                                 </Col>
                                 <Col md="6">
                                     <div className="pl-md-5">
-                                        <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
-                                            <i className="ni ni-settings" />
-                                        </div>
-                                        <h3>Our customers</h3>
-                                        <p className="lead">
-                                            Don't let your uses guess by attaching tooltips and
-                                            popoves to any element. Just make sure you enable them
-                                            first via JavaScript.
-                                        </p>
-                                        <p>
-                                            The kit comes with three pre-built pages to help you get
-                                            started faster. You can change the text and images and
-                                            you're good to go.
-                                        </p>
-                                        <p>
-                                            The kit comes with three pre-built pages to help you get
-                                            started faster. You can change the text and images and
-                                            you're good to go.
-                                        </p>
+                                        <Container>
+                                            <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                                                <i className="fa fa-hand-o-up" />
+                                            </div>
+                                            <h3 className="mb-1">Explore</h3>
+                                            <p className="mt-0">
+                                                Select...
+                                            </p>
+                                            <Button
+                                                block
+                                                className="btn-round"
+                                                color="default"
+                                                size="lg"
+                                                type="button"
+                                                onClick={() => this.scollToRef2.current.scrollIntoView({ behavior: 'smooth' })}
+
+                                            >
+                                                Account
+                                            </Button>
+                                            <Button
+                                                block
+                                                className="btn-round"
+                                                color="default"
+                                                size="lg"
+                                                type="button"
+                                                onClick={() => this.scollToRef1.current.scrollIntoView({ behavior: 'smooth' })}
+
+                                            >
+                                                Credit Card
+                                            </Button>
+                                            <Button
+                                                block
+                                                className="btn-round"
+                                                color="default"
+                                                size="lg"
+                                                type="button"
+                                            >
+                                                Loan
+                                            </Button>
+                                            <Button
+                                                block
+                                                className="btn-round"
+                                                color="default"
+                                                size="lg"
+                                                type="button"
+                                            >
+                                                Transaction
+                                            </Button>
+                                        </Container>
+
                                         <a
                                             className="font-weight-bold text-warning mt-5"
                                             href="#pablo"
@@ -191,11 +290,11 @@ class Client extends React.Component {
                             </Row>
                         </Container>
                     </section>
-                    <section className="section pb-0 bg-gradient-warning">
-                        <Container>
-                            <Row className="row-grid align-items-center">
-                                <div className="d-flex px-3">
-                                    <div>
+                    <section className="section pb-0 bg-gradient-warning" ref={this.scollToRef1}>
+                        <Container >
+                            <Row className="row-grid align-items-center" >
+                                <div className="d-flex px-3" >
+                                    <div >
                                         <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                                             <i className="fa fa-credit-card text-primary" />
                                         </div>
@@ -1016,7 +1115,7 @@ class Client extends React.Component {
                             </svg>
                         </div>
                     </section>
-                    <section className="section section-lg">
+                    <section className="section section-lg" ref={this.scollToRef2}>
                         <Container>
                             <Row className="justify-content-center text-center mb-lg">
                                 <Col lg="8">
