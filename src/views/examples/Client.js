@@ -49,6 +49,7 @@ class Client extends React.Component {
         this.scollToRef2 = createRef();
     }
 
+
     state = {
         tabs: 1,
         defaultModal1: false,
@@ -91,6 +92,7 @@ class Client extends React.Component {
         document.documentElement.scrollTop = 0;
         document.scrollingElement.scrollTop = 0;
         this.refs.main.scrollTop = 0;
+        document.title = "Mahfaztak";
     }
     render() {
         return (

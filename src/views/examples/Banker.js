@@ -21,7 +21,7 @@ import {
   InputGroup,
   Container,
   Row,
-  Col,Modal
+  Col, Modal
 } from "reactstrap";
 
 // core components
@@ -38,30 +38,32 @@ class Banker extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+    document.title = "Mahfaztak";
   }
-   state = {
-        tabs: 1,
-        defaultModal: false
-    };
-     toggleModal = state => {
-        this.setState({
-            [state]: !this.state[state]
-        });
-    };
 
-x=function BoldText({ children }) {
-  return (
-    <span style={{ fontWeight: 'bold' }}>{children}</span>
-  );
-}
+  state = {
+    tabs: 1,
+    defaultModal: false
+  };
+  toggleModal = state => {
+    this.setState({
+      [state]: !this.state[state]
+    });
+  };
 
-toggleNavs = (e, state, index) => {
+  x = function BoldText({ children }) {
+    return (
+      <span style={{ fontWeight: 'bold' }}>{children}</span>
+    );
+  }
+
+  toggleNavs = (e, state, index) => {
     e.preventDefault();
     this.setState({
       [state]: index
     });
   };
-    
+
   render() {
     return (
       <>
@@ -90,7 +92,7 @@ toggleNavs = (e, state, index) => {
                         <span>Here's your work for today</span>
                       </h1>
                       <p className="lead text-white">
-                       Enta khalas shoghl wala modeer fe khasm
+                        Enta khalas shoghl wala modeer fe khasm
                       </p>
                       <div className="btn-wrapper">
                         <Button
@@ -103,7 +105,7 @@ toggleNavs = (e, state, index) => {
                           </span>
                           <span className="btn-inner--text">Loan Requests</span>
                         </Button>
-                        
+
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
                           color="default"
@@ -141,280 +143,280 @@ toggleNavs = (e, state, index) => {
             {/* 1st Hero Variation */}
           </div>
           <div className="nav-wrapper">
-          <Nav
-            className="nav-fill flex-column flex-md-row"
-            id="tabs-icons-text"
-            pills
-            role="tablist"
-          >
-            <NavItem>
-              <NavLink
-                aria-selected={this.state.tabs === 1}
-                className={classnames("mb-sm-3 mb-md-0", {
-                  active: this.state.tabs === 1
-                })}
-                onClick={e => this.toggleNavs(e, "tabs", 1)}
-                href="#pablo"
-                role="tab"
-              >
-                <i className="ni ni-cloud-upload-96 mr-2" />
-                View Loan Requests
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                aria-selected={this.state.tabs === 2}
-                className={classnames("mb-sm-3 mb-md-0", {
-                  active: this.state.tabs === 2
-                })}
-                onClick={e => this.toggleNavs(e, "tabs", 2)}
-                href="#pablo"
-                role="tab"
-              >
-                <i className="ni ni-bell-55 mr-2" />
-                View Credit Card Requests
-              </NavLink>
-            </NavItem>
-          </Nav>
-        </div>
-        <Card className="shadow">
-          <CardBody>
-            <TabContent activeTab={"tabs" + this.state.tabs}>
-              <TabPane tabId="tabs1">
-                <p className="description">
-                
-                </p>
-                <p className="description">
-                  Raw denim you probably haven't heard of them jean shorts
-                  Austin. Nesciunt tofu stumptown aliqua, retro synth master
-                  cleanse.
-                </p>
-              </TabPane>
-              <TabPane tabId="tabs2">
-                <p className="description">
- <Row>
-  <Col >
-    <span>Client NAme</span>
-  </Col>
-   <Col >
-    <span>Client Id</span>
-  </Col>
+            <Nav
+              className="nav-fill flex-column flex-md-row"
+              id="tabs-icons-text"
+              pills
+              role="tablist"
+            >
+              <NavItem>
+                <NavLink
+                  aria-selected={this.state.tabs === 1}
+                  className={classnames("mb-sm-3 mb-md-0", {
+                    active: this.state.tabs === 1
+                  })}
+                  onClick={e => this.toggleNavs(e, "tabs", 1)}
+                  href="#pablo"
+                  role="tab"
+                >
+                  <i className="ni ni-cloud-upload-96 mr-2" />
+                  View Loan Requests
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  aria-selected={this.state.tabs === 2}
+                  className={classnames("mb-sm-3 mb-md-0", {
+                    active: this.state.tabs === 2
+                  })}
+                  onClick={e => this.toggleNavs(e, "tabs", 2)}
+                  href="#pablo"
+                  role="tab"
+                >
+                  <i className="ni ni-bell-55 mr-2" />
+                  View Credit Card Requests
+                </NavLink>
+              </NavItem>
+            </Nav>
+          </div>
+          <Card className="shadow">
+            <CardBody>
+              <TabContent activeTab={"tabs" + this.state.tabs}>
+                <TabPane tabId="tabs1">
+                  <p className="description">
 
-  <Col >
-    <span>Card Type</span>
-  </Col>
-    <Col >
-    <span>Salary</span>
-  </Col>
-  <Col>
-  </Col>
-</Row>
-<Row>
-  <Col> 
-    <span>Basboosa</span>
-  </Col>
-  <Col>
-    <span>58-1</span>
-  </Col>
- 
-  <Col>
-    <span>Platinum</span>
-  </Col>
-    <Col>
-    <span>900000</span>
-  </Col>
-  <Col>       <Button
-                                                        block
-                                                        className="mb-3"
-                                                        size="sm"
-                                                        color="primary"
-                                                        type="button"
-                                                        onClick={() => this.toggleModal("defaultModal")}
-                                                    >
-                                                        <i className="ni ni-basket"></i>
-                                                        {" "}View Details
-         </Button>
-                                                    <Modal
-                                                        className="modal-dialog-centered"
-                                                        isOpen={this.state.defaultModal}
-                                                        toggle={() => this.toggleModal("defaultModal")}
-                                                    >
-                                                        <div className="modal-header">
-                                                            <h6 className="modal-title" id="modal-title-default">
-                                                                Basboosa el amoora
-                                                            </h6>
-                                                            <button
-                                                                aria-label="Close"
-                                                                className="close"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal")}
-                                                            >
-                                                                <span aria-hidden={true}>×</span>
-                                                            </button>
-                                                        </div>
-                                                        <div className="modal-body">
-                                                            {/* stsuff */}
-                                                        </div>
-                                                        <div className="modal-footer">
-                                                            <Button color="primary" type="button">
-                                                                Save changes
-                                                            </Button>
-                                                            <Button
-                                                                className="ml-auto"
-                                                                color="link"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal")}
-                                                            >
-                                                                Close
-                                                            </Button>
-                                                        </div>
-                                                    </Modal>
-                                                
-  </Col>
-  </Row>
-  <Row>
-   <Col> 
-    <span>Mariouma</span>
-  </Col>
-  <Col>
-    <span>52-4086</span>
-  </Col>
- 
-  <Col>
-    <span>Diamond</span>
-  </Col>
-    <Col>
-    <span>70,000</span>
-  </Col>
-  <Col>
-    <Button
-                                                        block
-                                                        className="mb-3"
-                                                        size="sm"
-                                                        color="primary"
-                                                        type="button"
-                                                        onClick={() => this.toggleModal("defaultModal")}
-                                                    >
-                                                        <i className="ni ni-basket"></i>
-                                                        {" "}View Details
-         </Button>
-                                                    <Modal
-                                                        className="modal-dialog-centered"
-                                                        isOpen={this.state.defaultModal}
-                                                        toggle={() => this.toggleModal("defaultModal")}
-                                                    >
-                                                        <div className="modal-header">
-                                                            <h6 className="modal-title" id="modal-title-default">
-                                                                Basboosa el amoora
-                                                            </h6>
-                                                            <button
-                                                                aria-label="Close"
-                                                                className="close"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal")}
-                                                            >
-                                                                <span aria-hidden={true}>×</span>
-                                                            </button>
-                                                        </div>
-                                                        <div className="modal-body">
-                                                            {/* stsuff */}
-                                                        </div>
-                                                        <div className="modal-footer">
-                                                            <Button color="primary" type="button">
-                                                                Accept Request
-                                                            </Button>
-                                                            <Button
-                                                                className="ml-auto"
-                                                                color="link"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal")}
-                                                            >
-                                                                Reject
-                                                            </Button>
-                                                        </div>
-                                                    </Modal>
-                                                
-  </Col>
-</Row>
-<Row>
-   <Col> 
-    <span>Majid elmohandes</span>
-  </Col>
-  <Col>
-    <span>52-2777</span>
-  </Col>
-  
-  <Col>
-    <span>Fo2ara</span>
-  </Col>
-    <Col>
-    <span>3,000</span>
-  </Col>
-  <Col>
-    <Button
-                                                        block
-                                                        className="mb-3"
-                                                        size="sm"
-                                                        color="primary"
-                                                        type="button"
-                                                        onClick={() => this.toggleModal("defaultModal")}
-                                                    >
-                                                        <i className="ni ni-basket"></i>
-                                                        {" "}View Details
-         </Button>
-                                                    <Modal
-                                                        className="modal-dialog-centered"
-                                                        isOpen={this.state.defaultModal}
-                                                        toggle={() => this.toggleModal("defaultModal")}
-                                                    >
-                                                        <div className="modal-header">
-                                                            <h6 className="modal-title" id="modal-title-default">
-                                                                Basboosa el amoora
-                                                            </h6>
-                                                            <button
-                                                                aria-label="Close"
-                                                                className="close"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal")}
-                                                            >
-                                                                <span aria-hidden={true}>×</span>
-                                                            </button>
-                                                        </div>
-                                                        <div className="modal-body">
-                                                            {/* stsuff */}
-                                                        </div>
-                                                        <div className="modal-footer">
-                                                            <Button color="primary" type="button">
-                                                                Save changes
-                                                            </Button>
-                                                            <Button
-                                                                className="ml-auto"
-                                                                color="link"
-                                                                data-dismiss="modal"
-                                                                type="button"
-                                                                onClick={() => this.toggleModal("defaultModal")}
-                                                            >
-                                                                Close
-                                                            </Button>
-                                                        </div>
-                                                    </Modal>
-                                                
-  </Col>
-</Row>
-                </p>
-              </TabPane>
-            </TabContent>
-          </CardBody>
-        </Card>
-  
+                  </p>
+                  <p className="description">
+                    Raw denim you probably haven't heard of them jean shorts
+                    Austin. Nesciunt tofu stumptown aliqua, retro synth master
+                    cleanse.
+                  </p>
+                </TabPane>
+                <TabPane tabId="tabs2">
+                  <p className="description">
+                    <Row>
+                      <Col >
+                        <span>Client NAme</span>
+                      </Col>
+                      <Col >
+                        <span>Client Id</span>
+                      </Col>
 
-           
-          
+                      <Col >
+                        <span>Card Type</span>
+                      </Col>
+                      <Col >
+                        <span>Salary</span>
+                      </Col>
+                      <Col>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <span>Basboosa</span>
+                      </Col>
+                      <Col>
+                        <span>58-1</span>
+                      </Col>
+
+                      <Col>
+                        <span>Platinum</span>
+                      </Col>
+                      <Col>
+                        <span>900000</span>
+                      </Col>
+                      <Col>       <Button
+                        block
+                        className="mb-3"
+                        size="sm"
+                        color="primary"
+                        type="button"
+                        onClick={() => this.toggleModal("defaultModal")}
+                      >
+                        <i className="ni ni-basket"></i>
+                        {" "}View Details
+                      </Button>
+                        <Modal
+                          className="modal-dialog-centered"
+                          isOpen={this.state.defaultModal}
+                          toggle={() => this.toggleModal("defaultModal")}
+                        >
+                          <div className="modal-header">
+                            <h6 className="modal-title" id="modal-title-default">
+                              Basboosa el amoora
+                            </h6>
+                            <button
+                              aria-label="Close"
+                              className="close"
+                              data-dismiss="modal"
+                              type="button"
+                              onClick={() => this.toggleModal("defaultModal")}
+                            >
+                              <span aria-hidden={true}>×</span>
+                            </button>
+                          </div>
+                          <div className="modal-body">
+                            {/* stsuff */}
+                          </div>
+                          <div className="modal-footer">
+                            <Button color="primary" type="button">
+                              Save changes
+                            </Button>
+                            <Button
+                              className="ml-auto"
+                              color="link"
+                              data-dismiss="modal"
+                              type="button"
+                              onClick={() => this.toggleModal("defaultModal")}
+                            >
+                              Close
+                            </Button>
+                          </div>
+                        </Modal>
+
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <span>Mariouma</span>
+                      </Col>
+                      <Col>
+                        <span>52-4086</span>
+                      </Col>
+
+                      <Col>
+                        <span>Diamond</span>
+                      </Col>
+                      <Col>
+                        <span>70,000</span>
+                      </Col>
+                      <Col>
+                        <Button
+                          block
+                          className="mb-3"
+                          size="sm"
+                          color="primary"
+                          type="button"
+                          onClick={() => this.toggleModal("defaultModal")}
+                        >
+                          <i className="ni ni-basket"></i>
+                          {" "}View Details
+                        </Button>
+                        <Modal
+                          className="modal-dialog-centered"
+                          isOpen={this.state.defaultModal}
+                          toggle={() => this.toggleModal("defaultModal")}
+                        >
+                          <div className="modal-header">
+                            <h6 className="modal-title" id="modal-title-default">
+                              Basboosa el amoora
+                            </h6>
+                            <button
+                              aria-label="Close"
+                              className="close"
+                              data-dismiss="modal"
+                              type="button"
+                              onClick={() => this.toggleModal("defaultModal")}
+                            >
+                              <span aria-hidden={true}>×</span>
+                            </button>
+                          </div>
+                          <div className="modal-body">
+                            {/* stsuff */}
+                          </div>
+                          <div className="modal-footer">
+                            <Button color="primary" type="button">
+                              Accept Request
+                            </Button>
+                            <Button
+                              className="ml-auto"
+                              color="link"
+                              data-dismiss="modal"
+                              type="button"
+                              onClick={() => this.toggleModal("defaultModal")}
+                            >
+                              Reject
+                            </Button>
+                          </div>
+                        </Modal>
+
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <span>Majid elmohandes</span>
+                      </Col>
+                      <Col>
+                        <span>52-2777</span>
+                      </Col>
+
+                      <Col>
+                        <span>Fo2ara</span>
+                      </Col>
+                      <Col>
+                        <span>3,000</span>
+                      </Col>
+                      <Col>
+                        <Button
+                          block
+                          className="mb-3"
+                          size="sm"
+                          color="primary"
+                          type="button"
+                          onClick={() => this.toggleModal("defaultModal")}
+                        >
+                          <i className="ni ni-basket"></i>
+                          {" "}View Details
+                        </Button>
+                        <Modal
+                          className="modal-dialog-centered"
+                          isOpen={this.state.defaultModal}
+                          toggle={() => this.toggleModal("defaultModal")}
+                        >
+                          <div className="modal-header">
+                            <h6 className="modal-title" id="modal-title-default">
+                              Basboosa el amoora
+                            </h6>
+                            <button
+                              aria-label="Close"
+                              className="close"
+                              data-dismiss="modal"
+                              type="button"
+                              onClick={() => this.toggleModal("defaultModal")}
+                            >
+                              <span aria-hidden={true}>×</span>
+                            </button>
+                          </div>
+                          <div className="modal-body">
+                            {/* stsuff */}
+                          </div>
+                          <div className="modal-footer">
+                            <Button color="primary" type="button">
+                              Save changes
+                            </Button>
+                            <Button
+                              className="ml-auto"
+                              color="link"
+                              data-dismiss="modal"
+                              type="button"
+                              onClick={() => this.toggleModal("defaultModal")}
+                            >
+                              Close
+                            </Button>
+                          </div>
+                        </Modal>
+
+                      </Col>
+                    </Row>
+                  </p>
+                </TabPane>
+              </TabContent>
+            </CardBody>
+          </Card>
+
+
+
+
           <section className="section section-lg">
             <Container>
               <Row className="row-grid align-items-center">
