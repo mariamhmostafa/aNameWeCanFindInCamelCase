@@ -78,6 +78,15 @@ class Client extends React.Component {
     handleRedeem = (e) => {
         alert("Points redeemed!")
     }
+
+    handleCloseAccount = (e) => {
+        alert("Account closed successfully")
+    }
+
+    handleOpenAccount = (e) => {
+        alert("Account application sent")
+    }
+
     componentDidMount() {
         document.documentElement.scrollTop = 0;
         document.scrollingElement.scrollTop = 0;
@@ -133,6 +142,7 @@ class Client extends React.Component {
                         </section>
                         {/* 1st Hero Variation */}
                     </div>
+                    {/* Announcement */}
                     <section className="section section-lg pt-lg-0 mt--200">
                         <Container>
                             <Row className="justify-content-center">
@@ -340,9 +350,7 @@ class Client extends React.Component {
                                                         Close an Account
                                                     </h5>
                                                     <p>
-                                                        The Arctic Ocean freezes every winter and much of
-                                                        the sea-ice then thaws every summer, and that
-                                                        process will continue whatever.
+                                                        Closing your account has never been easier.
                                                     </p>
 
                                                 </div>
@@ -384,6 +392,7 @@ class Client extends React.Component {
                                                         <Button
                                                             size="sm" color="warning"
                                                             type="button"
+                                                            onClick={this.handleCloseAccount}
                                                         >
                                                             Close
                                                         </Button>
@@ -400,6 +409,7 @@ class Client extends React.Component {
                                                         <Button
                                                             size="sm" color="warning"
                                                             type="button"
+                                                            onClick={this.handleCloseAccount}
                                                         >
                                                             Close
                                                         </Button>
@@ -525,7 +535,7 @@ class Client extends React.Component {
                                                                 className="ml-auto"
                                                                 color="success"
                                                                 data-dismiss="modal"
-                                                                type="button"
+                                                                type="button" onClick={this.handleOpenAccount}
                                                             >
                                                                 Open Now
                                                             </Button>
