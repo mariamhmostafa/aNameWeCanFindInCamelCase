@@ -59,7 +59,7 @@ class Landing extends React.Component {
                   <Card className="card-lift--hover shadow border-0">
                     <CardBody className="py-5">
                       <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                        <i className="ni ni-planet" />
+                        <i className="ni ni-settings" />
                       </div>
                       <h6 className="text-warning text-uppercase">
                         Displays 404 error when I try to login [userid: 100234]
@@ -90,7 +90,7 @@ class Landing extends React.Component {
                   <Card className="card-lift--hover shadow border-0">
                     <CardBody className="py-5">
                       <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                        <i className="ni ni-planet" />
+                        <i className="ni ni-settings" />
                       </div>
                       <h6 className="text-warning text-uppercase">
                         Website is not responsive [userid: 30056]
@@ -121,7 +121,7 @@ class Landing extends React.Component {
                   <Card className="card-lift--hover shadow border-0">
                     <CardBody className="py-5">
                       <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
-                        <i className="ni ni-planet" />
+                        <i className="ni ni-check-bold" />
                       </div>
                       <h6 className="text-success text-uppercase">
                         Website takes >2 minutes to load [userid: 20056]
