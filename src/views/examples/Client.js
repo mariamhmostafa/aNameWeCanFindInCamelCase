@@ -76,6 +76,7 @@ class Client extends React.Component {
         alert("Bill paid successfully!")
     };
 
+
     handleRedeem = (e) => {
         alert("Points redeemed!")
     }
@@ -1054,6 +1055,9 @@ class Client extends React.Component {
                                                                 </Modal>
                                                             </Col>
                                                         </Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
                                                     </Container>
                                                 </TabPane>
                                                 <TabPane tabId="tabs2">
@@ -1102,6 +1106,9 @@ class Client extends React.Component {
                                                                 </FormGroup>
                                                             </Col>
                                                         </Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
                                                     </Form>
                                                 </TabPane>
                                                 <TabPane tabId="tabs3">
@@ -1155,6 +1162,8 @@ class Client extends React.Component {
                                                                 <span> Pending</span>
                                                             </Col>
                                                         </Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
                                                     </Container>
                                                 </TabPane>
                                                 <TabPane tabId="tabs4">
@@ -1191,28 +1200,32 @@ class Client extends React.Component {
                                                                         Choose card
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosa el amoora
                                                                         </DropdownItem>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosa a7la ota fl denya
                                                                         </DropdownItem>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosy
                                                                         </DropdownItem>
                                                                     </DropdownMenu>
                                                                 </UncontrolledDropdown>
                                                             </Col>
                                                             <Col>
-                                                                <Button
-                                                                    className="ml-auto"
-                                                                    color="primary"
-                                                                    data-dismiss="modal"
-                                                                    type="button"
-                                                                    onClick={() => this.handlePay()}
-                                                                >
-                                                                    Pay Now
-                                                                </Button>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                        Pay Now
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
+                                                                            Partially
+                                                                        </DropdownItem>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
+                                                                            Fully
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
                                                             </Col>
                                                         </Row>
                                                         <Row>
@@ -1228,28 +1241,32 @@ class Client extends React.Component {
                                                                         Choose card
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosa el amoora
                                                                         </DropdownItem>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosa a7la ota fl denya
                                                                         </DropdownItem>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosy
                                                                         </DropdownItem>
                                                                     </DropdownMenu>
                                                                 </UncontrolledDropdown>
                                                             </Col>
                                                             <Col>
-                                                                <Button
-                                                                    className="ml-auto"
-                                                                    color="primary"
-                                                                    data-dismiss="modal"
-                                                                    type="button"
-                                                                    onClick={() => this.handlePay()}
-                                                                >
-                                                                    Pay Now
-                                                                </Button>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="secondary" placeholder="Choose" onChange={this.handlePay}>
+                                                                        Pay Now
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem onClick={this.handlePay}>
+                                                                            Partially
+                                                                        </DropdownItem>
+                                                                        <DropdownItem onClick={this.handlePay}>
+                                                                            Fully
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
                                                             </Col>
                                                         </Row>
                                                         <Row>
@@ -1265,28 +1282,32 @@ class Client extends React.Component {
                                                                         Choose card
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosa el amoora
                                                                         </DropdownItem>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosa a7la ota fl denya
                                                                         </DropdownItem>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosy
                                                                         </DropdownItem>
                                                                     </DropdownMenu>
                                                                 </UncontrolledDropdown>
                                                             </Col>
                                                             <Col>
-                                                                <Button
-                                                                    className="ml-auto"
-                                                                    color="primary"
-                                                                    data-dismiss="modal"
-                                                                    type="button"
-                                                                    onClick={() => this.handlePay()}
-                                                                >
-                                                                    Pay Now
-                                                                </Button>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="secondary" placeholder="Choose" onChange={this.handlePay} >
+                                                                        Pay Now
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem onClick={this.handlePay}>
+                                                                            Partially
+                                                                        </DropdownItem>
+                                                                        <DropdownItem onClick={this.handlePay}>
+                                                                            Fully
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
                                                             </Col>
                                                         </Row>
                                                         <Row>
@@ -1298,34 +1319,49 @@ class Client extends React.Component {
                                                             </Col>
                                                             <Col>
                                                                 <UncontrolledDropdown>
-                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                    <DropdownToggle caret color="secondary" placeholder="Choose" >
                                                                         Choose card
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosa el amoora
                                                                         </DropdownItem>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosa a7la ota fl denya
                                                                         </DropdownItem>
-                                                                        <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
                                                                             Basboosy
                                                                         </DropdownItem>
                                                                     </DropdownMenu>
                                                                 </UncontrolledDropdown>
                                                             </Col>
                                                             <Col>
-                                                                <Button
-                                                                    className="ml-auto"
-                                                                    color="primary"
-                                                                    data-dismiss="modal"
-                                                                    type="button"
-                                                                    onClick={() => this.handlePay()}
-                                                                >
-                                                                    Pay Now
-                                                                </Button>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="secondary" placeholder="Choose" onChange={this.handlePay}>
+                                                                        Pay Now
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem onClick={this.handlePay}>
+                                                                            Partially
+                                                                        </DropdownItem>
+                                                                        <DropdownItem onClick={this.handlePay}>
+                                                                            Fully
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
                                                             </Col>
                                                         </Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+
                                                     </Container>
                                                 </TabPane>
                                                 <TabPane tabId="tabs5">
@@ -1429,8 +1465,11 @@ class Client extends React.Component {
                                                                 </div>
                                                             </CardBody>
                                                         </Card>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
                                                     </Container>
                                                 </TabPane>
+
                                                 <TabPane tabId="tabs6">
                                                     <Container>
                                                         <Row>
@@ -1474,26 +1513,6 @@ class Client extends React.Component {
                                                             </Col>
                                                         </Row>
                                                         <Row>
-                                                            <Col xs="7">
-                                                                <div className="progress-wrapper">
-                                                                    <div className="progress-info">
-                                                                        <div className="progress-label">
-                                                                            <span>Next Points</span>
-                                                                        </div>
-                                                                        <div className="progress-percentage">
-                                                                            <span>60%</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <Progress max="100" value="60" />
-                                                                </div>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <p>
-
-                                                            </p>
-                                                        </Row>
-                                                        <Row>
                                                             <Col xs="3">
                                                                 <span>Basboosy</span>
                                                             </Col>
@@ -1515,21 +1534,10 @@ class Client extends React.Component {
                                                                 </Button>
                                                             </Col>
                                                         </Row>
-                                                        <Row>
-                                                            <Col xs="7">
-                                                                <div className="progress-wrapper">
-                                                                    <div className="progress-info">
-                                                                        <div className="progress-label">
-                                                                            <span>Next Points</span>
-                                                                        </div>
-                                                                        <div className="progress-percentage">
-                                                                            <span>30%</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <Progress max="100" value="30" />
-                                                                </div>
-                                                            </Col>
-                                                        </Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
                                                     </Container>
                                                 </TabPane>
                                             </TabContent>
