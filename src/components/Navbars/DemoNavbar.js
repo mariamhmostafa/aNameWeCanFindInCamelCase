@@ -58,7 +58,7 @@ class DemoNavbar extends React.Component {
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
                   alt="..."
-                  src={require("assets/img/brand/logo222.png")}
+                  src={require("assets/img/brand/mahfaztakLogo.png")}
                 />
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
@@ -198,7 +198,7 @@ class DemoNavbar extends React.Component {
                       href="/login-page"
                     >
                       <span className="btn-inner--icon">
-                        <i className="fa fa-cloud-download mr-2" />
+                        <i className="fa fa-sign-out  mr-2" />
                       </span>
                       <span className="nav-link-inner--text ml-1">
                         Log out
