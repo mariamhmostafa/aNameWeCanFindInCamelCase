@@ -79,7 +79,7 @@ class Landing extends React.Component {
                       <Button
                         className="mt-6"
                         color="success"
-                        onClick={(e) => e.preventDefault()}
+                        onClick={(e) => alert("Issue marked as resolved")}
                       >
                         Mark Resolved
                       </Button>
@@ -110,7 +110,7 @@ class Landing extends React.Component {
                       <Button
                         className="mt-6"
                         color="success"
-                        onClick={(e) => e.preventDefault()}
+                        onClick={(e) => alert("Issue marked as resolved")}
                       >
                         Mark Resolved
                       </Button>
@@ -144,7 +144,7 @@ class Landing extends React.Component {
                       <Button
                         className="mt-6"
                         color="warning"
-                        onClick={(e) => e.preventDefault()}
+                        onClick={(e) => alert("Issue re-opened successfully")}
                       >
                         Re-open issue
                       </Button>

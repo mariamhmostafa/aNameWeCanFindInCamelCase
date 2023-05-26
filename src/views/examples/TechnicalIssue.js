@@ -76,10 +76,21 @@ class Profile extends React.Component {
                       <FormGroup>
                         <Input
                           id="exampleFormControlInput1"
-                          placeholder="                             Please describe your issue here"
+                          placeholder="                                  Please describe your issue here"
                         ></Input>
                       </FormGroup>
                     </Col>
+                  </Row>
+                  <Row className="justify-content-center">
+                    <Button
+                      className="btn-icon mb-3 mb-sm-0"
+                      color="info"
+                      onClick={(e) =>
+                        alert("Your issue has been reported successfully")
+                      }
+                    >
+                      <span className="btn-inner--text">Report</span>
+                    </Button>
                   </Row>
                 </div>
               </Card>
