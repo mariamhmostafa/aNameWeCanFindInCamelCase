@@ -109,7 +109,37 @@ class DemoNavbar extends React.Component {
                     </Media>
                   </Media>
                 </Nav>
-                {/* notifications here */}
+                <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">Notifications</span>
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem >
+                        <i className="fa fa-exclamation" />
+                        Reminder: Electricity Bill is due next Thursday.
+                      </DropdownItem>
+                      <DropdownItem >
+                        <i className="fa fa-check" />
+                        Issue Resolution: Website is now faster than ever.
+                      </DropdownItem>
+                      <DropdownItem >
+                        <i className="fa fa-exclamation" />
+                        Reminder: Loan payment is due next Sunday.
+                      </DropdownItem>
+                      <DropdownItem >
+                        <i className="fa fa-exclamation" />
+                        Reminder: Credit Card Bill is due on 27/6/2023.
+                      </DropdownItem>
+                      <DropdownItem >
+                        <i className="fa fa-check" />
+                        Issue Resolution: You can now pay securely online.
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+
+                </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <NavItem>
                     <NavLink
