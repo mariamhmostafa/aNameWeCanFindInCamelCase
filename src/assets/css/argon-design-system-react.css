@@ -38,6 +38,8 @@
     "Liberation Mono", "Courier New", monospace;
 }
 
+scroll-behavior: smooth;
+
 *,
 *::before,
 *::after {
