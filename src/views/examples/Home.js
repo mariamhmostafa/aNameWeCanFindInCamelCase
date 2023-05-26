@@ -19,6 +19,7 @@ import {
 } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
+import CardsFooter from 'components/Footers/CardsFooter';
 import HomeNavBar from "components/Navbars/HomeNavBar.js";
 
 class Admin extends React.Component {
@@ -64,30 +65,6 @@ class Admin extends React.Component {
                                                     that puts you first. Open an account today and embark on
                                                     a brighter financial future.
                                                 </p>
-                                                <div className="btn-wrapper">
-                                                    <Button
-                                                        className="btn-icon mb-3 mb-sm-0"
-                                                        color="info"
-                                                        href="/login-page"
-                                                    >
-                                                        <span className="btn-inner--icon mr-1">
-                                                            <i className="fa fa-sign-in" />
-                                                        </span>
-                                                        <span className="btn-inner--text">Sign in</span>
-                                                    </Button>
-                                                    <Button
-                                                        className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
-                                                        color="default"
-                                                        href="/register-page"
-                                                    >
-                                                        <span className="btn-inner--icon mr-1">
-                                                            <i className="fa fa-plus-square-o" />
-                                                        </span>
-                                                        <span className="btn-inner--text">
-                                                            Register
-                                                        </span>
-                                                    </Button>
-                                                </div>
                                             </Col>
                                         </Row>
                                     </div>
@@ -283,9 +260,19 @@ class Admin extends React.Component {
                                 </Row>
                             </Container>
                         </section>
+                        <Row className="row-grid justify-content-center">
+                            <Col className="text-center" lg="8">
+                                <h2 className="display-3">
+                                    Join Us{" "}
+                                    <span className="text-success">
+                                        Now
+                                    </span>
+                                </h2>
+                            </Col>
+                        </Row>
                     </main>
                 </div>
-                <SimpleFooter />
+                <CardsFooter />
             </>
         )
     }
