@@ -1,4 +1,4 @@
-import React, { createRef } from "react";
+import React, { createRef, Component } from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 import ReactDatetime from "react-datetime";
@@ -52,9 +52,12 @@ class Client extends React.Component {
         defaultModal1: false,
         defaultModal2: false,
         defaultModal3: false,
-
+        value: "Report Type"
     };
 
+    onChange = e => {
+        this.setState({ value: e.target.value })
+    }
 
     toggleModal = state => {
         this.setState({
@@ -92,6 +95,7 @@ class Client extends React.Component {
         document.title = "Mahfaztak";
     }
     render() {
+        const { value } = this.state;
         return (
             <>
                 <DemoNavbar />
@@ -1332,6 +1336,38 @@ class Client extends React.Component {
                                                                 <p className="mt-0">
                                                                     Your issue is very important to us.
                                                                 </p>
+                                                                <Row>
+                                                                    <Col xs="3">
+                                                                        <UncontrolledDropdown group>
+                                                                            <DropdownToggle caret color="primary" value={value}>
+                                                                                {this.state.value}
+                                                                            </DropdownToggle>
+                                                                            <DropdownMenu id="options" value={value} onChange={this.onChange}>
+                                                                                <DropdownItem value="Theft" onClick={e => e.preventDefault()}>
+                                                                                    Theft
+                                                                                </DropdownItem>
+                                                                                <DropdownItem value="Loss" onClick={e => e.preventDefault()}>
+                                                                                    Loss
+                                                                                </DropdownItem>
+                                                                                <DropdownItem value="Damage" onClick={e => e.preventDefault()}>
+                                                                                    Damage
+                                                                                </DropdownItem>
+                                                                            </DropdownMenu>
+                                                                        </UncontrolledDropdown>
+                                                                    </Col>
+                                                                    <Col className="d-flex" xs="3">
+                                                                        <input
+                                                                            className="custom-control-input"
+                                                                            id="customCheck3"
+                                                                            type="checkbox"
+                                                                        />
+                                                                        <label className="custom-control-label" htmlFor="customCheck3">
+                                                                            Apply for replacement
+                                                                        </label>
+                                                                    </Col>
+
+                                                                </Row>
+
                                                                 <FormGroup
                                                                     className={classnames("mt-5", {
                                                                         focused: this.state.nameFocused
