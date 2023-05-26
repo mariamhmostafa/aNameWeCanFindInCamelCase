@@ -17,13 +17,12 @@ import Client from "views/examples/Client.js";
 import Admin from "views/examples/Admin.js";
 import Banker from "views/examples/Banker.js";
 import TechnicalIssue from "views/examples/TechnicalIssue.js";
-import Home from "views/examples/Home.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact render={(props) => <Home {...props} />} />
+      <Route path="/" exact render={(props) => <Login {...props} />} />
       <Route
         path="/landing-page"
         exact

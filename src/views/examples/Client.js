@@ -1,7 +1,8 @@
-import React, { createRef } from "react";
+import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 import ReactDatetime from "react-datetime";
+
 // reactstrap components
 import {
     Badge,
@@ -23,7 +24,6 @@ import {
     InputGroup,
     Container,
     DropdownItem,
-    Progress,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
@@ -31,30 +31,21 @@ import {
     Col
 } from "reactstrap";
 
-
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import CardsFooter from "components/Footers/CardsFooter.js";
 import "assets/vendor/nucleo/css/nucleo.css";
 
-
+// index page sections
+import Download from "../IndexSections/Download.js";
 
 class Client extends React.Component {
-    constructor(props) {
-        super(props);
-        this.scollToRef1 = createRef();
-        this.scollToRef2 = createRef();
-    }
-
-
     state = {
         tabs: 1,
         defaultModal1: false,
         defaultModal2: false,
-        defaultModal3: false,
-
+        defaultModal3: false
     };
-
 
     toggleModal = state => {
         this.setState({
@@ -70,26 +61,13 @@ class Client extends React.Component {
     };
 
     handlePay = (e) => {
-        alert("Bill paid successfully!")
+        alert("bill paid successfully!")
     };
-
-    handleRedeem = (e) => {
-        alert("Points redeemed!")
-    }
-
-    handleCloseAccount = (e) => {
-        alert("Account closed successfully")
-    }
-
-    handleOpenAccount = (e) => {
-        alert("Account application sent")
-    }
 
     componentDidMount() {
         document.documentElement.scrollTop = 0;
         document.scrollingElement.scrollTop = 0;
         this.refs.main.scrollTop = 0;
-        document.title = "Mahfaztak";
     }
     render() {
         return (
@@ -120,6 +98,7 @@ class Client extends React.Component {
                                             </h1>
                                         </Col>
                                     </Row>
+
                                 </div>
                             </Container>
                             {/* SVG separator */}
@@ -141,69 +120,6 @@ class Client extends React.Component {
                         </section>
                         {/* 1st Hero Variation */}
                     </div>
-                    {/* Announcement */}
-                    <section className="section section-lg pt-lg-0 mt--200">
-                        <Container>
-                            <Row className="justify-content-center">
-                                <Col lg="12">
-                                    <Row className="row-grid">
-
-                                        <Col lg="12">
-                                            <Card className="card-lift--hover shadow border-0">
-                                                <CardBody className="py-5">
-                                                    <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                                                        <i className="fa fa-bullhorn" />
-                                                    </div>
-                                                    <h6 className="text-warning text-uppercase">
-                                                        Important Announcement
-                                                    </h6>
-                                                    <p className="description mt-3">
-                                                        Dear Valued Customers,
-                                                    </p>
-                                                    <p className="description mt-3">
-                                                        We are excited to announce that Mahfaztak will be implementing
-                                                        a service upgrade to enhance your banking experience. This upgrade
-                                                        is scheduled to take place on 20/6/2023 and will involve improvements to
-                                                        our digital banking platform and additional features for your convenience.
-                                                    </p>
-                                                    <p className="description mt-3">
-                                                        During the upgrade, there will be a temporary
-                                                        interruption in some of our services. Online and mobile banking
-                                                        services may be temporarily unavailable on 20/6/2023 from 22:00
-                                                        to 23:00. We apologize for any inconvenience this may cause and
-                                                        assure you that our team is working diligently to minimize the downtime and
-                                                        complete the upgrade as quickly as possible.
-                                                    </p>
-                                                    <p className="description mt-3">
-                                                        Once the upgrade is complete, you can look forward to a more seamless
-                                                        and user-friendly online banking experience. The enhanced platform will provide
-                                                        improved navigation, enhanced security measures, and additional functionalities
-                                                        designed to simplify your financial management.
-                                                    </p>
-                                                    <p className="description mt-3">
-                                                        Sincerely,
-                                                        <br></br>
-                                                        Mahfaztak.
-                                                    </p>
-                                                    <div>
-                                                        <Badge color="warning" pill className="mr-1">
-                                                            announcement
-                                                        </Badge>
-                                                        <Badge color="warning" pill className="mr-1">
-                                                            upgrade
-                                                        </Badge>
-                                                        <Badge color="warning" pill className="mr-1">
-                                                            launch
-                                                        </Badge>
-                                                    </div>
-                                                </CardBody>
-                                            </Card>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </section>
                     <section className="section bg-secondary">
                         <Container>
                             <Row className="row-grid align-items-center">
@@ -211,7 +127,7 @@ class Client extends React.Component {
                                     <Card className="bg-default shadow border-0">
                                         <CardImg
                                             alt="..."
-                                            src={require("assets/img/theme/bankoldppl.jpeg")}
+                                            src={require("assets/img/theme/img-1-1200x1000.jpg")}
                                             top
                                         />
                                         <blockquote className="card-blockquote">
@@ -232,346 +148,54 @@ class Client extends React.Component {
                                                 />
                                             </svg>
                                             <h4 className="display-3 font-weight-bold text-white">
-                                                What would you like to do today?
+                                                Design System
                                             </h4>
-
+                                            <p className="lead text-italic text-white">
+                                                The Arctic Ocean freezes every winter and much of the
+                                                sea-ice then thaws every summer, and that process will
+                                                continue whatever happens.
+                                            </p>
                                         </blockquote>
                                     </Card>
                                 </Col>
                                 <Col md="6">
                                     <div className="pl-md-5">
-                                        <Container>
-                                            <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
-                                                <i className="fa fa-hand-o-up" />
-                                            </div>
-                                            <h3 className="mb-1">Explore</h3>
-                                            <p className="mt-0">
-                                                Select...
-                                            </p>
-                                            <Button
-                                                block
-                                                className="btn-round"
-                                                color="default"
-                                                size="lg"
-                                                type="button"
-                                                onClick={() => this.scollToRef2.current.scrollIntoView({ behavior: 'smooth' })}
-
-                                            >
-                                                Account
-                                            </Button>
-                                            <Button
-                                                block
-                                                className="btn-round"
-                                                color="default"
-                                                size="lg"
-                                                type="button"
-                                                onClick={() => this.scollToRef1.current.scrollIntoView({ behavior: 'smooth' })}
-
-                                            >
-                                                Credit Card
-                                            </Button>
-                                            <Button
-                                                block
-                                                className="btn-round"
-                                                color="default"
-                                                size="lg"
-                                                type="button"
-                                            >
-                                                Loan
-                                            </Button>
-                                            <Button
-                                                block
-                                                className="btn-round"
-                                                color="default"
-                                                size="lg"
-                                                type="button"
-                                            >
-                                                Transaction
-                                            </Button>
-                                        </Container>
+                                        <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                                            <i className="ni ni-settings" />
+                                        </div>
+                                        <h3>Our customers</h3>
+                                        <p className="lead">
+                                            Don't let your uses guess by attaching tooltips and
+                                            popoves to any element. Just make sure you enable them
+                                            first via JavaScript.
+                                        </p>
+                                        <p>
+                                            The kit comes with three pre-built pages to help you get
+                                            started faster. You can change the text and images and
+                                            you're good to go.
+                                        </p>
+                                        <p>
+                                            The kit comes with three pre-built pages to help you get
+                                            started faster. You can change the text and images and
+                                            you're good to go.
+                                        </p>
+                                        <a
+                                            className="font-weight-bold text-warning mt-5"
+                                            href="#pablo"
+                                            onClick={(e) => e.preventDefault()}
+                                        >
+                                            A beautiful UI Kit for impactful websites
+                                        </a>
                                     </div>
                                 </Col>
                             </Row>
                         </Container>
                     </section>
-                    <section className="section pb-0 bg-gradient-white" ref={this.scollToRef2}>
-                        <Container className="d-flex"  >
-                            <Col className="row-grid align-items-center" xs="5">
-                                <Row className="order-lg-1" lg="6">
-                                    <div className="d-flex px-3">
-                                        <div>
-                                            <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                                                <i className="ni ni-building text-primary" />
-                                            </div>
-                                        </div>
-                                        <div className="pl-4">
-                                            <h4 className="display-3 text-primary">Accounts </h4>
-                                            <p className="text-primary">
-                                                Open a Mahfaztak account today and unlock a world of convenient
-                                                banking services tailored to your needs. Enjoy competitive interest
-                                                rates, seamless online and mobile banking, and personalized support from
-                                                our dedicated team of experts. Experience banking reimagined with Mahfaztak!
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <Card className="shadow shadow-lg--hover mt-5">
-                                        <CardBody>
-                                            <div className="d-flex px-3">
-                                                <div>
-                                                    <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
-                                                        <i className="fa fa-plus" />
-                                                    </div>
-                                                </div>
-                                                <div className="pl-4">
-                                                    <h5 className="title text-success">
-                                                        Open an account
-                                                    </h5>
-                                                    <p>
-                                                        You can now open your bank account online with just one click!
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                        </CardBody>
-                                    </Card>
-                                </Row>
-                                <Row>
-                                    <Card className="shadow shadow-lg--hover mt-5">
-                                        <CardBody>
-                                            <div className="d-flex px-3">
-                                                <div>
-                                                    <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                                                        <i className="fa fa-ban" />
-                                                    </div>
-                                                </div>
-                                                <div className="pl-4">
-                                                    <h5 className="title text-warning">
-                                                        Close an Account
-                                                    </h5>
-                                                    <p>
-                                                        Closing your account has never been easier.
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                        </CardBody>
-                                    </Card>
-                                </Row>
-                            </Col>
-                            <Col xs="7">
-                                <Card className="shadow shadow-lg--hover mt-5">
-                                    <CardBody>
-                                        <div className="d-flex px-3">
-                                            <div>
-                                                <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                                                    <i className="fa fa-plus" />
-                                                </div>
-                                            </div>
-                                            <div className="pl-4">
-                                                <h5 className="title text-primary">
-                                                    View Accounts
-                                                </h5>
-                                                <Row>
-                                                    <Col xs="5">
-                                                        Account number
-                                                    </Col>
-                                                    <Col xs="4">
-                                                        Type
-                                                    </Col>
-                                                </Row>
-                                                <Row><p></p></Row>
-                                                <Row>
-                                                    <Col xs="5">
-                                                        9479
-                                                    </Col>
-                                                    <Col xs="5">
-                                                        Savings
-                                                    </Col>
-                                                    <Col xs="1">
-                                                        <Button
-                                                            size="sm" color="warning"
-                                                            type="button"
-                                                            onClick={this.handleCloseAccount}
-                                                        >
-                                                            Close
-                                                        </Button>
-                                                    </Col>
-                                                </Row>
-                                                <Row>
-                                                    <Col xs="5">
-                                                        4872
-                                                    </Col>
-                                                    <Col xs="5">
-                                                        Current
-                                                    </Col>
-                                                    <Col xs="1">
-                                                        <Button
-                                                            size="sm" color="warning"
-                                                            type="button"
-                                                            onClick={this.handleCloseAccount}
-                                                        >
-                                                            Close
-                                                        </Button>
-                                                    </Col>
-                                                </Row>
-                                                <Row>
-                                                    <p></p><p></p>
-                                                </Row>
-                                                <Row>
-                                                    <h5 className="title text-success" >
-                                                        Open a new Bank Account
-                                                    </h5>
-                                                </Row>
-                                                <Row>
-                                                    <Form>
-                                                        <Row>
-                                                            <FormGroup>
-                                                                <Input
-                                                                    id="exampleFormControlInput1"
-                                                                    placeholder="Name"
-                                                                    type="email"
-                                                                />
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row>
-                                                            <FormGroup>
-                                                                <InputGroup className="input-group-alternative">
-                                                                    <InputGroupAddon addonType="prepend">
-                                                                        <InputGroupText>
-                                                                            <i className="ni ni-calendar-grid-58" />
-                                                                        </InputGroupText>
-                                                                    </InputGroupAddon>
-                                                                    <ReactDatetime
-                                                                        inputProps={{
-                                                                            placeholder: "Date of Birth"
-                                                                        }}
-                                                                        timeFormat={false}
-                                                                        renderDay={(props, currentDate, selectedDate) => {
-                                                                            let classes = props.className;
-                                                                            if (
-                                                                                this.state.startDate &&
-                                                                                this.state.endDate &&
-                                                                                this.state.startDate._d + "" === currentDate._d + ""
-                                                                            ) {
-                                                                                classes += " start-date";
-                                                                            } else if (
-                                                                                this.state.startDate &&
-                                                                                this.state.endDate &&
-                                                                                new Date(this.state.startDate._d + "") <
-                                                                                new Date(currentDate._d + "") &&
-                                                                                new Date(this.state.endDate._d + "") >
-                                                                                new Date(currentDate._d + "")
-                                                                            ) {
-                                                                                classes += " middle-date";
-                                                                            } else if (
-                                                                                this.state.endDate &&
-                                                                                this.state.endDate._d + "" === currentDate._d + ""
-                                                                            ) {
-                                                                                classes += " end-date";
-                                                                            }
-                                                                            return (
-                                                                                <td {...props} className={classes}>
-                                                                                    {currentDate.date()}
-                                                                                </td>
-                                                                            );
-                                                                        }}
-                                                                        onChange={e => this.setState({ startDate: e })}
-                                                                    />
-                                                                </InputGroup>
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row>
-                                                            <FormGroup>
-                                                                <Input
-                                                                    id="exampleFormControlInput1"
-                                                                    placeholder="Address"
-                                                                    type="email"
-                                                                />
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row>
-                                                            <FormGroup>
-                                                                <Input
-                                                                    id="exampleFormControlInput1"
-                                                                    placeholder="Phone Number"
-                                                                    type="email"
-                                                                />
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row>
-                                                            <FormGroup>
-                                                                <Input
-                                                                    id="exampleFormControlInput1"
-                                                                    placeholder="National ID"
-                                                                    type="email"
-                                                                />
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row>
-                                                            <Col>
-                                                                <input
-                                                                    className="custom-control-input"
-                                                                    id="customCheck1"
-                                                                    type="checkbox"
-                                                                />
-                                                                <label className="custom-control-label" htmlFor="customCheck1">
-                                                                    Married
-                                                                </label>
-                                                            </Col>
-                                                            <Col>
-                                                                <input
-                                                                    className="custom-control-input"
-                                                                    id="customCheck1"
-                                                                    type="checkbox"
-                                                                />
-                                                                <label className="custom-control-label" htmlFor="customCheck1">
-                                                                    Married
-                                                                </label>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <Button
-                                                                className="ml-auto"
-                                                                color="success"
-                                                                data-dismiss="modal"
-                                                                type="button" onClick={this.handleOpenAccount}
-                                                            >
-                                                                Open Now
-                                                            </Button>
-                                                        </Row>
-                                                    </Form>
-                                                </Row>
-                                            </div>
-                                        </div>
-                                    </CardBody>
-                                </Card>
-                            </Col>
-                        </Container>
-                        {/* SVG separator */}
-                        <div className="separator separator-bottom separator-skew zindex-100">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                preserveAspectRatio="none"
-                                version="1.1"
-                                viewBox="0 0 2560 100"
-                                x="0"
-                                y="0"
-                            >
-                                <polygon
-                                    className="fill-white"
-                                    points="2560 0 2560 100 0 100"
-                                />
-                            </svg>
-                        </div>
-                    </section>
-                    <section className="section pb-0 bg-gradient-white">
-                        <Container></Container>
-                    </section>
-                    <section className="section pb-0 bg-gradient-warning" ref={this.scollToRef1}>
-                        <Container >
-                            <Row className="row-grid align-items-center" >
-                                <div className="d-flex px-3" >
-                                    <div >
+                    <section className="section pb-0 bg-gradient-warning">
+                        <Container>
+                            <Row className="row-grid align-items-center">
+                                <div className="d-flex px-3">
+                                    <div>
                                         <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                                             <i className="fa fa-credit-card text-primary" />
                                         </div>
@@ -667,20 +291,6 @@ class Client extends React.Component {
                                                 >
                                                     <i className="fa fa-flag mr-2" />
                                                     Report
-                                                </NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink
-                                                    aria-selected={this.state.tabs === 6}
-                                                    className={classnames("mb-sm-3 mb-md-0", {
-                                                        active: this.state.tabs === 6
-                                                    })}
-                                                    onClick={e => this.toggleNavs(e, "tabs", 6)}
-                                                    href="#pablo"
-                                                    role="tab"
-                                                >
-                                                    <i className="fa fa-money mr-2" />
-                                                    Redeem Points
                                                 </NavLink>
                                             </NavItem>
                                         </Nav>
@@ -1190,7 +800,7 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <Button
                                                                     className="ml-auto"
-                                                                    color="primary"
+                                                                    color="link"
                                                                     data-dismiss="modal"
                                                                     type="button"
                                                                     onClick={() => this.handlePay()}
@@ -1227,7 +837,7 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <Button
                                                                     className="ml-auto"
-                                                                    color="primary"
+                                                                    color="link"
                                                                     data-dismiss="modal"
                                                                     type="button"
                                                                     onClick={() => this.handlePay()}
@@ -1264,7 +874,7 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <Button
                                                                     className="ml-auto"
-                                                                    color="primary"
+                                                                    color="link"
                                                                     data-dismiss="modal"
                                                                     type="button"
                                                                     onClick={() => this.handlePay()}
@@ -1301,7 +911,7 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <Button
                                                                     className="ml-auto"
-                                                                    color="primary"
+                                                                    color="link"
                                                                     data-dismiss="modal"
                                                                     type="button"
                                                                     onClick={() => this.handlePay()}
@@ -1372,7 +982,7 @@ class Client extends React.Component {
                                                                     <Button
                                                                         block
                                                                         className="btn-round"
-                                                                        color="primary"
+                                                                        color="default"
                                                                         size="lg"
                                                                         type="button"
                                                                     >
@@ -1381,107 +991,6 @@ class Client extends React.Component {
                                                                 </div>
                                                             </CardBody>
                                                         </Card>
-                                                    </Container>
-                                                </TabPane>
-                                                <TabPane tabId="tabs6">
-                                                    <Container>
-                                                        <Row>
-                                                            <Col xs="3">
-                                                                <span>Credit Card Name</span>
-                                                            </Col>
-                                                            <Col xs="3">
-                                                                <span>Credit Card Number</span>
-                                                            </Col>
-                                                            <Col xs="3">
-                                                                <span>Points Available </span>
-                                                            </Col>
-                                                            <Col xs="2">
-                                                                <span> </span>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <p>
-                                                            </p>
-                                                        </Row>
-                                                        <Row>
-                                                            <Col xs="3">
-                                                                <span>Basboosa el amoora</span>
-                                                            </Col>
-                                                            <Col xs="3">
-                                                                <span>99999999999</span>
-                                                            </Col>
-                                                            <Col xs="3">
-                                                                <span>500 </span>
-                                                            </Col>
-                                                            <Col xs="2">
-                                                                <Button
-                                                                    className="ml-auto"
-                                                                    color="primary"
-                                                                    data-dismiss="modal"
-                                                                    type="button"
-                                                                    onClick={() => this.handleRedeem()}
-                                                                >
-                                                                    Redeem
-                                                                </Button>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <Col xs="7">
-                                                                <div className="progress-wrapper">
-                                                                    <div className="progress-info">
-                                                                        <div className="progress-label">
-                                                                            <span>Next Points</span>
-                                                                        </div>
-                                                                        <div className="progress-percentage">
-                                                                            <span>60%</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <Progress max="100" value="60" />
-                                                                </div>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <p>
-
-                                                            </p>
-                                                        </Row>
-                                                        <Row>
-                                                            <Col xs="3">
-                                                                <span>Basboosy</span>
-                                                            </Col>
-                                                            <Col xs="3">
-                                                                <span>123456789</span>
-                                                            </Col>
-                                                            <Col xs="3">
-                                                                <span>78 </span>
-                                                            </Col>
-                                                            <Col xs="2">
-                                                                <Button
-                                                                    className="ml-auto"
-                                                                    color="primary"
-                                                                    data-dismiss="modal"
-                                                                    type="button"
-                                                                    onClick={() => this.handleRedeem()}
-                                                                >
-                                                                    Redeem
-                                                                </Button>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <Col xs="7">
-                                                                <div className="progress-wrapper">
-                                                                    <div className="progress-info">
-                                                                        <div className="progress-label">
-                                                                            <span>Next Points</span>
-                                                                        </div>
-                                                                        <div className="progress-percentage">
-                                                                            <span>30%</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <Progress max="100" value="30" />
-                                                                </div>
-                                                            </Col>
-                                                        </Row>
                                                     </Container>
                                                 </TabPane>
                                             </TabContent>
@@ -1507,9 +1016,372 @@ class Client extends React.Component {
                             </svg>
                         </div>
                     </section>
-
+                    <section className="section section-lg">
+                        <Container>
+                            <Row className="justify-content-center text-center mb-lg">
+                                <Col lg="8">
+                                    <h2 className="display-3">The amazing Team</h2>
+                                    <p className="lead text-muted">
+                                        According to the National Oceanic and Atmospheric
+                                        Administration, Ted, Scambos, NSIDClead scentist, puts the
+                                        potentially record maximum.
+                                    </p>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                                    <div className="px-4">
+                                        <img
+                                            alt="..."
+                                            className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                                            src={require("assets/img/theme/team-1-800x800.jpg")}
+                                            style={{ width: "200px" }}
+                                        />
+                                        <div className="pt-4 text-center">
+                                            <h5 className="title">
+                                                <span className="d-block mb-1">Ryan Tompson</span>
+                                                <small className="h6 text-muted">Web Developer</small>
+                                            </h5>
+                                            <div className="mt-3">
+                                                <Button
+                                                    className="btn-icon-only rounded-circle"
+                                                    color="warning"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-twitter" />
+                                                </Button>
+                                                <Button
+                                                    className="btn-icon-only rounded-circle ml-1"
+                                                    color="warning"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-facebook" />
+                                                </Button>
+                                                <Button
+                                                    className="btn-icon-only rounded-circle ml-1"
+                                                    color="warning"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-dribbble" />
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Col>
+                                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                                    <div className="px-4">
+                                        <img
+                                            alt="..."
+                                            className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                                            src={require("assets/img/theme/team-2-800x800.jpg")}
+                                            style={{ width: "200px" }}
+                                        />
+                                        <div className="pt-4 text-center">
+                                            <h5 className="title">
+                                                <span className="d-block mb-1">Romina Hadid</span>
+                                                <small className="h6 text-muted">
+                                                    Marketing Strategist
+                                                </small>
+                                            </h5>
+                                            <div className="mt-3">
+                                                <Button
+                                                    className="btn-icon-only rounded-circle"
+                                                    color="primary"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-twitter" />
+                                                </Button>
+                                                <Button
+                                                    className="btn-icon-only rounded-circle ml-1"
+                                                    color="primary"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-facebook" />
+                                                </Button>
+                                                <Button
+                                                    className="btn-icon-only rounded-circle ml-1"
+                                                    color="primary"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-dribbble" />
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Col>
+                                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                                    <div className="px-4">
+                                        <img
+                                            alt="..."
+                                            className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                                            src={require("assets/img/theme/team-3-800x800.jpg")}
+                                            style={{ width: "200px" }}
+                                        />
+                                        <div className="pt-4 text-center">
+                                            <h5 className="title">
+                                                <span className="d-block mb-1">Alexander Smith</span>
+                                                <small className="h6 text-muted">UI/UX Designer</small>
+                                            </h5>
+                                            <div className="mt-3">
+                                                <Button
+                                                    className="btn-icon-only rounded-circle"
+                                                    color="info"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-twitter" />
+                                                </Button>
+                                                <Button
+                                                    className="btn-icon-only rounded-circle ml-1"
+                                                    color="info"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-facebook" />
+                                                </Button>
+                                                <Button
+                                                    className="btn-icon-only rounded-circle ml-1"
+                                                    color="info"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-dribbble" />
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Col>
+                                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                                    <div className="px-4">
+                                        <img
+                                            alt="..."
+                                            className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                                            src={require("assets/img/theme/team-4-800x800.jpg")}
+                                            style={{ width: "200px" }}
+                                        />
+                                        <div className="pt-4 text-center">
+                                            <h5 className="title">
+                                                <span className="d-block mb-1">John Doe</span>
+                                                <small className="h6 text-muted">Founder and CEO</small>
+                                            </h5>
+                                            <div className="mt-3">
+                                                <Button
+                                                    className="btn-icon-only rounded-circle"
+                                                    color="success"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-twitter" />
+                                                </Button>
+                                                <Button
+                                                    className="btn-icon-only rounded-circle ml-1"
+                                                    color="success"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-facebook" />
+                                                </Button>
+                                                <Button
+                                                    className="btn-icon-only rounded-circle ml-1"
+                                                    color="success"
+                                                    href="#pablo"
+                                                    onClick={(e) => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-dribbble" />
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </section>
+                    <section className="section section-lg pt-0">
+                        <Container>
+                            <Card className="bg-gradient-warning shadow-lg border-0">
+                                <div className="p-5">
+                                    <Row className="align-items-center">
+                                        <Col lg="8">
+                                            <h3 className="text-white">
+                                                We made website building easier for you.
+                                            </h3>
+                                            <p className="lead text-white mt-3">
+                                                I will be the leader of a company that ends up being
+                                                worth billions of dollars, because I got the answers. I
+                                                understand culture.
+                                            </p>
+                                        </Col>
+                                        <Col className="ml-lg-auto" lg="3">
+                                            <Button
+                                                block
+                                                className="btn-white"
+                                                color="default"
+                                                href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
+                                                size="lg"
+                                            >
+                                                Download React
+                                            </Button>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            </Card>
+                        </Container>
+                    </section>
+                    <section className="section section-lg bg-gradient-default">
+                        <Container className="pt-lg pb-300">
+                            <Row className="text-center justify-content-center">
+                                <Col lg="10">
+                                    <h2 className="display-3 text-white">Build something</h2>
+                                    <p className="lead text-white">
+                                        According to the National Oceanic and Atmospheric
+                                        Administration, Ted, Scambos, NSIDClead scentist, puts the
+                                        potentially record low maximum sea ice extent tihs year down
+                                        to low ice.
+                                    </p>
+                                </Col>
+                            </Row>
+                            <Row className="row-grid mt-5">
+                                <Col lg="4">
+                                    <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                                        <i className="ni ni-settings text-primary" />
+                                    </div>
+                                    <h5 className="text-white mt-3">Building tools</h5>
+                                    <p className="text-white mt-3">
+                                        Some quick example text to build on the card title and make
+                                        up the bulk of the card's content.
+                                    </p>
+                                </Col>
+                                <Col lg="4">
+                                    <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                                        <i className="ni ni-ruler-pencil text-primary" />
+                                    </div>
+                                    <h5 className="text-white mt-3">Grow your market</h5>
+                                    <p className="text-white mt-3">
+                                        Some quick example text to build on the card title and make
+                                        up the bulk of the card's content.
+                                    </p>
+                                </Col>
+                                <Col lg="4">
+                                    <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                                        <i className="ni ni-atom text-primary" />
+                                    </div>
+                                    <h5 className="text-white mt-3">Launch time</h5>
+                                    <p className="text-white mt-3">
+                                        Some quick example text to build on the card title and make
+                                        up the bulk of the card's content.
+                                    </p>
+                                </Col>
+                            </Row>
+                        </Container>
+                        {/* SVG separator */}
+                        <div className="separator separator-bottom separator-skew zindex-100">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                preserveAspectRatio="none"
+                                version="1.1"
+                                viewBox="0 0 2560 100"
+                                x="0"
+                                y="0"
+                            >
+                                <polygon
+                                    className="fill-white"
+                                    points="2560 0 2560 100 0 100"
+                                />
+                            </svg>
+                        </div>
+                    </section>
+                    <section className="section section-lg pt-lg-0 section-contact-us">
+                        <Container>
+                            <Row className="justify-content-center mt--300">
+                                <Col lg="8">
+                                    <Card className="bg-gradient-secondary shadow">
+                                        <CardBody className="p-lg-5">
+                                            <h4 className="mb-1">Want to work with us?</h4>
+                                            <p className="mt-0">
+                                                Your project is very important to us.
+                                            </p>
+                                            <FormGroup
+                                                className={classnames("mt-5", {
+                                                    focused: this.state.nameFocused
+                                                })}
+                                            >
+                                                <InputGroup className="input-group-alternative">
+                                                    <InputGroupAddon addonType="prepend">
+                                                        <InputGroupText>
+                                                            <i className="ni ni-user-run" />
+                                                        </InputGroupText>
+                                                    </InputGroupAddon>
+                                                    <Input
+                                                        placeholder="Your name"
+                                                        type="text"
+                                                        onFocus={(e) =>
+                                                            this.setState({ nameFocused: true })
+                                                        }
+                                                        onBlur={(e) =>
+                                                            this.setState({ nameFocused: false })
+                                                        }
+                                                    />
+                                                </InputGroup>
+                                            </FormGroup>
+                                            <FormGroup
+                                                className={classnames({
+                                                    focused: this.state.emailFocused
+                                                })}
+                                            >
+                                                <InputGroup className="input-group-alternative">
+                                                    <InputGroupAddon addonType="prepend">
+                                                        <InputGroupText>
+                                                            <i className="ni ni-email-83" />
+                                                        </InputGroupText>
+                                                    </InputGroupAddon>
+                                                    <Input
+                                                        placeholder="Email address"
+                                                        type="email"
+                                                        onFocus={(e) =>
+                                                            this.setState({ emailFocused: true })
+                                                        }
+                                                        onBlur={(e) =>
+                                                            this.setState({ emailFocused: false })
+                                                        }
+                                                    />
+                                                </InputGroup>
+                                            </FormGroup>
+                                            <FormGroup className="mb-4">
+                                                <Input
+                                                    className="form-control-alternative"
+                                                    cols="80"
+                                                    name="name"
+                                                    placeholder="Type a message..."
+                                                    rows="4"
+                                                    type="textarea"
+                                                />
+                                            </FormGroup>
+                                            <div>
+                                                <Button
+                                                    block
+                                                    className="btn-round"
+                                                    color="default"
+                                                    size="lg"
+                                                    type="button"
+                                                >
+                                                    Send Message
+                                                </Button>
+                                            </div>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </section>
+                    <Download />
                 </main>
-                <SimpleFooter />
+                <CardsFooter />
             </>
         );
     }

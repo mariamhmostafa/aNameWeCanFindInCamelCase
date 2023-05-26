@@ -21,7 +21,7 @@ import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 
 var admin = "admin";  //username and passowrd of admin is "admin"
-var banker = "banker";  //username and passowrd of banker is "banker"
+var banker = "bankerr";  //username and passowrd of banker is "banker"
 var client = "basboosa";  //username and passowrd of user is "user"
 
 class Login extends React.Component {
@@ -29,7 +29,6 @@ class Login extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-    document.title = "Mahfaztak";
   }
 
   state = {

@@ -23,7 +23,6 @@ import {
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
-
 // index page sections
 import Download from "../IndexSections/Download.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
@@ -34,7 +33,6 @@ class Landing extends React.Component {
         document.documentElement.scrollTop = 0;
         document.scrollingElement.scrollTop = 0;
         this.refs.main.scrollTop = 0;
-        document.title = "Mahfaztak";
     }
     render() {
         return (
