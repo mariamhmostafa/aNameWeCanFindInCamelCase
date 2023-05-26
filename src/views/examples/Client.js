@@ -119,6 +119,18 @@ class Client extends React.Component {
                                                 <span>^^</span>
                                             </h1>
                                         </Col>
+                                        <Col>
+                                            <Col className="mb-5 mb-lg-0" lg="6" md="6">
+                                                <div className="px-4">
+                                                    <img
+                                                        alt="..."
+                                                        className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                                                        src={require("assets/img/theme/basboosa.jpg")}
+                                                        style={{ width: "200px" }}
+                                                    />
+                                                </div>
+                                            </Col>
+                                        </Col>
                                     </Row>
                                 </div>
                             </Container>
