@@ -34,12 +34,9 @@ import {
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import CardsFooter from "components/Footers/CardsFooter.js";
+import SimpleFooter from "components/Footers/SimpleFooter.js";
 import "assets/vendor/nucleo/css/nucleo.css";
 
-// index page sections
-import Download from "../IndexSections/Download.js";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
 
 
 class Client extends React.Component {

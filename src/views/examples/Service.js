@@ -23,6 +23,7 @@ import {
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
+
 // index page sections
 import Download from "../IndexSections/Download.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
