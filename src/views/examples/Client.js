@@ -120,13 +120,13 @@ class Client extends React.Component {
                                             </h1>
                                         </Col>
                                         <Col>
-                                            <Col className="mb-5 mb-lg-0" lg="6" md="6">
+                                            <Col className="mb-5 mb-lg-0" lg="7" md="6">
                                                 <div className="px-4">
                                                     <img
                                                         alt="..."
                                                         className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
                                                         src={require("assets/img/theme/basboosa.jpg")}
-                                                        style={{ width: "200px" }}
+                                                        style={{ width: "300px" }}
                                                     />
                                                 </div>
                                             </Col>
@@ -533,11 +533,11 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <input
                                                                     className="custom-control-input"
-                                                                    id="customCheck1"
+                                                                    id="customCheck2"
                                                                     type="checkbox"
                                                                 />
-                                                                <label className="custom-control-label" htmlFor="customCheck1">
-                                                                    Married
+                                                                <label className="custom-control-label" htmlFor="customCheck2">
+                                                                    Employed
                                                                 </label>
                                                             </Col>
                                                         </Row>
