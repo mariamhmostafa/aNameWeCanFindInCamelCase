@@ -124,7 +124,7 @@ class Landing extends React.Component {
                         <i className="ni ni-check-bold" />
                       </div>
                       <h6 className="text-success text-uppercase">
-                        Website takes >2 minutes to load [userid: 20056]
+                        Website takes &gt; 2 minutes to load [userid: 20056]
                       </h6>
                       <p className="description mt-3">
                         The mahfaztak wesbite takes ages to load, i tried it on
