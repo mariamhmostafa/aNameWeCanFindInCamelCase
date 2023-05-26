@@ -47,6 +47,9 @@ class Banker extends React.Component {
     defaultModal4: false,
     defaultModal5: false,
     defaultModal6: false,
+    defaultModal7: false,
+    defaultModal8: false,
+    defaultModal9: false,
   };
   toggleModal = (state) => {
     this.setState({
@@ -775,79 +778,234 @@ class Banker extends React.Component {
 
           <section className="section section-lg">
             <Container>
-              <Row className="row-grid align-items-center">
-                <Col className="order-md-2" md="6">
-                  <img
-                    alt="..."
-                    className="img-fluid floating"
-                    src={require("assets/img/theme/promo-1.png")}
-                  />
-                </Col>
-                <Col className="order-md-1" md="6">
-                  <div className="pr-md-5">
-                    <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
-                      <i className="ni ni-settings-gear-65" />
-                    </div>
-                    <h3>Awesome features</h3>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
-                    <ul className="list-unstyled mt-5">
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-settings-gear-65" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">
-                              Carefully crafted components
-                            </h6>
-                          </div>
+              <div className="px-4">
+                <img
+                  alt="..."
+                  className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                  src={require("assets/img/brand/CreditCard.jpeg")}
+                  style={{ width: "200px" }}
+                />
+              </div>
+
+              <div class="panel panel-success">
+                <div class="panel-heading">Reports</div>
+
+                <table class="table">
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+
+                    <th>Date</th>
+                    <th>Status</th>
+                  </tr>
+                  <tr>
+                    <td>1-</td>
+                    <td>Meghan</td>
+
+                    <td>21/3/2002</td>
+                    <td>
+                      <div>
+                        <Button
+                          block
+                          className="mb-3"
+                          size="sm"
+                          color="primary"
+                          type="button"
+                          onClick={() => this.toggleModal("defaultModal7")}
+                        >
+                          <i class="fa fa-address-card" aria-hidden="true"></i>{" "}
+                          View Details
+                        </Button>
+                      </div>
+                      <Modal
+                        className="modal-dialog-centered"
+                        isOpen={this.state.defaultModal7}
+                        toggle={() => this.toggleModal("defaultModal7")}
+                      >
+                        <div className="modal-header">
+                          <h6 className="modal-title" id="modal-title-default">
+                            Report Details
+                          </h6>
+                          <button
+                            aria-label="Close"
+                            className="close"
+                            data-dismiss="modal"
+                            type="button"
+                            onClick={() => this.toggleModal("defaultModal7")}
+                          >
+                            <span aria-hidden={true}>×</span>
+                          </button>
                         </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-html5" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">Amazing page examples</h6>
-                          </div>
+                        <div className="modal-body">
+                          {
+                            <Container>
+                              <span> CreditCard Number:52778 </span> <br></br>
+                              <span>
+                                {" "}
+                                Issue Description: Elcredit card ets7b mnha
+                                floos ya shwayet 7rameya{" "}
+                              </span>
+                            </Container>
+                          }
                         </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-satisfied" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">
-                              Super friendly support team
-                            </h6>
-                          </div>
+                        <div className="modal-footer">
+                          <Button
+                            color="success"
+                            type="button"
+                            onClick={() => alert("Issue Resolved")}
+                          >
+                            Resolve Issue
+                          </Button>
+                          <Button
+                            className="ml-auto"
+                            color="danger"
+                            data-dismiss="modal"
+                            type="button"
+                            onClick={() => this.toggleModal("defaultModal7")}
+                          >
+                            Ignore
+                          </Button>
                         </div>
-                      </li>
-                    </ul>
-                  </div>
-                </Col>
-              </Row>
+                      </Modal>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2-</td>
+                    <td>Hamada</td>
+                    <td>19/5/2077</td>
+                    <td>
+                      <div>
+                        <Button
+                          block
+                          className="mb-3"
+                          size="sm"
+                          color="primary"
+                          type="button"
+                          onClick={() => this.toggleModal("defaultModal8")}
+                        >
+                          <i class="fa fa-address-card" aria-hidden="true"></i>{" "}
+                          View Details
+                        </Button>
+                      </div>
+                      <Modal
+                        className="modal-dialog-centered"
+                        isOpen={this.state.defaultModal8}
+                        toggle={() => this.toggleModal("defaultModal8")}
+                      >
+                        <div className="modal-header">
+                          <h6 className="modal-title" id="modal-title-default">
+                            Report Details
+                          </h6>
+                          <button
+                            aria-label="Close"
+                            className="close"
+                            data-dismiss="modal"
+                            type="button"
+                            onClick={() => this.toggleModal("defaultModal8")}
+                          >
+                            <span aria-hidden={true}>×</span>
+                          </button>
+                        </div>
+                        <div className="modal-body">
+                          {
+                            <Container>
+                              <span> CreditCard Number:5256777 </span> <br></br>
+                              <span> Issue Description: Points mrg3etsh </span>
+                            </Container>
+                          }
+                        </div>
+                        <div className="modal-footer">
+                          <Button
+                            color="success"
+                            type="button"
+                            onClick={() => alert("Issue Resolved")}
+                          >
+                            Resolve Issue
+                          </Button>
+                          <Button
+                            className="ml-auto"
+                            color="danger"
+                            data-dismiss="modal"
+                            type="button"
+                            onClick={() => this.toggleModal("defaultModal8")}
+                          >
+                            Ignore
+                          </Button>
+                        </div>
+                      </Modal>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3-</td>
+                    <td>Helal</td>
+                    <td>16/10/2002</td>
+                    <td>
+                      <div>
+                        <Button
+                          block
+                          className="mb-3"
+                          size="sm"
+                          color="primary"
+                          type="button"
+                          onClick={() => this.toggleModal("defaultModal9")}
+                        >
+                          <i class="fa fa-address-card" aria-hidden="true"></i>{" "}
+                          View Details
+                        </Button>
+                      </div>
+                      <Modal
+                        className="modal-dialog-centered"
+                        isOpen={this.state.defaultModal9}
+                        toggle={() => this.toggleModal("defaultModal9")}
+                      >
+                        <div className="modal-header">
+                          <h6 className="modal-title" id="modal-title-default">
+                            Report Details
+                          </h6>
+                          <button
+                            aria-label="Close"
+                            className="close"
+                            data-dismiss="modal"
+                            type="button"
+                            onClick={() => this.toggleModal("defaultModal9")}
+                          >
+                            <span aria-hidden={true}>×</span>
+                          </button>
+                        </div>
+                        <div className="modal-body">
+                          {
+                            <Container>
+                              <span> CreditCard Number:999998 </span> <br></br>
+                              <span>
+                                {" "}
+                                Issue Description: Pls giveme sm money Im broke{" "}
+                              </span>
+                            </Container>
+                          }
+                        </div>
+                        <div className="modal-footer">
+                          <Button
+                            color="success"
+                            type="button"
+                            onClick={() => alert("Issue Resolved")}
+                          >
+                            Resolve Issue
+                          </Button>
+                          <Button
+                            className="ml-auto"
+                            color="danger"
+                            data-dismiss="modal"
+                            type="button"
+                            onClick={() => this.toggleModal("defaultModal9")}
+                          >
+                            Ignore
+                          </Button>
+                        </div>
+                      </Modal>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </Container>
           </section>
           <section className="section bg-secondary">
