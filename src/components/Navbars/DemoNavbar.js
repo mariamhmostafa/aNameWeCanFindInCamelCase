@@ -96,7 +96,9 @@ class DemoNavbar extends React.Component {
                     target="_blank"
                   >
                     <Media body className="ml-3">
-                      <span className="nav-link-inner--text">Our Services</span>
+                      <span className="nav-link-inner--text"
+                      style = {{color: "white"}}
+                      >Our Services</span>
                     </Media>
                   </Media>
                   <Media
@@ -105,7 +107,9 @@ class DemoNavbar extends React.Component {
                     target="_blank"
                   >
                     <Media body className="ml-3">
-                      <span className="nav-link-inner--text">About Us</span>
+                      <span className="nav-link-inner--text"
+                      style = {{color: "white"}}
+                      >About Us</span>
                     </Media>
                   </Media>
                 </Nav>

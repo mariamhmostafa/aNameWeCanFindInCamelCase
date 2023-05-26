@@ -12,7 +12,7 @@ import {
 } from "reactstrap";
 
 // core components
-import HomeNavBar from "components/Navbars/HomeNavBar.js";
+import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 
 class Profile extends React.Component {
@@ -25,7 +25,7 @@ class Profile extends React.Component {
   render() {
     return (
       <>
-        <HomeNavBar />
+        <DemoNavbar />
         <main className="profile-page" ref="main">
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
