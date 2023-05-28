@@ -45,6 +45,7 @@ class Client extends React.Component {
         this.scollToRef1 = createRef();
         this.scollToRef2 = createRef();
         this.scollToRef3 = createRef();
+        this.scollToRef4 = createRef();
     }
 
 
@@ -351,10 +352,9 @@ class Client extends React.Component {
                                                 color="default"
                                                 size="lg"
                                                 type="button"
-                                                onClick={() => this.scollToRef3.current.scrollIntoView({ behavior: 'smooth' })}
-
+                                                onClick={() => this.scollToRef4.current.scrollIntoView({ behavior: 'smooth' })}
                                             >
-                                                Loan
+                                                Transfer
                                             </Button>
                                             <Button
                                                 block
@@ -362,9 +362,12 @@ class Client extends React.Component {
                                                 color="default"
                                                 size="lg"
                                                 type="button"
+                                                onClick={() => this.scollToRef3.current.scrollIntoView({ behavior: 'smooth' })}
+
                                             >
-                                                Transfer
+                                                Loan
                                             </Button>
+                                
                                         </Container>
                                     </div>
                                 </Col>
@@ -1801,7 +1804,7 @@ class Client extends React.Component {
                             </Row>
                         </Container>
                         {/* SVG separator */}
-                        <div className="separator separator-bottom separator-skew zindex-100">
+                        <div className="separator separator-bottom separator-skew zindex-100" ref={this.scollToRef4}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 preserveAspectRatio="none"
