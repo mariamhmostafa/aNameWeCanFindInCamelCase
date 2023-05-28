@@ -59,7 +59,10 @@ class Client extends React.Component {
         amount: '',
         salary: '',
         account: '',
-        reason: ''
+        reason: '',
+        amountTransfered: '',
+        receiver: '',
+        sender:'',
     };
     getAccount = (e) => {
         this.setState({ account: e.target.value });
@@ -68,8 +71,17 @@ class Client extends React.Component {
       getSalary = (e) => {
         this.setState({ salary: e.target.value });
       }
+
       getAmount = (e) => {
         this.setState({ amount: e.target.value });
+      }
+
+      getReceiver = (e) => {
+        this.setState({ receiver: e.target.value });
+      }
+
+      getSender = (e) => {
+        this.setState({ sender: e.target.value });
       }
     
       getReason = (e) => {
@@ -110,9 +122,18 @@ class Client extends React.Component {
     };
 
     handleTransfer = (e) => {
-        alert("Amount transfered successfully!")
+        const amountTransfered = this.state.amountTransfered;
+        const sender = this.state.sender;
+        const receiver = this.state.receiver;
+        if (amountTransfered === '' || sender === ''|| receiver === '') {
+          alert("Please enter the required information")
+        }else{
+            alert("Amount transfered successfully!")
+        }
     };
-
+    getAmountTransfered = (e) => {
+        this.setState({ amountTransfered: e.target.value });
+    }
 
     handleRedeem = (e) => {
         alert("Points redeemed!")
@@ -1808,19 +1829,20 @@ class Client extends React.Component {
                     id="exampleFormControlInput1"
                     placeholder="transfering account number"
                     type="text"
+                    onChange={this.getSender}
                   />
                 </FormGroup>
               </Col>
               <Col md="6">
                 <FormGroup>
-                  <Input placeholder="receiving account number" type="text"/>
+                  <Input placeholder="receiving account number" type="text" onChange={this.getReceiver}/>
                 </FormGroup>
               </Col>
             </Row>
             <Row>
               <Col md="6">
                 <FormGroup>
-                  <Input placeholder="amount" type="text"/>
+                  <Input placeholder="amount" type="text" onChange={this.getAmountTransfered}/>
                 </FormGroup>
               </Col>
               <Col md="6">
