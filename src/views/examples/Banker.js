@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef, Component } from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 
@@ -38,6 +38,11 @@ class Banker extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+  }
+  constructor(props) {
+    super(props);
+    this.scollToRef1 = createRef();
+    this.scollToRef2 = createRef();
   }
   state = {
     tabs: 1,
@@ -108,7 +113,11 @@ class Banker extends React.Component {
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
                           color="default"
-                          onClick={() => this.toggleModal("defaultModal")}
+                          onClick={() =>
+                            this.scollToRef1.current.scrollIntoView({
+                              behavior: "smooth",
+                            })
+                          }
                         >
                           <span className="btn-inner--icon mr-1">
                             <i className="ni ni-cloud-download-95" />
@@ -139,875 +148,712 @@ class Banker extends React.Component {
             </section>
             {/* 1st Hero Variation */}
           </div>
-          <div className="nav-wrapper">
-            <Nav
-              className="nav-fill flex-column flex-md-row"
-              id="tabs-icons-text"
-              pills
-              role="tablist"
-            >
-              <NavItem>
-                <NavLink
-                  aria-selected={this.state.tabs === 1}
-                  className={classnames("mb-sm-3 mb-md-0", {
-                    active: this.state.tabs === 1,
-                  })}
-                  onClick={(e) => this.toggleNavs(e, "tabs", 1)}
-                  href="#pablo"
-                  role="tab"
-                >
-                  <i className="ni ni-cloud-upload-96 mr-2" />
-                  View Loan Requests
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  aria-selected={this.state.tabs === 2}
-                  className={classnames("mb-sm-3 mb-md-0", {
-                    active: this.state.tabs === 2,
-                  })}
-                  onClick={(e) => this.toggleNavs(e, "tabs", 2)}
-                  href="#pablo"
-                  role="tab"
-                >
-                  <i className="ni ni-bell-55 mr-2" />
-                  View Credit Card Requests
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </div>
-          <Card className="shadow">
-            <CardBody>
-              <TabContent activeTab={"tabs" + this.state.tabs}>
-                <TabPane tabId="tabs1">
-                  <p className="description"></p>
-                  <p className="description">
-                    <p className="description">
-                      <Row>
-                        <Col>
-                          <span>Client Name</span>
-                        </Col>
-                        <Col>
-                          <span>Loan Type</span>
-                        </Col>
-
-                        <Col>
-                          <span>Loan Amount</span>
-                        </Col>
-                        <Col>
-                          <span>Date</span>
-                        </Col>
-                        <Col></Col>
-                      </Row>
-                      <Row>
-                        <Col>
-                          <span>Basboosa</span>
-                        </Col>
-                        <Col>
-                          <span>Personal</span>
-                        </Col>
-
-                        <Col>
-                          <span>5000</span>
-                        </Col>
-                        <Col>
-                          <span>24/5/2023</span>
-                        </Col>
-                        <Col>
-                          {" "}
-                          <Button
-                            block
-                            className="mb-3"
-                            size="sm"
-                            color="primary"
-                            type="button"
-                            onClick={() => this.toggleModal("defaultModal1")}
-                          >
-                            <i
-                              class="fa fa-address-card"
-                              aria-hidden="true"
-                            ></i>{" "}
-                            View Details
-                          </Button>
-                          <Modal
-                            className="modal-dialog-centered"
-                            isOpen={this.state.defaultModal1}
-                            toggle={() => this.toggleModal("defaultModal1")}
-                          >
-                            <div className="modal-header">
-                              <h6
-                                className="modal-title"
-                                id="modal-title-default"
-                              >
-                                Basboosa el amoora
-                              </h6>
-                              <button
-                                aria-label="Close"
-                                className="close"
-                                data-dismiss="modal"
-                                type="button"
-                                onClick={() =>
-                                  this.toggleModal("defaultModal1")
-                                }
-                              >
-                                <span aria-hidden={true}>×</span>
-                              </button>
-                            </div>
-                            <div className="modal-body">
-                              {
-                                <Container>
-                                  <span> Name: Basboosa Smith </span> <br></br>
-                                  <span> Age: 35 </span>
-                                  <br></br>
-                                  <span>Occupation: professional meow</span>
-                                  <br></br>
-                                  <span> Monthly Income: $9000,000000</span>
-                                  <br></br>
-                                  <span>Credit Score: 1000</span>
-                                  <br></br>
-                                  <span> Loan Amount Requested: $5000</span>
-                                  <br></br>
-                                  <span>Loan Purpose: Meow products</span>
-                                  <br></br>
-                                  <span> Period: 4 months debts.</span>
-                                </Container>
-                              }
-                            </div>
-                            <div className="modal-footer">
-                              <Button
-                                color="success"
-                                type="button"
-                                onClick={() => alert("Request Accepted")}
-                              >
-                                Accept Request
-                              </Button>
-                              <Button
-                                className="ml-auto"
-                                color="danger"
-                                data-dismiss="modal"
-                                type="button"
-                                onClick={() =>
-                                  this.toggleModal("defaultModal1")
-                                }
-                              >
-                                Reject
-                              </Button>
-                            </div>
-                          </Modal>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col>
-                          <span>Mariouma</span>
-                        </Col>
-                        <Col>
-                          <span>Car</span>
-                        </Col>
-
-                        <Col>
-                          <span>800,000</span>
-                        </Col>
-                        <Col>
-                          <span>7/3/2022</span>
-                        </Col>
-                        <Col>
-                          <Button
-                            block
-                            className="mb-3"
-                            size="sm"
-                            color="primary"
-                            type="button"
-                            onClick={() => this.toggleModal("defaultModal2")}
-                          >
-                            <i
-                              class="fa fa-address-card"
-                              aria-hidden="true"
-                            ></i>{" "}
-                            View Details
-                          </Button>
-                          <Modal
-                            className="modal-dialog-centered"
-                            isOpen={this.state.defaultModal2}
-                            toggle={() => this.toggleModal("defaultModal2")}
-                          >
-                            <div className="modal-header">
-                              <h6
-                                className="modal-title"
-                                id="modal-title-default"
-                              >
-                                Mariouma el amoora
-                              </h6>
-                              <button
-                                aria-label="Close"
-                                className="close"
-                                data-dismiss="modal"
-                                type="button"
-                                onClick={() =>
-                                  this.toggleModal("defaultModal2")
-                                }
-                              >
-                                <span aria-hidden={true}>×</span>
-                              </button>
-                            </div>
-                            <div className="modal-body">
-                              {
-                                <Container>
-                                  <span> Name: Mrm Smith </span> <br></br>
-                                  <span> Age: 35 </span>
-                                  <br></br>
-                                  <span>Occupation: hkr</span>
-                                  <br></br>
-                                  <span> Monthly Income: $5,00</span>
-                                  <br></br>
-                                  <span>Credit Score: 20</span>
-                                  <br></br>
-                                  <span> Loan Amount Requested: $800,000</span>
-                                  <br></br>
-                                  <span>
-                                    Loan Purpose: New car to leave ahmed's car f
-                                    7alha
-                                  </span>
-                                  <br></br>
-                                  <span> Period: 24 months debts.</span>
-                                </Container>
-                              }
-                            </div>
-                            <div className="modal-footer">
-                              <Button
-                                color="success"
-                                type="button"
-                                onClick={() => alert("Request Accepted")}
-                              >
-                                Accept Request
-                              </Button>
-                              <Button
-                                className="ml-auto"
-                                color="danger"
-                                data-dismiss="modal"
-                                type="button"
-                                onClick={() =>
-                                  this.toggleModal("defaultModal2")
-                                }
-                              >
-                                Reject
-                              </Button>
-                            </div>
-                          </Modal>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col>
-                          <span>Majid elmohandes</span>
-                        </Col>
-                        <Col>
-                          <span>Personal</span>
-                        </Col>
-
-                        <Col>
-                          <span>50</span>
-                        </Col>
-                        <Col>
-                          <span>21/3/2002</span>
-                        </Col>
-                        <Col>
-                          <Button
-                            block
-                            className="mb-3"
-                            size="sm"
-                            color="primary"
-                            type="button"
-                            onClick={() => this.toggleModal("defaultModal3")}
-                          >
-                            <i
-                              class="fa fa-address-card"
-                              aria-hidden="true"
-                            ></i>{" "}
-                            View Details
-                          </Button>
-                          <Modal
-                            className="modal-dialog-centered"
-                            isOpen={this.state.defaultModal3}
-                            toggle={() => this.toggleModal("defaultModal3")}
-                          >
-                            <div className="modal-header">
-                              <h6
-                                className="modal-title"
-                                id="modal-title-default"
-                              >
-                                Majooda
-                              </h6>
-                              <button
-                                aria-label="Close"
-                                className="close"
-                                data-dismiss="modal"
-                                type="button"
-                                onClick={() =>
-                                  this.toggleModal("defaultModal3")
-                                }
-                              >
-                                <span aria-hidden={true}>×</span>
-                              </button>
-                            </div>
-                            <div className="modal-body">
-                              {
-                                <Container>
-                                  <span> Name: Majid Smith </span> <br></br>
-                                  <span> Age: 35 </span>
-                                  <br></br>
-                                  <span>Occupation: Software Engineer</span>
-                                  <br></br>
-                                  <span> Monthly Income: $5,000</span>
-                                  <br></br>
-                                  <span>Credit Score: 20</span>
-                                  <br></br>
-                                  <span> Loan Amount Requested: $50</span>
-                                  <br></br>
-                                  <span>
-                                    Loan Purpose: Debt consolidation Repayment
-                                  </span>
-                                  <br></br>
-                                  <span> Period: 24 months debts.</span>
-                                </Container>
-                              }
-                            </div>
-                            <div className="modal-footer">
-                              <Button
-                                color="success"
-                                type="button"
-                                onClick={() => alert("Request Accepted")}
-                              >
-                                Accept Request
-                              </Button>
-                              <Button
-                                className="ml-auto"
-                                color="danger"
-                                data-dismiss="modal"
-                                type="button"
-                                onClick={() =>
-                                  this.toggleModal("defaultModal3")
-                                }
-                              >
-                                Reject
-                              </Button>
-                            </div>
-                          </Modal>
-                        </Col>
-                      </Row>
-                    </p>
-                  </p>
-                </TabPane>
-                <TabPane tabId="tabs2">
-                  <p className="description">
-                    <Row>
-                      <Col>
-                        <span>Client Name</span>
-                      </Col>
-                      <Col>
-                        <span>Client Id</span>
-                      </Col>
-
-                      <Col>
-                        <span>Card Type</span>
-                      </Col>
-                      <Col>
-                        <span>Salary</span>
-                      </Col>
-                      <Col></Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <span>Basboosa</span>
-                      </Col>
-                      <Col>
-                        <span>58-1</span>
-                      </Col>
-
-                      <Col>
-                        <span>Platinum</span>
-                      </Col>
-                      <Col>
-                        <span>900000</span>
-                      </Col>
-                      <Col>
-                        {" "}
-                        <Button
-                          block
-                          className="mb-3"
-                          size="sm"
-                          color="primary"
-                          type="button"
-                          onClick={() => this.toggleModal("defaultModal4")}
-                        >
-                          <i class="fa fa-address-card" aria-hidden="true"></i>{" "}
-                          View Details
-                        </Button>
-                        <Modal
-                          className="modal-dialog-centered"
-                          isOpen={this.state.defaultModal4}
-                          toggle={() => this.toggleModal("defaultModal4")}
-                        >
-                          <div className="modal-header">
-                            <h6
-                              className="modal-title"
-                              id="modal-title-default"
-                            >
-                              Basboosa el amoora
-                            </h6>
-                            <button
-                              aria-label="Close"
-                              className="close"
-                              data-dismiss="modal"
-                              type="button"
-                              onClick={() => this.toggleModal("defaultModal4")}
-                            >
-                              <span aria-hidden={true}>×</span>
-                            </button>
-                          </div>
-                          <div className="modal-body">
-                            {
-                              <Container>
-                                <span> Name: Basboosa Smith </span> <br></br>
-                                <span> Age: 35 </span>
-                                <br></br>
-                                <span>Occupation: Meowww</span>
-                                <br></br>
-                                <span> Annual Income: $9,000000000000</span>
-                                <br></br>
-                                <span>Credit Score: 40000</span>
-                                <br></br>
-                                <span> Address: with Mariouma</span>
-                              </Container>
-                            }
-                          </div>
-                          <div className="modal-footer">
-                            <Button
-                              color="success"
-                              type="button"
-                              onClick={() => alert("Request Accepted")}
-                            >
-                              Accept Request
-                            </Button>
-                            <Button
-                              className="ml-auto"
-                              color="danger"
-                              data-dismiss="modal"
-                              type="button"
-                              onClick={() => this.toggleModal("defaultModal4")}
-                            >
-                              Reject
-                            </Button>
-                          </div>
-                        </Modal>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <span>Mariouma</span>
-                      </Col>
-                      <Col>
-                        <span>52-4086</span>
-                      </Col>
-
-                      <Col>
-                        <span>Diamond</span>
-                      </Col>
-                      <Col>
-                        <span>70,000</span>
-                      </Col>
-                      <Col>
-                        <Button
-                          block
-                          className="mb-3"
-                          size="sm"
-                          color="primary"
-                          type="button"
-                          onClick={() => this.toggleModal("defaultModal5")}
-                        >
-                          <i class="fa fa-address-card" aria-hidden="true"></i>{" "}
-                          View Details
-                        </Button>
-                        <Modal
-                          className="modal-dialog-centered"
-                          isOpen={this.state.defaultModal5}
-                          toggle={() => this.toggleModal("defaultModal5")}
-                        >
-                          <div className="modal-header">
-                            <h6
-                              className="modal-title"
-                              id="modal-title-default"
-                            >
-                              Mariouma el amoora
-                            </h6>
-                            <button
-                              aria-label="Close"
-                              className="close"
-                              data-dismiss="modal"
-                              type="button"
-                              onClick={() => this.toggleModal("defaultModal5")}
-                            >
-                              <span aria-hidden={true}>×</span>
-                            </button>
-                          </div>
-                          <div className="modal-body">
-                            {
-                              <Container>
-                                <span> Name: Mariouma Smith </span> <br></br>
-                                <span> Age: 35 </span>
-                                <br></br>
-                                <span>Occupation: hkr</span>
-                                <br></br>
-                                <span> Annual Income: $7,00000</span>
-                                <br></br>
-                                <span>Credit Score: 75</span>
-                                <br></br>
-                                <span> Address: Madinet Nasr</span>
-                              </Container>
-                            }
-                          </div>
-                          <div className="modal-footer">
-                            <Button
-                              color="success"
-                              type="button"
-                              onClick={() => alert("Request Accepted")}
-                            >
-                              Accept Request
-                            </Button>
-                            <Button
-                              className="ml-auto"
-                              color="danger"
-                              data-dismiss="modal"
-                              type="button"
-                              onClick={() => this.toggleModal("defaultModal5")}
-                            >
-                              Reject
-                            </Button>
-                          </div>
-                        </Modal>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <span>Majid elmohandes</span>
-                      </Col>
-                      <Col>
-                        <span>52-2777</span>
-                      </Col>
-
-                      <Col>
-                        <span>Fo2ara</span>
-                      </Col>
-                      <Col>
-                        <span>3,000</span>
-                      </Col>
-                      <Col>
-                        <Button
-                          block
-                          className="mb-3"
-                          size="sm"
-                          color="primary"
-                          type="button"
-                          onClick={() => this.toggleModal("defaultModal6")}
-                        >
-                          <i class="fa fa-address-card" aria-hidden="true"></i>{" "}
-                          View Details
-                        </Button>
-                        <Modal
-                          className="modal-dialog-centered"
-                          isOpen={this.state.defaultModal6}
-                          toggle={() => this.toggleModal("defaultModal6")}
-                        >
-                          <div className="modal-header">
-                            <h6
-                              className="modal-title"
-                              id="modal-title-default"
-                            >
-                              Majooda
-                            </h6>
-                            <button
-                              aria-label="Close"
-                              className="close"
-                              data-dismiss="modal"
-                              type="button"
-                              onClick={() => this.toggleModal("defaultModal6")}
-                            >
-                              <span aria-hidden={true}>×</span>
-                            </button>
-                          </div>
-                          <div className="modal-body">
-                            {
-                              <Container>
-                                <span> Name: Majid Smith </span> <br></br>
-                                <span> Age: 35 </span>
-                                <br></br>
-                                <span>Occupation: Software Engineer</span>
-                                <br></br>
-                                <span> Annual Income: $5,00000</span>
-                                <br></br>
-                                <span>Credit Score: 750</span>
-                                <br></br>
-                                <span> Address: GUC</span>
-                              </Container>
-                            }
-                          </div>
-                          <div className="modal-footer">
-                            <Button
-                              color="success"
-                              type="button"
-                              onClick={() => alert("Request Accepted")}
-                            >
-                              Accept Request
-                            </Button>
-                            <Button
-                              className="ml-auto"
-                              color="danger"
-                              data-dismiss="modal"
-                              type="button"
-                              onClick={() => this.toggleModal("defaultModal6")}
-                            >
-                              Reject
-                            </Button>
-                          </div>
-                        </Modal>
-                      </Col>
-                    </Row>
-                  </p>
-                </TabPane>
-              </TabContent>
-            </CardBody>
-          </Card>
-
-          <section className="section section-lg">
-            <Container>
-              <div className="px-4">
-                <img
-                  alt="..."
-                  className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                  src={require("assets/img/brand/CreditCard.jpeg")}
-                  style={{ width: "200px" }}
-                />
-              </div>
-
-              <div class="panel panel-success">
-                <div class="panel-heading">Reports</div>
-
-                <table class="table">
-                  <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-
-                    <th>Date</th>
-                    <th>Status</th>
-                  </tr>
-                  <tr>
-                    <td>1-</td>
-                    <td>Meghan</td>
-
-                    <td>21/3/2002</td>
-                    <td>
-                      <div>
-                        <Button
-                          block
-                          className="mb-3"
-                          size="sm"
-                          color="primary"
-                          type="button"
-                          onClick={() => this.toggleModal("defaultModal7")}
-                        >
-                          <i class="fa fa-address-card" aria-hidden="true"></i>{" "}
-                          View Details
-                        </Button>
-                      </div>
-                      <Modal
-                        className="modal-dialog-centered"
-                        isOpen={this.state.defaultModal7}
-                        toggle={() => this.toggleModal("defaultModal7")}
+          <section
+            className="section pb-0 bg-gradient-warning"
+            ref={this.scollToRef1}
+          >
+            <Card className="shadow shadow-lg--hover mt-5">
+              <CardBody>
+                <div className="nav-wrapper">
+                  <Nav
+                    className="nav-fill flex-column flex-md-row"
+                    id="tabs-icons-text"
+                    pills
+                    role="tablist"
+                  >
+                    <NavItem>
+                      <NavLink
+                        aria-selected={this.state.tabs === 1}
+                        className={classnames("mb-sm-3 mb-md-0", {
+                          active: this.state.tabs === 1,
+                        })}
+                        onClick={(e) => this.toggleNavs(e, "tabs", 1)}
+                        href="#pablo"
+                        role="tab"
                       >
-                        <div className="modal-header">
-                          <h6 className="modal-title" id="modal-title-default">
-                            Report Details
-                          </h6>
-                          <button
-                            aria-label="Close"
-                            className="close"
-                            data-dismiss="modal"
-                            type="button"
-                            onClick={() => this.toggleModal("defaultModal7")}
-                          >
-                            <span aria-hidden={true}>×</span>
-                          </button>
-                        </div>
-                        <div className="modal-body">
-                          {
-                            <Container>
-                              <span> CreditCard Number:52778 </span> <br></br>
-                              <span>
+                        <i className="ni ni-cloud-upload-96 mr-2" />
+                        View Loan Requests
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        aria-selected={this.state.tabs === 2}
+                        className={classnames("mb-sm-3 mb-md-0", {
+                          active: this.state.tabs === 2,
+                        })}
+                        onClick={(e) => this.toggleNavs(e, "tabs", 2)}
+                        href="#pablo"
+                        role="tab"
+                      >
+                        <i className="ni ni-bell-55 mr-2" />
+                        View Credit Card Requests
+                      </NavLink>
+                    </NavItem>
+                  </Nav>
+                </div>
+                <Card className="shadow">
+                  <CardBody>
+                    <TabContent activeTab={"tabs" + this.state.tabs}>
+                      <TabPane tabId="tabs1">
+                        <p className="description"></p>
+                        <p className="description">
+                          <p className="description">
+                            <Row>
+                              <Col>
+                                <span>Client Name</span>
+                              </Col>
+                              <Col>
+                                <span>Loan Type</span>
+                              </Col>
+
+                              <Col>
+                                <span>Loan Amount</span>
+                              </Col>
+                              <Col>
+                                <span>Date</span>
+                              </Col>
+                              <Col></Col>
+                            </Row>
+                            <Row>
+                              <Col>
+                                <span>Basboosa</span>
+                              </Col>
+                              <Col>
+                                <span>Personal</span>
+                              </Col>
+
+                              <Col>
+                                <span>5000</span>
+                              </Col>
+                              <Col>
+                                <span>24/5/2023</span>
+                              </Col>
+                              <Col>
                                 {" "}
-                                Issue Description: Elcredit card ets7b mnha
-                                floos ya shwayet 7rameya{" "}
-                              </span>
-                            </Container>
-                          }
-                        </div>
-                        <div className="modal-footer">
-                          <Button
-                            color="success"
-                            type="button"
-                            onClick={() => alert("Issue Resolved")}
-                          >
-                            Resolve Issue
-                          </Button>
-                          <Button
-                            className="ml-auto"
-                            color="danger"
-                            data-dismiss="modal"
-                            type="button"
-                            onClick={() => this.toggleModal("defaultModal7")}
-                          >
-                            Ignore
-                          </Button>
-                        </div>
-                      </Modal>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2-</td>
-                    <td>Hamada</td>
-                    <td>19/5/2077</td>
-                    <td>
-                      <div>
-                        <Button
-                          block
-                          className="mb-3"
-                          size="sm"
-                          color="primary"
-                          type="button"
-                          onClick={() => this.toggleModal("defaultModal8")}
-                        >
-                          <i class="fa fa-address-card" aria-hidden="true"></i>{" "}
-                          View Details
-                        </Button>
-                      </div>
-                      <Modal
-                        className="modal-dialog-centered"
-                        isOpen={this.state.defaultModal8}
-                        toggle={() => this.toggleModal("defaultModal8")}
-                      >
-                        <div className="modal-header">
-                          <h6 className="modal-title" id="modal-title-default">
-                            Report Details
-                          </h6>
-                          <button
-                            aria-label="Close"
-                            className="close"
-                            data-dismiss="modal"
-                            type="button"
-                            onClick={() => this.toggleModal("defaultModal8")}
-                          >
-                            <span aria-hidden={true}>×</span>
-                          </button>
-                        </div>
-                        <div className="modal-body">
-                          {
-                            <Container>
-                              <span> CreditCard Number:5256777 </span> <br></br>
-                              <span> Issue Description: Points mrg3etsh </span>
-                            </Container>
-                          }
-                        </div>
-                        <div className="modal-footer">
-                          <Button
-                            color="success"
-                            type="button"
-                            onClick={() => alert("Issue Resolved")}
-                          >
-                            Resolve Issue
-                          </Button>
-                          <Button
-                            className="ml-auto"
-                            color="danger"
-                            data-dismiss="modal"
-                            type="button"
-                            onClick={() => this.toggleModal("defaultModal8")}
-                          >
-                            Ignore
-                          </Button>
-                        </div>
-                      </Modal>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3-</td>
-                    <td>Helal</td>
-                    <td>16/10/2002</td>
-                    <td>
-                      <div>
-                        <Button
-                          block
-                          className="mb-3"
-                          size="sm"
-                          color="primary"
-                          type="button"
-                          onClick={() => this.toggleModal("defaultModal9")}
-                        >
-                          <i class="fa fa-address-card" aria-hidden="true"></i>{" "}
-                          View Details
-                        </Button>
-                      </div>
-                      <Modal
-                        className="modal-dialog-centered"
-                        isOpen={this.state.defaultModal9}
-                        toggle={() => this.toggleModal("defaultModal9")}
-                      >
-                        <div className="modal-header">
-                          <h6 className="modal-title" id="modal-title-default">
-                            Report Details
-                          </h6>
-                          <button
-                            aria-label="Close"
-                            className="close"
-                            data-dismiss="modal"
-                            type="button"
-                            onClick={() => this.toggleModal("defaultModal9")}
-                          >
-                            <span aria-hidden={true}>×</span>
-                          </button>
-                        </div>
-                        <div className="modal-body">
-                          {
-                            <Container>
-                              <span> CreditCard Number:999998 </span> <br></br>
-                              <span>
-                                {" "}
-                                Issue Description: Pls giveme sm money Im broke{" "}
-                              </span>
-                            </Container>
-                          }
-                        </div>
-                        <div className="modal-footer">
-                          <Button
-                            color="success"
-                            type="button"
-                            onClick={() => alert("Issue Resolved")}
-                          >
-                            Resolve Issue
-                          </Button>
-                          <Button
-                            className="ml-auto"
-                            color="danger"
-                            data-dismiss="modal"
-                            type="button"
-                            onClick={() => this.toggleModal("defaultModal9")}
-                          >
-                            Ignore
-                          </Button>
-                        </div>
-                      </Modal>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </Container>
+                                <Button
+                                  block
+                                  className="mb-3"
+                                  size="sm"
+                                  color="primary"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal1")
+                                  }
+                                >
+                                  <i
+                                    class="fa fa-address-card"
+                                    aria-hidden="true"
+                                  ></i>{" "}
+                                  View Details
+                                </Button>
+                                <Modal
+                                  className="modal-dialog-centered"
+                                  isOpen={this.state.defaultModal1}
+                                  toggle={() =>
+                                    this.toggleModal("defaultModal1")
+                                  }
+                                >
+                                  <div className="modal-header">
+                                    <h6
+                                      className="modal-title"
+                                      id="modal-title-default"
+                                    >
+                                      Basboosa el amoora
+                                    </h6>
+                                    <button
+                                      aria-label="Close"
+                                      className="close"
+                                      data-dismiss="modal"
+                                      type="button"
+                                      onClick={() =>
+                                        this.toggleModal("defaultModal1")
+                                      }
+                                    >
+                                      <span aria-hidden={true}>×</span>
+                                    </button>
+                                  </div>
+                                  <div className="modal-body">
+                                    {
+                                      <Container>
+                                        <span> Name: Basboosa Smith </span>{" "}
+                                        <br></br>
+                                        <span> Age: 35 </span>
+                                        <br></br>
+                                        <span>
+                                          Occupation: professional meow
+                                        </span>
+                                        <br></br>
+                                        <span>
+                                          {" "}
+                                          Monthly Income: $9000,000000
+                                        </span>
+                                        <br></br>
+                                        <span>Credit Score: 1000</span>
+                                        <br></br>
+                                        <span>
+                                          {" "}
+                                          Loan Amount Requested: $5000
+                                        </span>
+                                        <br></br>
+                                        <span>Loan Purpose: Meow products</span>
+                                        <br></br>
+                                        <span> Period: 4 months debts.</span>
+                                      </Container>
+                                    }
+                                  </div>
+                                  <div className="modal-footer">
+                                    <Button
+                                      color="success"
+                                      type="button"
+                                      onClick={() => alert("Request Accepted")}
+                                    >
+                                      Accept Request
+                                    </Button>
+                                    <Button
+                                      className="ml-auto"
+                                      color="danger"
+                                      data-dismiss="modal"
+                                      type="button"
+                                      onClick={() =>
+                                        this.toggleModal("defaultModal1")
+                                      }
+                                    >
+                                      Reject
+                                    </Button>
+                                  </div>
+                                </Modal>
+                              </Col>
+                            </Row>
+                            <Row>
+                              <Col>
+                                <span>Mariouma</span>
+                              </Col>
+                              <Col>
+                                <span>Car</span>
+                              </Col>
+
+                              <Col>
+                                <span>800,000</span>
+                              </Col>
+                              <Col>
+                                <span>7/3/2022</span>
+                              </Col>
+                              <Col>
+                                <Button
+                                  block
+                                  className="mb-3"
+                                  size="sm"
+                                  color="primary"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal2")
+                                  }
+                                >
+                                  <i
+                                    class="fa fa-address-card"
+                                    aria-hidden="true"
+                                  ></i>{" "}
+                                  View Details
+                                </Button>
+                                <Modal
+                                  className="modal-dialog-centered"
+                                  isOpen={this.state.defaultModal2}
+                                  toggle={() =>
+                                    this.toggleModal("defaultModal2")
+                                  }
+                                >
+                                  <div className="modal-header">
+                                    <h6
+                                      className="modal-title"
+                                      id="modal-title-default"
+                                    >
+                                      Mariouma el amoora
+                                    </h6>
+                                    <button
+                                      aria-label="Close"
+                                      className="close"
+                                      data-dismiss="modal"
+                                      type="button"
+                                      onClick={() =>
+                                        this.toggleModal("defaultModal2")
+                                      }
+                                    >
+                                      <span aria-hidden={true}>×</span>
+                                    </button>
+                                  </div>
+                                  <div className="modal-body">
+                                    {
+                                      <Container>
+                                        <span> Name: Mrm Smith </span> <br></br>
+                                        <span> Age: 35 </span>
+                                        <br></br>
+                                        <span>Occupation: hkr</span>
+                                        <br></br>
+                                        <span> Monthly Income: $5,00</span>
+                                        <br></br>
+                                        <span>Credit Score: 20</span>
+                                        <br></br>
+                                        <span>
+                                          {" "}
+                                          Loan Amount Requested: $800,000
+                                        </span>
+                                        <br></br>
+                                        <span>
+                                          Loan Purpose: New car to leave ahmed's
+                                          car f 7alha
+                                        </span>
+                                        <br></br>
+                                        <span> Period: 24 months debts.</span>
+                                      </Container>
+                                    }
+                                  </div>
+                                  <div className="modal-footer">
+                                    <Button
+                                      color="success"
+                                      type="button"
+                                      onClick={() => alert("Request Accepted")}
+                                    >
+                                      Accept Request
+                                    </Button>
+                                    <Button
+                                      className="ml-auto"
+                                      color="danger"
+                                      data-dismiss="modal"
+                                      type="button"
+                                      onClick={() =>
+                                        this.toggleModal("defaultModal2")
+                                      }
+                                    >
+                                      Reject
+                                    </Button>
+                                  </div>
+                                </Modal>
+                              </Col>
+                            </Row>
+                            <Row>
+                              <Col>
+                                <span>Majid elmohandes</span>
+                              </Col>
+                              <Col>
+                                <span>Personal</span>
+                              </Col>
+
+                              <Col>
+                                <span>50</span>
+                              </Col>
+                              <Col>
+                                <span>21/3/2002</span>
+                              </Col>
+                              <Col>
+                                <Button
+                                  block
+                                  className="mb-3"
+                                  size="sm"
+                                  color="primary"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal3")
+                                  }
+                                >
+                                  <i
+                                    class="fa fa-address-card"
+                                    aria-hidden="true"
+                                  ></i>{" "}
+                                  View Details
+                                </Button>
+                                <Modal
+                                  className="modal-dialog-centered"
+                                  isOpen={this.state.defaultModal3}
+                                  toggle={() =>
+                                    this.toggleModal("defaultModal3")
+                                  }
+                                >
+                                  <div className="modal-header">
+                                    <h6
+                                      className="modal-title"
+                                      id="modal-title-default"
+                                    >
+                                      Majooda
+                                    </h6>
+                                    <button
+                                      aria-label="Close"
+                                      className="close"
+                                      data-dismiss="modal"
+                                      type="button"
+                                      onClick={() =>
+                                        this.toggleModal("defaultModal3")
+                                      }
+                                    >
+                                      <span aria-hidden={true}>×</span>
+                                    </button>
+                                  </div>
+                                  <div className="modal-body">
+                                    {
+                                      <Container>
+                                        <span> Name: Majid Smith </span>{" "}
+                                        <br></br>
+                                        <span> Age: 35 </span>
+                                        <br></br>
+                                        <span>
+                                          Occupation: Software Engineer
+                                        </span>
+                                        <br></br>
+                                        <span> Monthly Income: $5,000</span>
+                                        <br></br>
+                                        <span>Credit Score: 20</span>
+                                        <br></br>
+                                        <span> Loan Amount Requested: $50</span>
+                                        <br></br>
+                                        <span>
+                                          Loan Purpose: Debt consolidation
+                                          Repayment
+                                        </span>
+                                        <br></br>
+                                        <span> Period: 24 months debts.</span>
+                                      </Container>
+                                    }
+                                  </div>
+                                  <div className="modal-footer">
+                                    <Button
+                                      color="success"
+                                      type="button"
+                                      onClick={() => alert("Request Accepted")}
+                                    >
+                                      Accept Request
+                                    </Button>
+                                    <Button
+                                      className="ml-auto"
+                                      color="danger"
+                                      data-dismiss="modal"
+                                      type="button"
+                                      onClick={() =>
+                                        this.toggleModal("defaultModal3")
+                                      }
+                                    >
+                                      Reject
+                                    </Button>
+                                  </div>
+                                </Modal>
+                              </Col>
+                            </Row>
+                          </p>
+                        </p>
+                      </TabPane>
+                      <TabPane tabId="tabs2">
+                        <p className="description">
+                          <Row>
+                            <Col>
+                              <span>Client Name</span>
+                            </Col>
+                            <Col>
+                              <span>Client Id</span>
+                            </Col>
+
+                            <Col>
+                              <span>Card Type</span>
+                            </Col>
+                            <Col>
+                              <span>Salary</span>
+                            </Col>
+                            <Col></Col>
+                          </Row>
+                          <Row>
+                            <Col>
+                              <span>Basboosa</span>
+                            </Col>
+                            <Col>
+                              <span>58-1</span>
+                            </Col>
+
+                            <Col>
+                              <span>Platinum</span>
+                            </Col>
+                            <Col>
+                              <span>900000</span>
+                            </Col>
+                            <Col>
+                              {" "}
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal4")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                              <Modal
+                                className="modal-dialog-centered"
+                                isOpen={this.state.defaultModal4}
+                                toggle={() => this.toggleModal("defaultModal4")}
+                              >
+                                <div className="modal-header">
+                                  <h6
+                                    className="modal-title"
+                                    id="modal-title-default"
+                                  >
+                                    Basboosa el amoora
+                                  </h6>
+                                  <button
+                                    aria-label="Close"
+                                    className="close"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal4")
+                                    }
+                                  >
+                                    <span aria-hidden={true}>×</span>
+                                  </button>
+                                </div>
+                                <div className="modal-body">
+                                  {
+                                    <Container>
+                                      <span> Name: Basboosa Smith </span>{" "}
+                                      <br></br>
+                                      <span> Age: 35 </span>
+                                      <br></br>
+                                      <span>Occupation: Meowww</span>
+                                      <br></br>
+                                      <span>
+                                        {" "}
+                                        Annual Income: $9,000000000000
+                                      </span>
+                                      <br></br>
+                                      <span>Credit Score: 40000</span>
+                                      <br></br>
+                                      <span> Address: with Mariouma</span>
+                                    </Container>
+                                  }
+                                </div>
+                                <div className="modal-footer">
+                                  <Button
+                                    color="success"
+                                    type="button"
+                                    onClick={() => alert("Request Accepted")}
+                                  >
+                                    Accept Request
+                                  </Button>
+                                  <Button
+                                    className="ml-auto"
+                                    color="danger"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal4")
+                                    }
+                                  >
+                                    Reject
+                                  </Button>
+                                </div>
+                              </Modal>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col>
+                              <span>Mariouma</span>
+                            </Col>
+                            <Col>
+                              <span>52-4086</span>
+                            </Col>
+
+                            <Col>
+                              <span>Diamond</span>
+                            </Col>
+                            <Col>
+                              <span>70,000</span>
+                            </Col>
+                            <Col>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal5")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                              <Modal
+                                className="modal-dialog-centered"
+                                isOpen={this.state.defaultModal5}
+                                toggle={() => this.toggleModal("defaultModal5")}
+                              >
+                                <div className="modal-header">
+                                  <h6
+                                    className="modal-title"
+                                    id="modal-title-default"
+                                  >
+                                    Mariouma el amoora
+                                  </h6>
+                                  <button
+                                    aria-label="Close"
+                                    className="close"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal5")
+                                    }
+                                  >
+                                    <span aria-hidden={true}>×</span>
+                                  </button>
+                                </div>
+                                <div className="modal-body">
+                                  {
+                                    <Container>
+                                      <span> Name: Mariouma Smith </span>{" "}
+                                      <br></br>
+                                      <span> Age: 35 </span>
+                                      <br></br>
+                                      <span>Occupation: hkr</span>
+                                      <br></br>
+                                      <span> Annual Income: $7,00000</span>
+                                      <br></br>
+                                      <span>Credit Score: 75</span>
+                                      <br></br>
+                                      <span> Address: Madinet Nasr</span>
+                                    </Container>
+                                  }
+                                </div>
+                                <div className="modal-footer">
+                                  <Button
+                                    color="success"
+                                    type="button"
+                                    onClick={() => alert("Request Accepted")}
+                                  >
+                                    Accept Request
+                                  </Button>
+                                  <Button
+                                    className="ml-auto"
+                                    color="danger"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal5")
+                                    }
+                                  >
+                                    Reject
+                                  </Button>
+                                </div>
+                              </Modal>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col>
+                              <span>Majid elmohandes</span>
+                            </Col>
+                            <Col>
+                              <span>52-2777</span>
+                            </Col>
+
+                            <Col>
+                              <span>Fo2ara</span>
+                            </Col>
+                            <Col>
+                              <span>3,000</span>
+                            </Col>
+                            <Col>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal6")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                              <Modal
+                                className="modal-dialog-centered"
+                                isOpen={this.state.defaultModal6}
+                                toggle={() => this.toggleModal("defaultModal6")}
+                              >
+                                <div className="modal-header">
+                                  <h6
+                                    className="modal-title"
+                                    id="modal-title-default"
+                                  >
+                                    Majooda
+                                  </h6>
+                                  <button
+                                    aria-label="Close"
+                                    className="close"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal6")
+                                    }
+                                  >
+                                    <span aria-hidden={true}>×</span>
+                                  </button>
+                                </div>
+                                <div className="modal-body">
+                                  {
+                                    <Container>
+                                      <span> Name: Majid Smith </span> <br></br>
+                                      <span> Age: 35 </span>
+                                      <br></br>
+                                      <span>Occupation: Software Engineer</span>
+                                      <br></br>
+                                      <span> Annual Income: $5,00000</span>
+                                      <br></br>
+                                      <span>Credit Score: 750</span>
+                                      <br></br>
+                                      <span> Address: GUC</span>
+                                    </Container>
+                                  }
+                                </div>
+                                <div className="modal-footer">
+                                  <Button
+                                    color="success"
+                                    type="button"
+                                    onClick={() => alert("Request Accepted")}
+                                  >
+                                    Accept Request
+                                  </Button>
+                                  <Button
+                                    className="ml-auto"
+                                    color="danger"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal6")
+                                    }
+                                  >
+                                    Reject
+                                  </Button>
+                                </div>
+                              </Modal>
+                            </Col>
+                          </Row>
+                        </p>
+                      </TabPane>
+                    </TabContent>
+                  </CardBody>
+                </Card>
+              </CardBody>
+            </Card>
           </section>
+          <section className="section pb-0 bg-gradient-warning"></section>
           <section className="section bg-secondary">
             <Container>
               <Row className="row-grid align-items-center">
@@ -1079,92 +925,303 @@ class Banker extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section pb-0 bg-gradient-warning">
+          <section
+            className="section pb-0 bg-gradient-warning"
+            ref={this.scollToRef1}
+          >
             <Container>
-              <Row className="row-grid align-items-center">
-                <Col className="order-lg-2 ml-lg-auto" md="6">
-                  <div className="position-relative pl-md-5">
-                    <img
-                      alt="..."
-                      className="img-center img-fluid"
-                      src={require("assets/img/ill/ill-2.svg")}
-                    />
+              <div className="d-flex px-3">
+                <div>
+                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                    <i class="fa fa-file-o" aria-hidden="true"></i>
                   </div>
-                </Col>
-                <Col className="order-lg-1" lg="6">
-                  <div className="d-flex px-3">
-                    <div>
-                      <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                        <i className="ni ni-building text-primary" />
-                      </div>
+                </div>
+                <div className="pl-4">
+                  <h4 className="display-3 text-white">Reports</h4>
+                  <p className="text-white">
+                    You can find reports of all the customers here.
+                  </p>
+                </div>
+              </div>
+
+              <Card className="shadow shadow-lg--hover mt-5">
+                <CardBody>
+                  <Container>
+                    <div className="d-flex px-3"></div>
+                    <div className="px-4">
+                      <img
+                        alt="..."
+                        className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                        src={require("assets/img/brand/CreditCard.jpeg")}
+                        style={{ width: "200px" }}
+                      />
                     </div>
-                    <div className="pl-4">
-                      <h4 className="display-3 text-white">Modern Interface</h4>
-                      <p className="text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever.
-                      </p>
+
+                    <div class="panel panel-success">
+                      <div class="panel-heading">Reports</div>
+
+                      <table class="table">
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+
+                          <th>Date</th>
+                          <th>Status</th>
+                        </tr>
+                        <tr>
+                          <td>1-</td>
+                          <td>Meghan</td>
+
+                          <td>21/3/2002</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal7")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal7}
+                              toggle={() => this.toggleModal("defaultModal7")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Report Details
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal7")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> CreditCard Number:52778 </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Issue Description: Elcredit card ets7b
+                                      mnha floos ya shwayet 7rameya{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                              <div className="modal-footer">
+                                <Button
+                                  color="success"
+                                  type="button"
+                                  onClick={() => alert("Issue Resolved")}
+                                >
+                                  Resolve Issue
+                                </Button>
+                                <Button
+                                  className="ml-auto"
+                                  color="danger"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal7")
+                                  }
+                                >
+                                  Ignore
+                                </Button>
+                              </div>
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2-</td>
+                          <td>Hamada</td>
+                          <td>19/5/2077</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal8")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal8}
+                              toggle={() => this.toggleModal("defaultModal8")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Report Details
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal8")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> CreditCard Number:5256777 </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Issue Description: Points mrg3etsh{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                              <div className="modal-footer">
+                                <Button
+                                  color="success"
+                                  type="button"
+                                  onClick={() => alert("Issue Resolved")}
+                                >
+                                  Resolve Issue
+                                </Button>
+                                <Button
+                                  className="ml-auto"
+                                  color="danger"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal8")
+                                  }
+                                >
+                                  Ignore
+                                </Button>
+                              </div>
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3-</td>
+                          <td>Helal</td>
+                          <td>16/10/2002</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal9")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal9}
+                              toggle={() => this.toggleModal("defaultModal9")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Report Details
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal9")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> CreditCard Number:999998 </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Issue Description: Pls giveme sm money Im
+                                      broke{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                              <div className="modal-footer">
+                                <Button
+                                  color="success"
+                                  type="button"
+                                  onClick={() => alert("Issue Resolved")}
+                                >
+                                  Resolve Issue
+                                </Button>
+                                <Button
+                                  className="ml-auto"
+                                  color="danger"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal9")
+                                  }
+                                >
+                                  Ignore
+                                </Button>
+                              </div>
+                            </Modal>
+                          </td>
+                        </tr>
+                      </table>
                     </div>
-                  </div>
-                  <Card className="shadow shadow-lg--hover mt-5">
-                    <CardBody>
-                      <div className="d-flex px-3">
-                        <div>
-                          <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
-                            <i className="ni ni-satisfied" />
-                          </div>
-                        </div>
-                        <div className="pl-4">
-                          <h5 className="title text-success">
-                            Awesome Support
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
-                          <a
-                            className="text-success"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
-                  <Card className="shadow shadow-lg--hover mt-5">
-                    <CardBody>
-                      <div className="d-flex px-3">
-                        <div>
-                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                            <i className="ni ni-active-40" />
-                          </div>
-                        </div>
-                        <div className="pl-4">
-                          <h5 className="title text-warning">
-                            Modular Components
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
-                          <a
-                            className="text-warning"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
-                </Col>
-              </Row>
+                  </Container>
+                </CardBody>
+              </Card>
             </Container>
             {/* SVG separator */}
             <div className="separator separator-bottom separator-skew zindex-100">
