@@ -75,6 +75,7 @@ root.render(
         render={(props) => <Admin {...props} />}
       />
 
+
       <Redirect to="/" />
     </Switch>
   </BrowserRouter>

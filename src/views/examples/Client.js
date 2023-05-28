@@ -54,7 +54,7 @@ class Client extends React.Component {
         defaultModal3: false,
         defaultModal4: false,
         defaultModal5: false,
-        value: "Report Type"
+        value: "Report Type",
     };
 
     onChange = e => {
@@ -76,6 +76,10 @@ class Client extends React.Component {
 
     handlePay = (e) => {
         alert("Bill paid successfully!")
+    };
+
+    handleTransfer = (e) => {
+        alert("Amount transfered successfully!")
     };
 
 
@@ -1759,7 +1763,49 @@ class Client extends React.Component {
                             </svg>
                         </div>
                     </section>
+                    <Form>
+            <Row>
+              <Col md="6">
+                <FormGroup>
+                  <Input
+                    id="exampleFormControlInput1"
+                    placeholder="transfering account number"
+                    type="text"
+                  />
+                </FormGroup>
+              </Col>
+              <Col md="6">
+                <FormGroup>
+                  <Input placeholder="receiving account number" type="text"/>
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col md="6">
+                <FormGroup>
+                  <Input placeholder="amount" type="text"/>
+                </FormGroup>
+              </Col>
+              <Col md="6">
+                <FormGroup>
+                  <Input placeholder="transaction date" type="date"/>
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row> 
+            <Button
+                block
+                className="btn-round"
+                color="default"
+                size="sm"
+                type="button"
+                onClick={this.handleTransfer}
 
+            >
+                Transfer 
+            </Button> 
+            </Row>
+          </Form>
                 </main>
                 <SimpleFooter />
             </>
