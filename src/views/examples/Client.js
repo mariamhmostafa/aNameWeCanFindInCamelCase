@@ -1763,6 +1763,10 @@ class Client extends React.Component {
                             </svg>
                         </div>
                     </section>
+                    <div><h4 className="display-3 text-black">Transfers</h4>
+                                        <p className="text-black">
+                                        A banking transfer is a process of moving money from one bank account to another. It can be done electronically through online banking or by physically visiting a bank branch and filling out a transfer form. The transfer can be between accounts held at the same bank or between different banks. Banking transfers are commonly used to pay bills, make purchases, and send money to family and friends.
+                                        </p></div>
                     <Form>
             <Row>
               <Col md="6">
