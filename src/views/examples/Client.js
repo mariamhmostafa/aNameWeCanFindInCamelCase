@@ -52,6 +52,8 @@ class Client extends React.Component {
         defaultModal1: false,
         defaultModal2: false,
         defaultModal3: false,
+        defaultModal4: false,
+        defaultModal5: false,
         value: "Report Type"
     };
 
@@ -121,7 +123,7 @@ class Client extends React.Component {
                                         <Col lg="6">
                                             <h1 className="display-3 text-white">
                                                 Great to see you again, Basboosa{" "}
-                                                <span>^^</span>
+                                                <span> :3 </span>
                                             </h1>
                                         </Col>
                                         <Col>
@@ -303,7 +305,7 @@ class Client extends React.Component {
                                                 size="lg"
                                                 type="button"
                                             >
-                                                Transaction
+                                                Transfer
                                             </Button>
                                         </Container>
                                     </div>
@@ -389,7 +391,7 @@ class Client extends React.Component {
                                                     View Accounts
                                                 </h5>
                                                 <Row>
-                                                    <Col xs="5">
+                                                    <Col xs="4">
                                                         Account number
                                                     </Col>
                                                     <Col xs="4">
@@ -398,11 +400,106 @@ class Client extends React.Component {
                                                 </Row>
                                                 <Row><p></p></Row>
                                                 <Row>
-                                                    <Col xs="5">
+                                                    <Col xs="3">
                                                         9479
                                                     </Col>
-                                                    <Col xs="5">
+                                                    <Col xs="4">
                                                         Savings
+                                                    </Col>
+                                                    <Col xs="3">
+                                                        <Button
+                                                            block
+                                                            className="d-flex mb-3"
+                                                            size="sm"
+                                                            color="primary"
+                                                            type="button"
+                                                            onClick={() => this.toggleModal("defaultModal4")}
+                                                        >
+                                                            View {"  "}
+                                                            <i className="ni ni-basket"></i>
+                                                        </Button>
+                                                        <Modal
+                                                            className="modal-dialog-centered"
+                                                            isOpen={this.state.defaultModal4}
+                                                            toggle={() => this.toggleModal("defaultModal4")}
+                                                        >
+                                                            <div className="modal-header">
+                                                                <h6 className="modal-title" id="modal-title-default">
+                                                                    Account Transactions
+                                                                </h6>
+                                                                <button
+                                                                    aria-label="Close"
+                                                                    className="close"
+                                                                    data-dismiss="modal"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal4")}
+                                                                >
+                                                                    <span aria-hidden={true}>×</span>
+                                                                </button>
+                                                            </div>
+                                                            <div className="modal-body">
+                                                                <Container>
+                                                                    <Row>
+                                                                        <Col xs="6">
+                                                                            <span>Transaction number</span>
+                                                                        </Col>
+                                                                        <Col xs="3">
+                                                                            <span>Amount </span>
+                                                                        </Col>
+                                                                        <Col xs="2">
+                                                                            <span>Date </span>
+                                                                        </Col>
+                                                                    </Row>
+                                                                    <Row><p></p>
+                                                                    </Row>
+                                                                    <Row>
+                                                                        <Col xs="6">
+                                                                            <span>193703</span>
+                                                                        </Col>
+                                                                        <Col xs="3">
+                                                                            <span>450.00 </span>
+                                                                        </Col>
+                                                                        <Col xs="2">
+                                                                            <span>18/05/2022 </span>
+                                                                        </Col>
+                                                                    </Row>
+                                                                    <Row>
+                                                                        <Col xs="6">
+                                                                            <span>297023</span>
+                                                                        </Col>
+                                                                        <Col xs="3">
+                                                                            <span>7500.00 </span>
+                                                                        </Col>
+                                                                        <Col xs="2">
+                                                                            <span>15/12/2023 </span>
+                                                                        </Col>
+                                                                    </Row>
+                                                                    <Row>
+                                                                        <Col xs="6">
+                                                                            <span>72874</span>
+                                                                        </Col>
+                                                                        <Col xs="3">
+                                                                            <span>99720.50 </span>
+                                                                        </Col>
+                                                                        <Col xs="2">
+                                                                            <span>03/05/2023 </span>
+                                                                        </Col>
+                                                                    </Row>
+
+                                                                </Container>
+                                                            </div>
+                                                            <div className="modal-footer">
+                                                                <Button
+                                                                    className="ml-auto"
+                                                                    color="link"
+                                                                    data-dismiss="modal"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal4")}
+                                                                >
+                                                                    Close
+                                                                </Button>
+                                                            </div>
+                                                        </Modal>
                                                     </Col>
                                                     <Col xs="1">
                                                         <Button
@@ -415,15 +512,114 @@ class Client extends React.Component {
                                                     </Col>
                                                 </Row>
                                                 <Row>
-                                                    <Col xs="5">
+                                                    <Col xs="3">
                                                         4872
                                                     </Col>
-                                                    <Col xs="5">
+                                                    <Col xs="4">
                                                         Current
+                                                    </Col>
+                                                    <Col xs="3">
+                                                        <Button
+                                                            block
+                                                            className="d-flex mb-3"
+                                                            size="sm"
+                                                            color="primary"
+                                                            type="button"
+                                                            onClick={() => this.toggleModal("defaultModal5")}
+                                                        >
+                                                            View {"  "}
+                                                            <i className="ni ni-basket"></i>
+                                                        </Button>
+                                                        <Modal
+                                                            className="modal-dialog-centered"
+                                                            isOpen={this.state.defaultModal5}
+                                                            toggle={() => this.toggleModal("defaultModal5")}
+                                                        >
+                                                            <div className="modal-header">
+                                                                <h6 className="modal-title" id="modal-title-default">
+                                                                    Account Transations
+                                                                </h6>
+                                                                <button
+                                                                    aria-label="Close"
+                                                                    className="close"
+                                                                    data-dismiss="modal"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal5")}
+                                                                >
+                                                                    <span aria-hidden={true}>×</span>
+                                                                </button>
+                                                            </div>
+                                                            <div className="modal-body">
+                                                                <Container>
+                                                                    <Row>
+                                                                        <Col xs="6">
+                                                                            <span>Transaction number</span>
+                                                                        </Col>
+                                                                        <Col xs="3">
+                                                                            <span>Amount </span>
+                                                                        </Col>
+                                                                        <Col xs="2">
+                                                                            <span>Date </span>
+                                                                        </Col>
+                                                                    </Row>
+                                                                    <Row>
+                                                                        <p>
+
+                                                                        </p>
+                                                                    </Row>
+                                                                    <Row>
+                                                                        <Col xs="6">
+                                                                            <span>19843</span>
+                                                                        </Col>
+                                                                        <Col xs="3">
+                                                                            <span>150.00 </span>
+                                                                        </Col>
+                                                                        <Col xs="2">
+                                                                            <span>18/05/2022 </span>
+                                                                        </Col>
+                                                                    </Row>
+                                                                    <Row>
+                                                                        <Col xs="6">
+                                                                            <span>297023</span>
+                                                                        </Col>
+                                                                        <Col xs="3">
+                                                                            <span>7500.00 </span>
+                                                                        </Col>
+                                                                        <Col xs="2">
+                                                                            <span>15/05/2023 </span>
+                                                                        </Col>
+                                                                    </Row>
+                                                                    <Row>
+                                                                        <Col xs="6">
+                                                                            <span>98245</span>
+                                                                        </Col>
+                                                                        <Col xs="3">
+                                                                            <span>90.00 </span>
+                                                                        </Col>
+                                                                        <Col xs="2">
+                                                                            <span>23/05/2023 </span>
+                                                                        </Col>
+                                                                    </Row>
+
+                                                                </Container>
+                                                            </div>
+                                                            <div className="modal-footer">
+                                                                <Button
+                                                                    className="ml-auto"
+                                                                    color="link"
+                                                                    data-dismiss="modal"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal5")}
+                                                                >
+                                                                    Close
+                                                                </Button>
+                                                            </div>
+                                                        </Modal>
                                                     </Col>
                                                     <Col xs="1">
                                                         <Button
                                                             size="sm" color="warning"
+                                                            className="d-flex"
                                                             type="button"
                                                             onClick={this.handleCloseAccount}
                                                         >
@@ -564,6 +760,10 @@ class Client extends React.Component {
                                 </Card>
                             </Col>
                         </Container>
+                        <Row><p></p></Row>
+                        <Row><p></p></Row>
+                        <Row><p></p></Row>
+                        <Row><p></p></Row>
                         {/* SVG separator */}
                         <div className="separator separator-bottom separator-skew zindex-100">
                             <svg
@@ -1057,7 +1257,6 @@ class Client extends React.Component {
                                                         </Row>
                                                         <Row><p></p></Row>
                                                         <Row><p></p></Row>
-                                                        <Row><p></p></Row>
                                                     </Container>
                                                 </TabPane>
                                                 <TabPane tabId="tabs2">
@@ -1106,7 +1305,6 @@ class Client extends React.Component {
                                                                 </FormGroup>
                                                             </Col>
                                                         </Row>
-                                                        <Row><p></p></Row>
                                                         <Row><p></p></Row>
                                                         <Row><p></p></Row>
                                                     </Form>
@@ -1354,13 +1552,6 @@ class Client extends React.Component {
                                                         <Row><p></p></Row>
                                                         <Row><p></p></Row>
                                                         <Row><p></p></Row>
-                                                        <Row><p></p></Row>
-                                                        <Row><p></p></Row>
-                                                        <Row><p></p></Row>
-                                                        <Row><p></p></Row>
-                                                        <Row><p></p></Row>
-                                                        <Row><p></p></Row>
-                                                        <Row><p></p></Row>
 
                                                     </Container>
                                                 </TabPane>
@@ -1535,14 +1726,19 @@ class Client extends React.Component {
                                                             </Col>
                                                         </Row>
                                                         <Row><p></p></Row>
-                                                        <Row><p></p></Row>
-                                                        <Row><p></p></Row>
-                                                        <Row><p></p></Row>
                                                     </Container>
                                                 </TabPane>
                                             </TabContent>
                                         </CardBody>
                                     </Card>
+                                    <Row><p></p></Row>
+                                    <Row><p></p></Row>
+                                    <Row><p></p></Row>
+                                    <Row><p></p></Row>
+                                    <Row><p></p></Row>
+                                    <Row><p></p></Row>
+                                    <Row><p></p></Row>
+                                    <Row><p></p></Row>
                                 </section>
                             </Row>
                         </Container>
