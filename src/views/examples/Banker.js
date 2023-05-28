@@ -28,7 +28,7 @@ import {
 
 // core components
 import BankerNavBar from "components/Navbars/BankerNavBar.js";
-import CardsFooter from "components/Footers/CardsFooter.js";
+import SimpleFooter from "components/Footers/SimpleFooter.js";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
@@ -222,10 +222,10 @@ class Banker extends React.Component {
           </section>
           {/* Requests */}
           <section
-            className="section section-lg bg-seconadry pt-lg-0 "
+            className="section section-lg bg-default pt-lg-0 "
             ref={this.scollToRef2}
           >
-            <Card className="shadow shadow-lg--hover mt-5" color="primary">
+            <Card className="shadow shadow-lg--hover mt-5" color="default">
               <CardBody>
                 <div className="nav-wrapper">
                   <Nav
@@ -314,7 +314,7 @@ class Banker extends React.Component {
                                 block
                                 className="mb-3"
                                 size="sm"
-                                color="primary"
+                                color="default"
                                 type="button"
                                 onClick={() =>
                                   this.toggleModal("defaultModal1")
@@ -415,7 +415,7 @@ class Banker extends React.Component {
                                 block
                                 className="mb-3"
                                 size="sm"
-                                color="primary"
+                                color="default"
                                 type="button"
                                 onClick={() =>
                                   this.toggleModal("defaultModal2")
@@ -521,7 +521,7 @@ class Banker extends React.Component {
                                 block
                                 className="mb-3"
                                 size="sm"
-                                color="primary"
+                                color="default"
                                 type="button"
                                 onClick={() =>
                                   this.toggleModal("defaultModal3")
@@ -653,7 +653,7 @@ class Banker extends React.Component {
                                 block
                                 className="mb-3"
                                 size="sm"
-                                color="primary"
+                                color="default"
                                 type="button"
                                 onClick={() =>
                                   this.toggleModal("defaultModal4")
@@ -751,7 +751,7 @@ class Banker extends React.Component {
                                 block
                                 className="mb-3"
                                 size="sm"
-                                color="primary"
+                                color="default"
                                 type="button"
                                 onClick={() =>
                                   this.toggleModal("defaultModal5")
@@ -846,7 +846,7 @@ class Banker extends React.Component {
                                 block
                                 className="mb-3"
                                 size="sm"
-                                color="primary"
+                                color="default"
                                 type="button"
                                 onClick={() =>
                                   this.toggleModal("defaultModal6")
@@ -1464,7 +1464,7 @@ class Banker extends React.Component {
           </section>
           <Download />
         </main>
-        <CardsFooter />
+        <SimpleFooter />
       </>
     );
   }
