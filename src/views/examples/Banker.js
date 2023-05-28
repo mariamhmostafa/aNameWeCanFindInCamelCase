@@ -27,7 +27,7 @@ import {
 } from "reactstrap";
 
 // core components
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
+import BankerNavBar from "components/Navbars/BankerNavBar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 // index page sections
@@ -72,7 +72,7 @@ class Banker extends React.Component {
   render() {
     return (
       <>
-        <DemoNavbar />
+        <BankerNavBar />
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}

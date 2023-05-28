@@ -20,7 +20,7 @@ import {
 } from "reactstrap";
 
 // core components
-import HomeNavBar from "components/Navbars/HomeNavBar.js";
+import AdminNavBar from "components/Navbars/AdminNavBar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 
 // index page sections
@@ -35,7 +35,7 @@ class Landing extends React.Component {
   render() {
     return (
       <>
-        <HomeNavBar />
+        <AdminNavBar />
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">
