@@ -44,6 +44,7 @@ class Client extends React.Component {
         super(props);
         this.scollToRef1 = createRef();
         this.scollToRef2 = createRef();
+        this.scollToRef3 = createRef();
     }
 
 
@@ -55,11 +56,41 @@ class Client extends React.Component {
         defaultModal4: false,
         defaultModal5: false,
         value: "Report Type",
+        amount: '',
+        salary: '',
+        account: '',
+        reason: ''
+    };
+    getAccount = (e) => {
+        this.setState({ account: e.target.value });
+      }
+    
+      getSalary = (e) => {
+        this.setState({ salary: e.target.value });
+      }
+      getAmount = (e) => {
+        this.setState({ amount: e.target.value });
+      }
+    
+      getReason = (e) => {
+        this.setState({ reason: e.target.value });
+      }
+      handleLoanApplication = (e) => {
+        const amount = this.state.amount;
+        const reason = this.state.reason;
+        const account = this.state.account;
+        const salary = this.state.salary;
+        if (amount === '' || reason === ''|| account === ''|| salary === '') {
+          alert("Please enter the required information")
+        }else{
+            alert("Loan Application sent successfully")
+        }
+      }
+      payLoan = (e) => {
+        alert("Loan Installment Paid successfully!")
     };
 
-    onChange = e => {
-        this.setState({ value: e.target.value })
-    }
+    
 
     toggleModal = state => {
         this.setState({
@@ -299,6 +330,8 @@ class Client extends React.Component {
                                                 color="default"
                                                 size="lg"
                                                 type="button"
+                                                onClick={() => this.scollToRef3.current.scrollIntoView({ behavior: 'smooth' })}
+
                                             >
                                                 Loan
                                             </Button>
@@ -1810,6 +1843,338 @@ class Client extends React.Component {
             </Button> 
             </Row>
           </Form>
+          <section className="section pb-0 bg-gradient-success" ref={this.scollToRef3}>
+                        <Container >
+                            <Row className="row-grid align-items-center" >
+                                <div className="d-flex px-3" >
+                                    <div >
+                                        <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                                        <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div className="pl-4">
+                                        <h4 className="display-3 text-white">Loans</h4>
+                                        <p className="text-white">
+                                        A loan is a sum of money borrowed from a lender, such as a bank or financial institution, that must be repaid with interest over 
+                                        a set period of time. Loans can be used for a variety of purposes, such as purchasing a home or car,
+                                        starting a business, or paying for education expenses. The terms of a loan, including the amount borrowed,
+                                        interest rate, and repayment schedule, are typically outlined in a loan agreement between the borrower and lender. 
+                                        Failure to repay a loan can result in penalties, fees, and damage to the borrower's credit score.
+                                        </p>
+                                    </div>
+                                </div>
+                                <section>
+                                    <div className="nav-wrapper">
+                                        <Nav
+                                            className="nav-fill flex-column flex-md-row"
+                                            id="tabs-icons-text"
+                                            pills
+                                            role="tablist"
+                                        >
+                                            <NavItem>
+                                                <NavLink
+                                                    aria-selected={this.state.tabs === 1}
+                                                    className={classnames("mb-sm-3 mb-md-0", {
+                                                        active: this.state.tabs === 1
+                                                    })}
+                                                    onClick={e => this.toggleNavs(e, "tabs", 1)}
+                                                    href="#pablo"
+                                                    role="tab"
+                                                >
+                                                    <i className="fa fa-handshake-o"/>
+                                                    View Loans
+                                                </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink
+                                                    aria-selected={this.state.tabs === 2}
+                                                    className={classnames("mb-sm-3 mb-md-0", {
+                                                        active: this.state.tabs === 2
+                                                    })}
+                                                    onClick={e => this.toggleNavs(e, "tabs", 2)}
+                                                    href="#pablo"
+                                                    role="tab"
+                                                >
+                                                    <i className="fa fa-user mr-2" />
+                                                    Apply for a Loan
+                                                </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink
+                                                    aria-selected={this.state.tabs === 3}
+                                                    className={classnames("mb-sm-3 mb-md-0", {
+                                                        active: this.state.tabs === 3
+                                                    })}
+                                                    onClick={e => this.toggleNavs(e, "tabs", 3)}
+                                                    href="#pablo"
+                                                    role="tab"
+                                                >
+                                                    <i className="fa fa-eye mr-2" />
+                                                    View Loan requests
+                                                </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink
+                                                    aria-selected={this.state.tabs === 4}
+                                                    className={classnames("mb-sm-3 mb-md-0", {
+                                                        active: this.state.tabs === 4
+                                                    })}
+                                                    onClick={e => this.toggleNavs(e, "tabs", 4)}
+                                                    href="#pablo"
+                                                    role="tab"
+                                                >
+                                                    <i className="fa fa-money mr-2" />
+                                                    Pay Loan Installment
+                                                </NavLink>
+                                            </NavItem>
+                                        </Nav>
+                                    </div>
+                                    <Card className="shadow">
+                                        <CardBody>
+                                            <TabContent activeTab={"tabs" + this.state.tabs}>
+                                                <TabPane tabId="tabs1">
+                                                    <Container>
+                                                    <Row>
+                                                            <Col>
+                                                                <span>Account number</span>
+                                                            </Col>
+                                                            <Col xs="3">
+                                                                <span>Loan Type</span>
+                                                            </Col>
+                                                            <Col xs="3">
+                                                                <span>Total amount</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>Installment amount</span>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <p>
+                                                            </p>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                            <span>9479</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>Car Loan</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>500000</span>
+                                                            </Col>
+                                                            <Col>
+                                                            <span>3000</span>
+                                                            </Col>
+                                                        </Row>
+                                                        
+                                                    </Container>
+                                                </TabPane>
+                                                <TabPane tabId="tabs2">
+                                                    <Form>
+                                                        <Row>
+                                                            <Col md="4">
+                                                                <FormGroup>
+                                                                    account number:
+                                                                    <Input
+                                                                        id="account"
+                                                                        placeholder="account"
+                                                                        type="account"
+                                                                        onChange={this.getAccount}
+                                                                    />
+                                                                </FormGroup>
+                                                            </Col>
+                                                            <Col md="4">
+                                                                <FormGroup>
+                                                                    Your monthly salary:
+                                                                    <Input
+                                                                        id="salary"
+                                                                        placeholder="$XXXX.XX"
+                                                                        type="salary"
+                                                                        onChange={this.getSalary}
+                                                                    />
+                                                                </FormGroup>
+                                                            </Col>
+                                                            </Row>
+                                                            <Row>
+                                                            <Col md="4">
+                                                                <FormGroup>
+                                                                    Loan amount:
+                                                                    <Input
+                                                                        id="ammount"
+                                                                        placeholder="$XXXX.XX"
+                                                                        type="amount"
+                                                                        onChange={this.getAmount}
+                                                                    />
+                                                                </FormGroup>
+                                                            </Col>
+                                                            <Col md="4">
+                                                                <FormGroup>
+                                                                    Why do you need a loan?:
+                                                                    <Input
+                                                                        id="reason"
+                                                                        placeholder="reason"
+                                                                        type="reason"
+                                                                        onChange={this.getReason}
+                                                                    />
+                                                                </FormGroup>
+                                                            </Col>
+                                                            <Col>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                        Choose Loan Type
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
+                                                                            Personal loan
+                                                                        </DropdownItem>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
+                                                                            Car loan
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                           
+                                                            <Col md="6">
+                                                                <FormGroup>
+                                                                    <p>
+
+                                                                    </p>
+                                                                    <Button block color="primary" size="lg" type="button" onClick={this.handleLoanApplication}>
+                                                                        Apply Now!
+                                                                    </Button>
+                                                                </FormGroup>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                    </Form>
+                                                </TabPane>
+                                                <TabPane tabId="tabs3">
+                                                    <Container>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>Application Number</span>
+                                                            </Col>
+                                                            <Col >
+                                                                <span>Issue Date </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>Status </span>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <p>
+
+                                                            </p>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>874</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>10/11/2020 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span> Accepted</span>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>2593</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>19/07/2022 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span> Rejected</span>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>46239</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span> 23/05/2023</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span> Pending</span>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                    </Container>
+                                                </TabPane>
+                                                <TabPane tabId="tabs4">
+                                                    <Container>
+                                                        <Row>
+                                                            <Col xs="3">
+                                                                <span>Loan Type</span>
+                                                            </Col>
+                                                            <Col xs="3">
+                                                                <span>Total amount</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>Installment amount</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span></span>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <p>
+
+                                                            </p>
+                                                        </Row>
+                                                        <Row>
+                                                            <Col>
+                                                                <span>Car Loan</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>500000</span>
+                                                            </Col>
+                                                            <Col>
+                                                            <span>3000</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button block color="primary" size="sm" type="button" onClick={this.payLoan}>
+                                                                    Pay Installment!
+                                                                </Button>
+                                                            </Col>
+                                                        </Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                        <Row><p></p></Row>
+                                                    </Container>
+                                                </TabPane>
+                                            </TabContent>
+                                        </CardBody>
+                                    </Card>
+                                </section>
+                            </Row>
+                        </Container>
+                        {/* SVG separator */}
+                        <div className="separator separator-bottom separator-skew zindex-100">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                preserveAspectRatio="none"
+                                version="1.1"
+                                viewBox="0 0 2560 100"
+                                x="0"
+                                y="0"
+                            >
+                                <polygon
+                                    className="fill-white"
+                                    points="2560 0 2560 100 0 100"
+                                />
+                            </svg>
+                        </div>
+                    </section> 
+
+
+
                 </main>
                 <SimpleFooter />
             </>
