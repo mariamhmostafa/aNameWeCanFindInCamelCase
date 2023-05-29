@@ -28,7 +28,7 @@ import {
 
 // core components
 import BankerNavBar from "components/Navbars/BankerNavBar.js";
-import CardsFooter from "components/Footers/CardsFooter.js";
+import SimpleFooter from "components/Footers/SimpleFooter.js";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
@@ -55,6 +55,12 @@ class Banker extends React.Component {
     defaultModal7: false,
     defaultModal8: false,
     defaultModal9: false,
+    defaultModal10: false,
+    defaultModal11: false,
+    defaultModal13: false,
+    defaultModal14: false,
+    defaultModal15: false
+
   };
   toggleModal = (state) => {
     this.setState({
@@ -102,12 +108,16 @@ class Banker extends React.Component {
                         <Button
                           className="btn-icon mb-3 mb-sm-0"
                           color="default"
-                          onClick={() => alert("You're good enough! :)")}
+                          onClick={() =>
+                            this.scollToRef2.current.scrollIntoView({
+                              behavior: "smooth",
+                            })
+                          }
                         >
                           <span className="btn-inner--icon mr-1">
                             <i class="fa fa-smile-o" aria-hidden="true"></i>
                           </span>
-                          <span className="btn-inner--text">Cheerup msg?</span>
+                          <span className="btn-inner--text">View Requests</span>
                         </Button>
 
                         <Button
@@ -148,11 +158,80 @@ class Banker extends React.Component {
             </section>
             {/* 1st Hero Variation */}
           </div>
+          {/* Announcement */}
+          <section className="section section-lg pt-lg-0 mt--200">
+            <Container>
+              <Row className="justify-content-center">
+                <Col lg="12">
+                  <Row className="row-grid">
+                    <Col lg="12">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5">
+                          <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
+                            <i className="fa fa-bullhorn" />
+                          </div>
+                          <h6 className="text-warning text-uppercase">
+                            Important Announcement
+                          </h6>
+                          <p className="description mt-3">
+                            Dear Valued Customers,
+                          </p>
+                          <p className="description mt-3">
+                            We are excited to announce that Mahfaztak will be
+                            implementing a service upgrade to enhance your
+                            banking experience. This upgrade is scheduled to
+                            take place on 20/6/2023 and will involve
+                            improvements to our digital banking platform and
+                            additional features for your convenience.
+                          </p>
+                          <p className="description mt-3">
+                            During the upgrade, there will be a temporary
+                            interruption in some of our services. Online and
+                            mobile banking services may be temporarily
+                            unavailable on 20/6/2023 from 22:00 to 23:00. We
+                            apologize for any inconvenience this may cause and
+                            assure you that our team is working diligently to
+                            minimize the downtime and complete the upgrade as
+                            quickly as possible.
+                          </p>
+                          <p className="description mt-3">
+                            Once the upgrade is complete, you can look forward
+                            to a more seamless and user-friendly online banking
+                            experience. The enhanced platform will provide
+                            improved navigation, enhanced security measures, and
+                            additional functionalities designed to simplify your
+                            financial management.
+                          </p>
+                          <p className="description mt-3">
+                            Sincerely,
+                            <br></br>
+                            Mahfaztak.
+                          </p>
+                          <div>
+                            <Badge color="warning" pill className="mr-1">
+                              announcement
+                            </Badge>
+                            <Badge color="warning" pill className="mr-1">
+                              upgrade
+                            </Badge>
+                            <Badge color="warning" pill className="mr-1">
+                              launch
+                            </Badge>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          {/* Requests */}
           <section
-            className="section pb-0 bg-gradient-warning"
-            ref={this.scollToRef1}
+            className="section section-lg bg-default pt-lg-0 "
+            ref={this.scollToRef2}
           >
-            <Card className="shadow shadow-lg--hover mt-5">
+            <Card className="shadow shadow-lg--hover mt-5" color="default">
               <CardBody>
                 <div className="nav-wrapper">
                   <Nav
@@ -195,365 +274,368 @@ class Banker extends React.Component {
                   <CardBody>
                     <TabContent activeTab={"tabs" + this.state.tabs}>
                       <TabPane tabId="tabs1">
-                        <p className="description"></p>
                         <p className="description">
-                          <p className="description">
-                            <Row>
-                              <Col>
-                                <span>Client Name</span>
-                              </Col>
-                              <Col>
-                                <span>Loan Type</span>
-                              </Col>
+                          <Row>
+                            <Col>
+                              <span>
+                                <h5>Client Name</h5>
+                              </span>
+                            </Col>
+                            <Col>
+                              <span>
+                                <h5>Loan Type</h5>
+                              </span>
+                            </Col>
 
-                              <Col>
-                                <span>Loan Amount</span>
-                              </Col>
-                              <Col>
-                                <span>Date</span>
-                              </Col>
-                              <Col></Col>
-                            </Row>
-                            <Row>
-                              <Col>
-                                <span>Basboosa</span>
-                              </Col>
-                              <Col>
-                                <span>Personal</span>
-                              </Col>
+                            <Col>
+                              <span>
+                                <h5>Loan Amount</h5>
+                              </span>
+                            </Col>
+                            <Col>
+                              <span>
+                                <h5>Date</h5>
+                              </span>
+                            </Col>
+                            <Col></Col>
+                          </Row>
 
-                              <Col>
-                                <span>5000</span>
-                              </Col>
-                              <Col>
-                                <span>24/5/2023</span>
-                              </Col>
-                              <Col>
-                                {" "}
-                                <Button
-                                  block
-                                  className="mb-3"
-                                  size="sm"
-                                  color="primary"
-                                  type="button"
-                                  onClick={() =>
-                                    this.toggleModal("defaultModal1")
-                                  }
-                                >
-                                  <i
-                                    class="fa fa-address-card"
-                                    aria-hidden="true"
-                                  ></i>{" "}
-                                  View Details
-                                </Button>
-                                <Modal
-                                  className="modal-dialog-centered"
-                                  isOpen={this.state.defaultModal1}
-                                  toggle={() =>
-                                    this.toggleModal("defaultModal1")
-                                  }
-                                >
-                                  <div className="modal-header">
-                                    <h6
-                                      className="modal-title"
-                                      id="modal-title-default"
-                                    >
-                                      Basboosa el amoora
-                                    </h6>
-                                    <button
-                                      aria-label="Close"
-                                      className="close"
-                                      data-dismiss="modal"
-                                      type="button"
-                                      onClick={() =>
-                                        this.toggleModal("defaultModal1")
-                                      }
-                                    >
-                                      <span aria-hidden={true}>×</span>
-                                    </button>
-                                  </div>
-                                  <div className="modal-body">
-                                    {
-                                      <Container>
-                                        <span> Name: Basboosa Smith </span>{" "}
-                                        <br></br>
-                                        <span> Age: 35 </span>
-                                        <br></br>
-                                        <span>
-                                          Occupation: professional meow
-                                        </span>
-                                        <br></br>
-                                        <span>
-                                          {" "}
-                                          Monthly Income: $9000,000000
-                                        </span>
-                                        <br></br>
-                                        <span>Credit Score: 1000</span>
-                                        <br></br>
-                                        <span>
-                                          {" "}
-                                          Loan Amount Requested: $5000
-                                        </span>
-                                        <br></br>
-                                        <span>Loan Purpose: Meow products</span>
-                                        <br></br>
-                                        <span> Period: 4 months debts.</span>
-                                      </Container>
+                          <Row>
+                            <Col>
+                              <span>Basboosa</span>
+                            </Col>
+                            <Col>
+                              <span>Personal</span>
+                            </Col>
+
+                            <Col>
+                              <span>5000</span>
+                            </Col>
+                            <Col>
+                              <span>24/5/2023</span>
+                            </Col>
+                            <Col>
+                              {" "}
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="default"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal1")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                              <Modal
+                                className="modal-dialog-centered"
+                                isOpen={this.state.defaultModal1}
+                                toggle={() => this.toggleModal("defaultModal1")}
+                              >
+                                <div className="modal-header">
+                                  <h6
+                                    className="modal-title"
+                                    id="modal-title-default"
+                                  >
+                                    Basboosa el amoora
+                                  </h6>
+                                  <button
+                                    aria-label="Close"
+                                    className="close"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal1")
                                     }
-                                  </div>
-                                  <div className="modal-footer">
-                                    <Button
-                                      color="success"
-                                      type="button"
-                                      onClick={() => alert("Request Accepted")}
-                                    >
-                                      Accept Request
-                                    </Button>
-                                    <Button
-                                      className="ml-auto"
-                                      color="danger"
-                                      data-dismiss="modal"
-                                      type="button"
-                                      onClick={() =>
-                                        this.toggleModal("defaultModal1")
-                                      }
-                                    >
-                                      Reject
-                                    </Button>
-                                  </div>
-                                </Modal>
-                              </Col>
-                            </Row>
-                            <Row>
-                              <Col>
-                                <span>Mariouma</span>
-                              </Col>
-                              <Col>
-                                <span>Car</span>
-                              </Col>
-
-                              <Col>
-                                <span>800,000</span>
-                              </Col>
-                              <Col>
-                                <span>7/3/2022</span>
-                              </Col>
-                              <Col>
-                                <Button
-                                  block
-                                  className="mb-3"
-                                  size="sm"
-                                  color="primary"
-                                  type="button"
-                                  onClick={() =>
-                                    this.toggleModal("defaultModal2")
+                                  >
+                                    <span aria-hidden={true}>×</span>
+                                  </button>
+                                </div>
+                                <div className="modal-body">
+                                  {
+                                    <Container>
+                                      <span> Name: Basboosa Smith </span>{" "}
+                                      <br></br>
+                                      <span> Age: 35 </span>
+                                      <br></br>
+                                      <span>Occupation: professional meow</span>
+                                      <br></br>
+                                      <span> Monthly Income: $9000,000000</span>
+                                      <br></br>
+                                      <span> Account Number: 123456789</span>
+                                      <br></br>
+                                      <span>Credit Score: 1000</span>
+                                      <br></br>
+                                      <span> Loan Amount Requested: $5000</span>
+                                      <br></br>
+                                      <span>Loan Purpose: Meow products</span>
+                                      <br></br>
+                                      <span> Period: 4 months debts.</span>
+                                    </Container>
                                   }
-                                >
-                                  <i
-                                    class="fa fa-address-card"
-                                    aria-hidden="true"
-                                  ></i>{" "}
-                                  View Details
-                                </Button>
-                                <Modal
-                                  className="modal-dialog-centered"
-                                  isOpen={this.state.defaultModal2}
-                                  toggle={() =>
-                                    this.toggleModal("defaultModal2")
-                                  }
-                                >
-                                  <div className="modal-header">
-                                    <h6
-                                      className="modal-title"
-                                      id="modal-title-default"
-                                    >
-                                      Mariouma el amoora
-                                    </h6>
-                                    <button
-                                      aria-label="Close"
-                                      className="close"
-                                      data-dismiss="modal"
-                                      type="button"
-                                      onClick={() =>
-                                        this.toggleModal("defaultModal2")
-                                      }
-                                    >
-                                      <span aria-hidden={true}>×</span>
-                                    </button>
-                                  </div>
-                                  <div className="modal-body">
-                                    {
-                                      <Container>
-                                        <span> Name: Mrm Smith </span> <br></br>
-                                        <span> Age: 35 </span>
-                                        <br></br>
-                                        <span>Occupation: hkr</span>
-                                        <br></br>
-                                        <span> Monthly Income: $5,00</span>
-                                        <br></br>
-                                        <span>Credit Score: 20</span>
-                                        <br></br>
-                                        <span>
-                                          {" "}
-                                          Loan Amount Requested: $800,000
-                                        </span>
-                                        <br></br>
-                                        <span>
-                                          Loan Purpose: New car to leave ahmed's
-                                          car f 7alha
-                                        </span>
-                                        <br></br>
-                                        <span> Period: 24 months debts.</span>
-                                      </Container>
+                                </div>
+                                <div className="modal-footer">
+                                  <Button
+                                    color="success"
+                                    type="button"
+                                    onClick={() => alert("Request Accepted")}
+                                  >
+                                    Accept Request
+                                  </Button>
+                                  <Button
+                                    className="ml-auto"
+                                    color="danger"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal1")
                                     }
-                                  </div>
-                                  <div className="modal-footer">
-                                    <Button
-                                      color="success"
-                                      type="button"
-                                      onClick={() => alert("Request Accepted")}
-                                    >
-                                      Accept Request
-                                    </Button>
-                                    <Button
-                                      className="ml-auto"
-                                      color="danger"
-                                      data-dismiss="modal"
-                                      type="button"
-                                      onClick={() =>
-                                        this.toggleModal("defaultModal2")
-                                      }
-                                    >
-                                      Reject
-                                    </Button>
-                                  </div>
-                                </Modal>
-                              </Col>
-                            </Row>
-                            <Row>
-                              <Col>
-                                <span>Majid elmohandes</span>
-                              </Col>
-                              <Col>
-                                <span>Personal</span>
-                              </Col>
+                                  >
+                                    Reject
+                                  </Button>
+                                </div>
+                              </Modal>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col>
+                              <span>Mariouma</span>
+                            </Col>
+                            <Col>
+                              <span>Car</span>
+                            </Col>
 
-                              <Col>
-                                <span>50</span>
-                              </Col>
-                              <Col>
-                                <span>21/3/2002</span>
-                              </Col>
-                              <Col>
-                                <Button
-                                  block
-                                  className="mb-3"
-                                  size="sm"
-                                  color="primary"
-                                  type="button"
-                                  onClick={() =>
-                                    this.toggleModal("defaultModal3")
-                                  }
-                                >
-                                  <i
-                                    class="fa fa-address-card"
-                                    aria-hidden="true"
-                                  ></i>{" "}
-                                  View Details
-                                </Button>
-                                <Modal
-                                  className="modal-dialog-centered"
-                                  isOpen={this.state.defaultModal3}
-                                  toggle={() =>
-                                    this.toggleModal("defaultModal3")
-                                  }
-                                >
-                                  <div className="modal-header">
-                                    <h6
-                                      className="modal-title"
-                                      id="modal-title-default"
-                                    >
-                                      Majooda
-                                    </h6>
-                                    <button
-                                      aria-label="Close"
-                                      className="close"
-                                      data-dismiss="modal"
-                                      type="button"
-                                      onClick={() =>
-                                        this.toggleModal("defaultModal3")
-                                      }
-                                    >
-                                      <span aria-hidden={true}>×</span>
-                                    </button>
-                                  </div>
-                                  <div className="modal-body">
-                                    {
-                                      <Container>
-                                        <span> Name: Majid Smith </span>{" "}
-                                        <br></br>
-                                        <span> Age: 35 </span>
-                                        <br></br>
-                                        <span>
-                                          Occupation: Software Engineer
-                                        </span>
-                                        <br></br>
-                                        <span> Monthly Income: $5,000</span>
-                                        <br></br>
-                                        <span>Credit Score: 20</span>
-                                        <br></br>
-                                        <span> Loan Amount Requested: $50</span>
-                                        <br></br>
-                                        <span>
-                                          Loan Purpose: Debt consolidation
-                                          Repayment
-                                        </span>
-                                        <br></br>
-                                        <span> Period: 24 months debts.</span>
-                                      </Container>
+                            <Col>
+                              <span>800,000</span>
+                            </Col>
+                            <Col>
+                              <span>7/3/2022</span>
+                            </Col>
+                            <Col>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="default"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal2")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                              <Modal
+                                className="modal-dialog-centered"
+                                isOpen={this.state.defaultModal2}
+                                toggle={() => this.toggleModal("defaultModal2")}
+                              >
+                                <div className="modal-header">
+                                  <h6
+                                    className="modal-title"
+                                    id="modal-title-default"
+                                  >
+                                    Mariouma el amoora
+                                  </h6>
+                                  <button
+                                    aria-label="Close"
+                                    className="close"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal2")
                                     }
-                                  </div>
-                                  <div className="modal-footer">
-                                    <Button
-                                      color="success"
-                                      type="button"
-                                      onClick={() => alert("Request Accepted")}
-                                    >
-                                      Accept Request
-                                    </Button>
-                                    <Button
-                                      className="ml-auto"
-                                      color="danger"
-                                      data-dismiss="modal"
-                                      type="button"
-                                      onClick={() =>
-                                        this.toggleModal("defaultModal3")
-                                      }
-                                    >
-                                      Reject
-                                    </Button>
-                                  </div>
-                                </Modal>
-                              </Col>
-                            </Row>
-                          </p>
+                                  >
+                                    <span aria-hidden={true}>×</span>
+                                  </button>
+                                </div>
+                                <div className="modal-body">
+                                  {
+                                    <Container>
+                                      <span> Name: Mrm Smith </span> <br></br>
+                                      <span> Age: 35 </span>
+                                      <br></br>
+                                      <span>Occupation: hkr</span>
+                                      <br></br>
+                                      <span> Monthly Income: $5,00</span>
+                                      <br></br>
+                                      <span> Account Number: 26376276</span>
+                                      <br></br>
+                                      <span>Credit Score: 20</span>
+                                      <br></br>
+                                      <span>
+                                        {" "}
+                                        Loan Amount Requested: $800,000
+                                      </span>
+                                      <br></br>
+                                      <span>
+                                        Loan Purpose: New car to leave ahmed's
+                                        car f 7alha
+                                      </span>
+                                      <br></br>
+                                      <span> Period: 24 months debts.</span>
+                                    </Container>
+                                  }
+                                </div>
+                                <div className="modal-footer">
+                                  <Button
+                                    color="success"
+                                    type="button"
+                                    onClick={() => alert("Request Accepted")}
+                                  >
+                                    Accept Request
+                                  </Button>
+                                  <Button
+                                    className="ml-auto"
+                                    color="danger"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal2")
+                                    }
+                                  >
+                                    Reject
+                                  </Button>
+                                </div>
+                              </Modal>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col>
+                              <span>Majid elmohandes</span>
+                            </Col>
+                            <Col>
+                              <span>Personal</span>
+                            </Col>
+
+                            <Col>
+                              <span>50</span>
+                            </Col>
+                            <Col>
+                              <span>21/3/2002</span>
+                            </Col>
+                            <Col>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="default"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal3")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                              <Modal
+                                className="modal-dialog-centered"
+                                isOpen={this.state.defaultModal3}
+                                toggle={() => this.toggleModal("defaultModal3")}
+                              >
+                                <div className="modal-header">
+                                  <h6
+                                    className="modal-title"
+                                    id="modal-title-default"
+                                  >
+                                    Majooda
+                                  </h6>
+                                  <button
+                                    aria-label="Close"
+                                    className="close"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal3")
+                                    }
+                                  >
+                                    <span aria-hidden={true}>×</span>
+                                  </button>
+                                </div>
+                                <div className="modal-body">
+                                  {
+                                    <Container>
+                                      <span> Name: Majid Smith </span> <br></br>
+                                      <span> Age: 35 </span>
+                                      <br></br>
+                                      <span>Occupation: Software Engineer</span>
+                                      <br></br>
+                                      <span> Monthly Income: $5,000</span>
+                                      <br></br>
+                                      <span> Account Number: 34675764</span>
+                                      <br></br>
+                                      <span>Credit Score: 20</span>
+                                      <br></br>
+                                      <span> Loan Amount Requested: $50</span>
+                                      <br></br>
+                                      <span>
+                                        Loan Purpose: Debt consolidation
+                                        Repayment
+                                      </span>
+                                      <br></br>
+                                      <span> Period: 24 months debts.</span>
+                                    </Container>
+                                  }
+                                </div>
+                                <div className="modal-footer">
+                                  <Button
+                                    color="success"
+                                    type="button"
+                                    onClick={() => alert("Request Accepted")}
+                                  >
+                                    Accept Request
+                                  </Button>
+                                  <Button
+                                    className="ml-auto"
+                                    color="danger"
+                                    data-dismiss="modal"
+                                    type="button"
+                                    onClick={() =>
+                                      this.toggleModal("defaultModal3")
+                                    }
+                                  >
+                                    Reject
+                                  </Button>
+                                </div>
+                              </Modal>
+                            </Col>
+                          </Row>
                         </p>
                       </TabPane>
                       <TabPane tabId="tabs2">
                         <p className="description">
                           <Row>
                             <Col>
-                              <span>Client Name</span>
+                              <span>
+                                <h5>Client Name</h5>{" "}
+                              </span>
                             </Col>
                             <Col>
-                              <span>Client Id</span>
+                              <span>
+                                <h5>Client ID</h5>{" "}
+                              </span>
                             </Col>
 
                             <Col>
-                              <span>Card Type</span>
+                              <span>
+                                <h5>Card Type</h5>{" "}
+                              </span>
                             </Col>
                             <Col>
-                              <span>Salary</span>
+                              <span>
+                                <h5>Salary</h5>{" "}
+                              </span>
                             </Col>
                             <Col></Col>
                           </Row>
@@ -577,7 +659,7 @@ class Banker extends React.Component {
                                 block
                                 className="mb-3"
                                 size="sm"
-                                color="primary"
+                                color="default"
                                 type="button"
                                 onClick={() =>
                                   this.toggleModal("defaultModal4")
@@ -675,7 +757,7 @@ class Banker extends React.Component {
                                 block
                                 className="mb-3"
                                 size="sm"
-                                color="primary"
+                                color="default"
                                 type="button"
                                 onClick={() =>
                                   this.toggleModal("defaultModal5")
@@ -770,7 +852,7 @@ class Banker extends React.Component {
                                 block
                                 className="mb-3"
                                 size="sm"
-                                color="primary"
+                                color="default"
                                 type="button"
                                 onClick={() =>
                                   this.toggleModal("defaultModal6")
@@ -853,7 +935,6 @@ class Banker extends React.Component {
               </CardBody>
             </Card>
           </section>
-          <section className="section pb-0 bg-gradient-warning"></section>
           <section className="section bg-secondary">
             <Container>
               <Row className="row-grid align-items-center">
@@ -897,7 +978,7 @@ class Banker extends React.Component {
                     <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>
-                    <h3>Our customers</h3>
+                    <h3>Clients</h3>
                     <p className="lead">
                       Don't let your uses guess by attaching tooltips and
                       popoves to any element. Just make sure you enable them
@@ -908,11 +989,7 @@ class Banker extends React.Component {
                       started faster. You can change the text and images and
                       you're good to go.
                     </p>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
+                    
                     <a
                       className="font-weight-bold text-warning mt-5"
                       href="#pablo"
@@ -1240,223 +1317,7 @@ class Banker extends React.Component {
               </svg>
             </div>
           </section>
-          <section className="section section-lg">
-            <Container>
-              <Row className="justify-content-center text-center mb-lg">
-                <Col lg="8">
-                  <h2 className="display-3">The amazing Team</h2>
-                  <p className="lead text-muted">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record maximum.
-                  </p>
-                </Col>
-              </Row>
-              <Row>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-1-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Ryan Tompson</span>
-                        <small className="h6 text-muted">Web Developer</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="warning"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="warning"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="warning"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-2-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Romina Hadid</span>
-                        <small className="h6 text-muted">
-                          Marketing Strategist
-                        </small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="primary"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="primary"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="primary"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-3-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Alexander Smith</span>
-                        <small className="h6 text-muted">UI/UX Designer</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="info"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="info"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="info"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-4-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">John Doe</span>
-                        <small className="h6 text-muted">Founder and CEO</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="success"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="success"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="success"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-          <section className="section section-lg pt-0">
-            <Container>
-              <Card className="bg-gradient-warning shadow-lg border-0">
-                <div className="p-5">
-                  <Row className="align-items-center">
-                    <Col lg="8">
-                      <h3 className="text-white">
-                        We made website building easier for you.
-                      </h3>
-                      <p className="lead text-white mt-3">
-                        I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture.
-                      </p>
-                    </Col>
-                    <Col className="ml-lg-auto" lg="3">
-                      <Button
-                        block
-                        className="btn-white"
-                        color="default"
-                        href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
-                        size="lg"
-                      >
-                        Download React
-                      </Button>
-                    </Col>
-                  </Row>
-                </div>
-              </Card>
-            </Container>
-          </section>
+
           <section className="section section-lg bg-gradient-default">
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
@@ -1603,9 +1464,464 @@ class Banker extends React.Component {
               </Row>
             </Container>
           </section>
+
+          <section
+            className="section pb-0 bg-gradient-warning"
+            ref={this.scollToRef1}
+          >
+            <Container>
+              <div className="d-flex px-3">
+                <div>
+                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                    <i class="fa fa-file-o" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div className="pl-4">
+                  <h4 className="display-3 text-white">Clients</h4>
+                  <p className="text-white">
+                    You can find details of all the customers here.
+                  </p>
+                </div>
+              </div>
+
+              <Card className="shadow shadow-lg--hover mt-5">
+                <CardBody>
+                  <Container>
+                    <div className="d-flex px-3"></div>
+                    <div className="px-4">
+                      <img
+                        alt="..."
+                        className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                        src={require("assets/img/brand/CreditCard.jpeg")}
+                        style={{ width: "200px" }}
+                      />
+                    </div>
+
+                    <div class="panel panel-success">
+                      <div class="panel-heading">Clients</div>
+
+                      <table class="table">
+                        <tr>
+                          <th>Name</th>
+                          <th>Namtional ID</th>
+                          <th>Date of Birth</th>
+                          <th>More Details</th>
+                        </tr>
+                        <tr>
+                          <td>Basboosa</td>
+                          <td>7709795757</td>
+                          <td>23/2/1998</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal10")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal10}
+                              toggle={() => this.toggleModal("defaultModal10")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Basboosa Smith
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal10")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account Numbers: 9479, 4872  </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard Numbers: 99999999999, 100100100100, 123456789  </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 1{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                             
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Meghan</td>
+                          <td>5500795757</td>
+                          <td>21/3/2002</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal13")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal13}
+                              toggle={() => this.toggleModal("defaultModal13")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Meghan Micheal
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal13")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account Numbers: 1111, 1223, 9990  </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard Numbers: 52778, 88980  </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 0{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                             
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Mariouma</td>
+                          <td>5500000757</td>
+                          <td>21/12/2002</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal14")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal14}
+                              toggle={() => this.toggleModal("defaultModal14")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Mariouma Marmora
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal14")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account Numbers: 5656  </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard Numbers:   </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 1{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                             
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                          <td>Hamada</td>
+                          <td>7875693568</td>
+                          <td>19/5/2077</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal11")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal11}
+                              toggle={() => this.toggleModal("defaultModal11")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Hamada Levi
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal11")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account numbers: 8988, 7777 </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard numbers: 5256777</span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 0{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Helal</td>
+                          <td>89909898780</td>
+                          <td>16/10/2002</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal12")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal12}
+                              toggle={() => this.toggleModal("defaultModal12")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Helal Shams
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal12")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account Numbers: 9003, 2123 </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard Numbers: 999998 </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 0{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Majid</td>
+                          <td>89909898080</td>
+                          <td>17/10/2002</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal15")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal15}
+                              toggle={() => this.toggleModal("defaultModal15")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Majid Elmohandes
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal15")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account Numbers: 7774 </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard Numbers: 8980011 </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 1{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                            </Modal>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </Container>
+                </CardBody>
+              </Card>
+            </Container>
+            {/* SVG separator */}
+            <div className="separator separator-bottom separator-skew zindex-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+                version="1.1"
+                viewBox="0 0 2560 100"
+                x="0"
+                y="0"
+              >
+                <polygon
+                  className="fill-white"
+                  points="2560 0 2560 100 0 100"
+                />
+              </svg>
+            </div>
+          </section>
+
           <Download />
         </main>
-        <CardsFooter />
+        <SimpleFooter />
       </>
     );
   }

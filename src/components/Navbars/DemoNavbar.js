@@ -19,7 +19,7 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  UncontrolledTooltip,
 } from "reactstrap";
 
 class DemoNavbar extends React.Component {
@@ -30,18 +30,18 @@ class DemoNavbar extends React.Component {
   }
   state = {
     collapseClasses: "",
-    collapseOpen: false
+    collapseOpen: false,
   };
 
   onExiting = () => {
     this.setState({
-      collapseClasses: "collapsing-out"
+      collapseClasses: "collapsing-out",
     });
   };
 
   onExited = () => {
     this.setState({
-      collapseClasses: ""
+      collapseClasses: "",
     });
   };
 
@@ -90,59 +90,88 @@ class DemoNavbar extends React.Component {
                   </Row>
                 </div>
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar>
-                  <Media
-                    className="d-flex align-items-center"
-                    href="/service-page"
-                    target="_blank"
-                  >
-                    <Media body className="ml-3">
-                      <span className="nav-link-inner--text"
-                      style = {{color: "white"}}
-                      >Our Services</span>
-                    </Media>
-                  </Media>
-                  <Media
-                    className="d-flex align-items-center"
-                    href="/aboutus-page"
-                    target="_blank"
-                  >
-                    <Media body className="ml-3">
-                      <span className="nav-link-inner--text"
-                      style = {{color: "white"}}
-                      >About Us</span>
-                    </Media>
-                  </Media>
-                </Nav>
-                <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle nav>
+                      <i className="ni ni-ui-04 d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">Components</span>
+                    </DropdownToggle>
+                    <DropdownMenu className="dropdown-menu-xl">
+                      <div className="dropdown-menu-inner">
+                        <Media
+                          className="d-flex align-items-center"
+                          href="/service-page"
+                          target="_blank"
+                        >
+                          <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                            <i className="ni ni-spaceship" />
+                          </div>
+                          <Media body className="ml-3">
+                            <h6 className="heading text-primary mb-md-1">
+                              Our Services
+                            </h6>
+                            <p className="description d-none d-md-inline-block mb-0">
+                              Learn more about our services.
+                            </p>
+                          </Media>
+                        </Media>
+                        <Media
+                          className="d-flex align-items-center"
+                          href="/aboutus-page"
+                          target="_blank"
+                        >
+                          <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
+                            <i className="ni ni-palette" />
+                          </div>
+                          <Media body className="ml-3">
+                            <h6 className="heading text-primary mb-md-1">
+                              About Us
+                            </h6>
+                            <p className="description d-none d-md-inline-block mb-0">
+                              Learn more about the amazing team.
+                            </p>
+                          </Media>
+                        </Media>
+                        <Media
+                          className="d-flex align-items-center"
+                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alert?ref=adsr-navbar"
+                          target="_blank"
+                        >
+                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                            <i className="ni ni-ui-04" />
+                          </div>
+                          <Media body className="ml-3">
+                            <h5 className="heading text-warning mb-md-1">
+                              Components
+                            </h5>
+                            <p className="description d-none d-md-inline-block mb-0">
+                              Browse our 50 beautiful handcrafted components
+                              offered in the Free version.
+                            </p>
+                          </Media>
+                        </Media>
+                      </div>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Notifications</span>
+                      <span className="nav-link-inner--text">Examples</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem >
-                        <i className="fa fa-exclamation" />
-                        Reminder: Electricity Bill is due next Thursday.
+                      <DropdownItem to="/landing-page" tag={Link}>
+                        Landing
                       </DropdownItem>
-                      <DropdownItem >
-                        <i className="fa fa-check" />
-                        Issue Resolution: Website is now faster than ever.
+                      <DropdownItem to="/profile-page" tag={Link}>
+                        Profile
                       </DropdownItem>
-                      <DropdownItem >
-                        <i className="fa fa-exclamation" />
-                        Reminder: Loan payment is due next Sunday.
+                      <DropdownItem to="/login-page" tag={Link}>
+                        Login
                       </DropdownItem>
-                      <DropdownItem >
-                        <i className="fa fa-exclamation" />
-                        Reminder: Credit Card Bill is due on 27/6/2023.
-                      </DropdownItem>
-                      <DropdownItem >
-                        <i className="fa fa-check" />
-                        Issue Resolution: You can now pay securely online.
+                      <DropdownItem to="/register-page" tag={Link}>
+                        Register
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-
                 </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <NavItem>
@@ -170,10 +199,32 @@ class DemoNavbar extends React.Component {
                       <span className="btn-inner--icon">
                         <i className="fa fa-sign-out  mr-2" />
                       </span>
-                      <span className="nav-link-inner--text ml-1">
-                        Log out
-                      </span>
+                      <span className="nav-link-inner--text ml-1">Log out</span>
                     </Button>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      className="nav-link-icon"
+                      onClick={() => window.history.back()}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <i className="fa fa-arrow-left" />
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        Back
+                      </span>
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      className="nav-link-icon"
+                      onClick={() => window.history.forward()}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <i className="fa fa-arrow-right" />
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        Forward
+                      </span>
+                    </NavLink>
                   </NavItem>
                 </Nav>
               </UncontrolledCollapse>

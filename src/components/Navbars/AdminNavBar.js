@@ -149,19 +149,29 @@ class DemoNavbar extends React.Component {
                       <span className="nav-link-inner--text ml-1">Log out</span>
                     </Button>
                   </NavItem>
-                  <NavItem className="d-none d-lg-block ml-lg-4">
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
-                      href="/announce-page"
+                  <NavItem>
+                    <NavLink
+                      className="nav-link-icon"
+                      onClick={() => window.history.back()}
+                      style={{ cursor: "pointer" }}
                     >
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-fat-add " />
+                      <i className="fa fa-arrow-left" />
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        Back
                       </span>
-                      <span className="nav-link-inner--text ml-1">
-                        Make an Announcement
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      className="nav-link-icon"
+                      onClick={() => window.history.forward()}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <i className="fa fa-arrow-right" />
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        Forward
                       </span>
-                    </Button>
+                    </NavLink>
                   </NavItem>
                 </Nav>
               </UncontrolledCollapse>
