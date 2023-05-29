@@ -1,1 +1,1 @@
-An online bank system
+An online banking system
