@@ -22,6 +22,21 @@ class Profile extends React.Component {
     this.refs.main.scrollTop = 0;
     document.title = "Mahfaztak";
   }
+  state = {
+    text: "",
+  };
+
+  getText = (e) => {
+    this.setState({ text: e.target.value });
+  };
+  handleSignIn = (e) => {
+    if (this.state.text === "") {
+      alert("Please enter text");
+    } else {
+      alert("Your announcement has been sent successfully");
+    }
+  };
+
   render() {
     return (
       <>
@@ -72,6 +87,7 @@ class Profile extends React.Component {
                     <Col md="6">
                       <FormGroup>
                         <Input
+                          onChange={this.getText}
                           id="exampleFormControlInput1"
                           placeholder="                                  Please describe your announcement here"
                         ></Input>
@@ -82,9 +98,7 @@ class Profile extends React.Component {
                     <Button
                       className="btn-icon mb-3 mb-sm-0"
                       color="info"
-                      onClick={(e) =>
-                        alert("Your announcement has been sent successfully")
-                      }
+                      onClick={this.handleSignIn}
                     >
                       <span className="btn-inner--text">Announce</span>
                     </Button>
