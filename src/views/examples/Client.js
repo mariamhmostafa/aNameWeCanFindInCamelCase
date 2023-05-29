@@ -367,7 +367,7 @@ class Client extends React.Component {
                                             >
                                                 Loan
                                             </Button>
-                                
+                                            
                                         </Container>
                                     </div>
                                 </Col>
@@ -1453,6 +1453,7 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <span>1900.00 </span>
                                                             </Col>
+                                                            
                                                             <Col>
                                                                 <UncontrolledDropdown>
                                                                     <DropdownToggle caret color="secondary" placeholder="Choose">
@@ -1477,15 +1478,16 @@ class Client extends React.Component {
                                                                         Pay Now
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
-                                                                        <DropdownItem onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={this.handlePay}>
                                                                             Partially
                                                                         </DropdownItem>
-                                                                        <DropdownItem onClick={e => e.preventDefault()}>
+                                                                        <DropdownItem onClick={this.handlePay}>
                                                                             Fully
                                                                         </DropdownItem>
                                                                     </DropdownMenu>
                                                                 </UncontrolledDropdown>
                                                             </Col>
+                                                            
                                                         </Row>
                                                         <Row>
                                                             <Col>
@@ -2196,6 +2198,10 @@ class Client extends React.Component {
                                 />
                             </svg>
                         </div>
+                        <Row><p></p></Row>
+                        <Row><p></p></Row>
+                        <Row><p></p></Row>
+                        <Row><p></p></Row>
                     </section> 
 
 
