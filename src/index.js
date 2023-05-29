@@ -78,7 +78,8 @@ root.render(
         path="/announce-page"
         exact
         render={(props) => <Announce {...props} />}
-      />      <Route
+      />
+      <Route
         path="/visually-impaired-page"
         exact
         render={(props) => <VisuallyImpaired {...props} />}
