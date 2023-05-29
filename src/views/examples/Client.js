@@ -65,6 +65,15 @@ class Client extends React.Component {
         amountTransfered: '',
         receiver: '',
         sender: '',
+        name: '',
+        address: '',
+        phoneNum: '',
+        nationalID: '',
+        message:'',
+        creditCardNum:'',
+        email:'',
+        cardName: '',
+        cardSalary:''
     };
 
     setReminder = (e) => {
@@ -94,6 +103,33 @@ class Client extends React.Component {
     getReason = (e) => {
         this.setState({ reason: e.target.value });
     }
+    getName = (e) => {
+        this.setState({ name: e.target.value });
+    }
+    getAddress = (e) => {
+        this.setState({ address: e.target.value });
+    }
+    getPhoneNum = (e) => {
+        this.setState({ phoneNum: e.target.value });
+    }
+    getNationalID = (e) => {
+        this.setState({ nationalID: e.target.value });
+    }
+    getCreditCardNumber = (e) => {
+        this.setState({ creditCardNum: e.target.value });
+    }
+    getMessage = (e) => {
+        this.setState({ message: e.target.value });
+    }
+    getEmail = (e) => {
+        this.setState({ email: e.target.value });
+    }
+    getCardName = (e) => {
+        this.setState({ cardName: e.target.value });
+    }
+    getCardSalary = (e) => {
+        this.setState({ cardSalary: e.target.value });
+    }
     handleLoanApplication = (e) => {
         const amount = this.state.amount;
         const reason = this.state.reason;
@@ -108,8 +144,16 @@ class Client extends React.Component {
     payLoan = (e) => {
         alert("Loan Installment Paid successfully!")
     };
-
-
+    applyForCard= (e) => {
+        const email = this.state.email;
+        const cardName = this.state.cardName;
+        const cardSalary = this.state.cardSalary;
+        if (email === '' || cardName === '' || cardSalary === '') {
+            alert("Please enter the required information")
+        } else {
+            alert("CreditCard application sent!")
+        }
+    };
 
     toggleModal = state => {
         this.setState({
@@ -151,7 +195,25 @@ class Client extends React.Component {
     }
 
     handleOpenAccount = (e) => {
-        alert("Account application sent")
+        const name = this.state.name;
+        const dateOfBirth = this.state.dateOfBirth;
+        const address = this.state.address;
+        const phoneNum = this.state.phoneNum;
+        const nationalID = this.state.nationalID;
+        if (name === ''  || address === '' || phoneNum === ''|| nationalID === '') {
+            alert("Please enter the required information")
+        } else {
+            alert("Account Application sent ")
+        }
+    }
+    handleReport = (e) => {
+        const creditCardNum = this.state.creditCardNum;
+        const message= this.state.message;
+        if (creditCardNum === ''   || message === '') {
+            alert("Please enter the required information")
+        } else {
+            alert("Report sent!")
+        }
     }
 
     componentDidMount() {
@@ -720,6 +782,7 @@ class Client extends React.Component {
                                                                         id="exampleFormControlInput1"
                                                                         placeholder="Name"
                                                                         type="email"
+                                                                        onChange={this.getName}
                                                                     />
                                                                 </FormGroup>
                                                             </Row>
@@ -776,6 +839,7 @@ class Client extends React.Component {
                                                                         id="exampleFormControlInput1"
                                                                         placeholder="Address"
                                                                         type="email"
+                                                                        onChange={this.getAddress}
                                                                     />
                                                                 </FormGroup>
                                                             </Row>
@@ -785,6 +849,7 @@ class Client extends React.Component {
                                                                         id="exampleFormControlInput1"
                                                                         placeholder="Phone Number"
                                                                         type="email"
+                                                                        onChange={this.getPhoneNum}
                                                                     />
                                                                 </FormGroup>
                                                             </Row>
@@ -794,6 +859,7 @@ class Client extends React.Component {
                                                                         id="exampleFormControlInput1"
                                                                         placeholder="National ID"
                                                                         type="email"
+                                                                        onChange={this.getNationalID}
                                                                     />
                                                                 </FormGroup>
                                                             </Row>
@@ -1346,6 +1412,7 @@ class Client extends React.Component {
                                                                         id="exampleFormControlInput1"
                                                                         placeholder="name@example.com"
                                                                         type="email"
+                                                                        onChange={this.getEmail}
                                                                     />
                                                                 </FormGroup>
                                                             </Col>
@@ -1355,7 +1422,8 @@ class Client extends React.Component {
                                                                     <Input
                                                                         id="exampleFormControlInput1"
                                                                         placeholder="$XXXX.XX"
-                                                                        type="email"
+                                                                        type="text"
+                                                                        onChange={this.getCardSalary}
                                                                     />
                                                                 </FormGroup>
                                                             </Col>
@@ -1367,7 +1435,8 @@ class Client extends React.Component {
                                                                     <Input
                                                                         id="exampleFormControlInput1"
                                                                         placeholder="enter your name"
-                                                                        type="email"
+                                                                        type="text"
+                                                                        onChange={this.getCardName}
                                                                     />
                                                                 </FormGroup>
                                                             </Col>
@@ -1376,8 +1445,9 @@ class Client extends React.Component {
                                                                     <p>
 
                                                                     </p>
-                                                                    <Button block color="primary" size="lg" type="button">
+                                                                    <Button block color="primary" size="lg" type="button"  onClick={this.applyForCard}>
                                                                         Apply Now!
+                                                                    
                                                                     </Button>
                                                                 </FormGroup>
                                                             </Col>
@@ -1997,6 +2067,7 @@ class Client extends React.Component {
                                                                             onBlur={(e) =>
                                                                                 this.setState({ nameFocused: false })
                                                                             }
+                                                                            onChange={this.getCreditCardNumber}
                                                                         />
                                                                     </InputGroup>
                                                                 </FormGroup>
@@ -2023,6 +2094,7 @@ class Client extends React.Component {
                                                                         placeholder="Type a message..."
                                                                         rows="4"
                                                                         type="textarea"
+                                                                        onChange={this.getMessage}
                                                                     />
                                                                 </FormGroup>
                                                                 <div>
@@ -2032,6 +2104,7 @@ class Client extends React.Component {
                                                                         color="primary"
                                                                         size="lg"
                                                                         type="button"
+                                                                        onClick={this.handleReport}
                                                                     >
                                                                         Send Report
                                                                     </Button>

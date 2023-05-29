@@ -168,61 +168,6 @@ class Login extends React.Component {
                       >
                         <small>Forgot password?</small>
                       </a>
-                      <Modal
-                        className="modal-dialog-centered"
-                        isOpen={this.state.exampleModal}
-                        toggle={() => this.toggleModal("exampleModal")}
-                      >
-                        <div className="modal-header">
-                          <h5 className="modal-title" id="exampleModalLabel">
-                            Please Enter Your Email
-                          </h5>
-                          <button
-                            aria-label="Close"
-                            className="close"
-                            data-dismiss="modal"
-                            type="button"
-                            onClick={() => this.toggleModal("exampleModal")}
-                          >
-                            <span aria-hidden={true}>×</span>
-                          </button>
-                        </div>
-                        <div className="modal-body">
-                          {" "}
-                          <InputGroup className="input-group-alternative">
-                            <InputGroupAddon addonType="prepend">
-                              <InputGroupText>
-                                <i className="ni ni-email-83" />
-                              </InputGroupText>
-                            </InputGroupAddon>
-                            <Input
-                              id="Password"
-                              placeholder="Email"
-                              type="Password"
-                              name="Password"
-                            />
-                          </InputGroup>
-                        </div>
-                        <div className="modal-footer">
-                          <Button
-                            color="secondary"
-                            data-dismiss="modal"
-                            type="button"
-                            onClick={() => this.toggleModal("exampleModal")}
-                          >
-                            Close
-                          </Button>
-                          <Button
-                            color="primary"
-                            type="button"
-                            onClick={() =>
-                              alert("Reset link sent !!!")
-                            }
-                          >
-                            Reset Password
-                          </Button>
-                        </div>
-                      </Modal>
                     </Col>
                     <Col className="text-right" xs="6">
                       <a

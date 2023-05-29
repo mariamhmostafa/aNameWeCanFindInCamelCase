@@ -154,7 +154,13 @@ class Profile extends React.Component {
                             >
                               Close
                             </Button>
-                            <Button color="primary" type="button">
+                            <Button
+                              color="primary"
+                              type="button"
+                              onClick={() =>
+                                alert("Password Changed successfully !!!")
+                              }
+                            >
                               Save changes
                             </Button>
                           </div>
@@ -255,7 +261,9 @@ class Profile extends React.Component {
                     </Row>
                   </div>
                   <div className="text-center border-top">
-                    <Row><p></p></Row>
+                    <Row>
+                      <p></p>
+                    </Row>
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p>

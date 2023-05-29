@@ -12,8 +12,8 @@ import {
 } from "reactstrap";
 
 // core components
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
+import AdminNavBar from "components/Navbars/AdminNavBar.js";
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -33,13 +33,14 @@ class Profile extends React.Component {
     if (this.state.text === "") {
       alert("Please enter text");
     } else {
-      alert("Your issue has been reported successfully");
+      alert("Your announcement has been sent successfully");
     }
   };
+
   render() {
     return (
       <>
-        <DemoNavbar />
+        <AdminNavBar />
         <main className="profile-page" ref="main">
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
@@ -65,7 +66,7 @@ class Profile extends React.Component {
                           <img
                             alt="..."
                             className="rounded-circle"
-                            src={require("assets/img/theme/repair.png")}
+                            src={require("assets/img/theme/mic.png")}
                           />
                         </a>
                       </div>
@@ -76,13 +77,10 @@ class Profile extends React.Component {
                 <div className="mt-5 py-5 border-top text-center">
                   <Row className="justify-content-center">
                     <div className="text-center mt-5">
-                      <h3>Have a technical issue to report? </h3>
+                      <h3>What would you like to announce? </h3>
                     </div>
                     <Col lg="9">
-                      <p>
-                        Our skilled team of software engineers are always here
-                        to hear about your issues
-                      </p>
+                      <p>This will be sent to all users</p>
                     </Col>
                   </Row>
                   <Row className="justify-content-center">
@@ -91,7 +89,7 @@ class Profile extends React.Component {
                         <Input
                           onChange={this.getText}
                           id="exampleFormControlInput1"
-                          placeholder="                                  Please describe your issue here"
+                          placeholder="                                  Please describe your announcement here"
                         ></Input>
                       </FormGroup>
                     </Col>
@@ -102,7 +100,7 @@ class Profile extends React.Component {
                       color="info"
                       onClick={this.handleSignIn}
                     >
-                      <span className="btn-inner--text">Report</span>
+                      <span className="btn-inner--text">Announce</span>
                     </Button>
                   </Row>
                 </div>

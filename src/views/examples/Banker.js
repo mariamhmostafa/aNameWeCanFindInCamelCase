@@ -43,6 +43,7 @@ class Banker extends React.Component {
     super(props);
     this.scollToRef1 = createRef();
     this.scollToRef2 = createRef();
+    this.scollToRef3 = createRef();
   }
   state = {
     tabs: 1,
@@ -59,8 +60,7 @@ class Banker extends React.Component {
     defaultModal11: false,
     defaultModal13: false,
     defaultModal14: false,
-    defaultModal15: false
-
+    defaultModal15: false,
   };
   toggleModal = (state) => {
     this.setState({
@@ -130,9 +130,29 @@ class Banker extends React.Component {
                           }
                         >
                           <span className="btn-inner--icon mr-1">
-                            <i className="ni ni-cloud-download-95" />
+                            <i class="fa fa-file-o" aria-hidden="true"></i>
                           </span>
                           <span className="btn-inner--text">View reports</span>
+                        </Button>
+
+                        <Button
+                          className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
+                          color="default"
+                          onClick={() =>
+                            this.scollToRef3.current.scrollIntoView({
+                              behavior: "smooth",
+                            })
+                          }
+                        >
+                          <span className="btn-inner--icon mr-1">
+                            <i
+                              class="fa fa-address-book-o"
+                              aria-hidden="true"
+                            ></i>
+                          </span>
+                          <span className="btn-inner--text">
+                            View all clients
+                          </span>
                         </Button>
                       </div>
                     </Col>
@@ -250,7 +270,7 @@ class Banker extends React.Component {
                         href="#pablo"
                         role="tab"
                       >
-                        <i className="ni ni-cloud-upload-96 mr-2" />
+                        <i class="fa fa-money" aria-hidden="true"></i>
                         View Loan Requests
                       </NavLink>
                     </NavItem>
@@ -264,7 +284,7 @@ class Banker extends React.Component {
                         href="#pablo"
                         role="tab"
                       >
-                        <i className="ni ni-bell-55 mr-2" />
+                        <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
                         View Credit Card Requests
                       </NavLink>
                     </NavItem>
@@ -936,74 +956,10 @@ class Banker extends React.Component {
             </Card>
           </section>
           <section className="section bg-secondary">
-            <Container>
-              <Row className="row-grid align-items-center">
-                <Col md="6">
-                  <Card className="bg-default shadow border-0">
-                    <CardImg
-                      alt="..."
-                      src={require("assets/img/theme/img-1-1200x1000.jpg")}
-                      top
-                    />
-                    <blockquote className="card-blockquote">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="svg-bg"
-                        preserveAspectRatio="none"
-                        viewBox="0 0 583 95"
-                      >
-                        <polygon
-                          className="fill-default"
-                          points="0,52 583,95 0,95"
-                        />
-                        <polygon
-                          className="fill-default"
-                          opacity=".2"
-                          points="0,42 583,95 683,0 0,95"
-                        />
-                      </svg>
-                      <h4 className="display-3 font-weight-bold text-white">
-                        Design System
-                      </h4>
-                      <p className="lead text-italic text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever happens.
-                      </p>
-                    </blockquote>
-                  </Card>
-                </Col>
-                <Col md="6">
-                  <div className="pl-md-5">
-                    <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
-                      <i className="ni ni-settings" />
-                    </div>
-                    <h3>Clients</h3>
-                    <p className="lead">
-                      Don't let your uses guess by attaching tooltips and
-                      popoves to any element. Just make sure you enable them
-                      first via JavaScript.
-                    </p>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
-                    
-                    <a
-                      className="font-weight-bold text-warning mt-5"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      A beautiful UI Kit for impactful websites
-                    </a>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
+            <Container></Container>
           </section>
           <section
-            className="section pb-0 bg-gradient-warning"
+            className="section pb-0 bg-gradient-primary"
             ref={this.scollToRef1}
           >
             <Container>
@@ -1317,163 +1273,29 @@ class Banker extends React.Component {
               </svg>
             </div>
           </section>
-
-          <section className="section section-lg bg-gradient-default">
-            <Container className="pt-lg pb-300">
-              <Row className="text-center justify-content-center">
-                <Col lg="10">
-                  <h2 className="display-3 text-white">Build something</h2>
-                  <p className="lead text-white">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record low maximum sea ice extent tihs year down
-                    to low ice.
-                  </p>
-                </Col>
-              </Row>
-              <Row className="row-grid mt-5">
-                <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="ni ni-settings text-primary" />
-                  </div>
-                  <h5 className="text-white mt-3">Building tools</h5>
-                  <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-                <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="ni ni-ruler-pencil text-primary" />
-                  </div>
-                  <h5 className="text-white mt-3">Grow your market</h5>
-                  <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-                <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="ni ni-atom text-primary" />
-                  </div>
-                  <h5 className="text-white mt-3">Launch time</h5>
-                  <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-              </Row>
-            </Container>
-            {/* SVG separator */}
-            <div className="separator separator-bottom separator-skew zindex-100">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-                version="1.1"
-                viewBox="0 0 2560 100"
-                x="0"
-                y="0"
-              >
-                <polygon
-                  className="fill-white"
-                  points="2560 0 2560 100 0 100"
-                />
-              </svg>
-            </div>
-          </section>
-          <section className="section section-lg pt-lg-0 section-contact-us">
-            <Container>
-              <Row className="justify-content-center mt--300">
-                <Col lg="8">
-                  <Card className="bg-gradient-secondary shadow">
-                    <CardBody className="p-lg-5">
-                      <h4 className="mb-1">Want to work with us?</h4>
-                      <p className="mt-0">
-                        Your project is very important to us.
-                      </p>
-                      <FormGroup
-                        className={classnames("mt-5", {
-                          focused: this.state.nameFocused,
-                        })}
-                      >
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-user-run" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Your name"
-                            type="text"
-                            onFocus={(e) =>
-                              this.setState({ nameFocused: true })
-                            }
-                            onBlur={(e) =>
-                              this.setState({ nameFocused: false })
-                            }
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup
-                        className={classnames({
-                          focused: this.state.emailFocused,
-                        })}
-                      >
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-email-83" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Email address"
-                            type="email"
-                            onFocus={(e) =>
-                              this.setState({ emailFocused: true })
-                            }
-                            onBlur={(e) =>
-                              this.setState({ emailFocused: false })
-                            }
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup className="mb-4">
-                        <Input
-                          className="form-control-alternative"
-                          cols="80"
-                          name="name"
-                          placeholder="Type a message..."
-                          rows="4"
-                          type="textarea"
-                        />
-                      </FormGroup>
-                      <div>
-                        <Button
-                          block
-                          className="btn-round"
-                          color="default"
-                          size="lg"
-                          type="button"
-                        >
-                          Send Message
-                        </Button>
-                      </div>
-                    </CardBody>
-                  </Card>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+          {/* SVG separator */}
+          <div className="separator separator-bottom separator-skew zindex-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+              version="1.1"
+              viewBox="0 0 2560 100"
+              x="0"
+              y="0"
+            >
+              <polygon className="fill-white" points="2560 0 2560 100 0 100" />
+            </svg>
+          </div>
 
           <section
-            className="section pb-0 bg-gradient-warning"
-            ref={this.scollToRef1}
+            className="section pb-0 bg-gradient-default"
+            ref={this.scollToRef3}
           >
             <Container>
               <div className="d-flex px-3">
                 <div>
                   <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i class="fa fa-file-o" aria-hidden="true"></i>
+                    <i class="fa fa-address-book-o" aria-hidden="true"></i>
                   </div>
                 </div>
                 <div className="pl-4">
@@ -1492,7 +1314,7 @@ class Banker extends React.Component {
                       <img
                         alt="..."
                         className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                        src={require("assets/img/brand/CreditCard.jpeg")}
+                        src={require("assets/img/brand/Clientsss.jpeg")}
                         style={{ width: "200px" }}
                       />
                     </div>
@@ -1503,7 +1325,7 @@ class Banker extends React.Component {
                       <table class="table">
                         <tr>
                           <th>Name</th>
-                          <th>Namtional ID</th>
+                          <th>National ID</th>
                           <th>Date of Birth</th>
                           <th>More Details</th>
                         </tr>
@@ -1557,18 +1379,18 @@ class Banker extends React.Component {
                               <div className="modal-body">
                                 {
                                   <Container>
-                                    <span> Account Numbers: 9479, 4872  </span>{" "}
-                                    <br></br>
-                                    <span> CreditCard Numbers: 99999999999, 100100100100, 123456789  </span>{" "}
+                                    <span> Account Numbers: 9479, 4872 </span>{" "}
                                     <br></br>
                                     <span>
                                       {" "}
-                                      Number of loans: 1{" "}
-                                    </span>
+                                      CreditCard Numbers: 99999999999,
+                                      100100100100, 123456789{" "}
+                                    </span>{" "}
+                                    <br></br>
+                                    <span> Number of loans: 1 </span>
                                   </Container>
                                 }
                               </div>
-                             
                             </Modal>
                           </td>
                         </tr>
@@ -1622,18 +1444,20 @@ class Banker extends React.Component {
                               <div className="modal-body">
                                 {
                                   <Container>
-                                    <span> Account Numbers: 1111, 1223, 9990  </span>{" "}
-                                    <br></br>
-                                    <span> CreditCard Numbers: 52778, 88980  </span>{" "}
+                                    <span>
+                                      {" "}
+                                      Account Numbers: 1111, 1223, 9990{" "}
+                                    </span>{" "}
                                     <br></br>
                                     <span>
                                       {" "}
-                                      Number of loans: 0{" "}
-                                    </span>
+                                      CreditCard Numbers: 52778, 88980{" "}
+                                    </span>{" "}
+                                    <br></br>
+                                    <span> Number of loans: 0 </span>
                                   </Container>
                                 }
                               </div>
-                             
                             </Modal>
                           </td>
                         </tr>
@@ -1687,18 +1511,13 @@ class Banker extends React.Component {
                               <div className="modal-body">
                                 {
                                   <Container>
-                                    <span> Account Numbers: 5656  </span>{" "}
+                                    <span> Account Numbers: 5656 </span>{" "}
                                     <br></br>
-                                    <span> CreditCard Numbers:   </span>{" "}
-                                    <br></br>
-                                    <span>
-                                      {" "}
-                                      Number of loans: 1{" "}
-                                    </span>
+                                    <span> CreditCard Numbers: </span> <br></br>
+                                    <span> Number of loans: 1 </span>
                                   </Container>
                                 }
                               </div>
-                             
                             </Modal>
                           </td>
                         </tr>
@@ -1755,12 +1574,12 @@ class Banker extends React.Component {
                                   <Container>
                                     <span> Account numbers: 8988, 7777 </span>{" "}
                                     <br></br>
-                                    <span> CreditCard numbers: 5256777</span>{" "}
-                                    <br></br>
                                     <span>
                                       {" "}
-                                      Number of loans: 0{" "}
-                                    </span>
+                                      CreditCard numbers: 5256777
+                                    </span>{" "}
+                                    <br></br>
+                                    <span> Number of loans: 0 </span>
                                   </Container>
                                 }
                               </div>
@@ -1819,12 +1638,12 @@ class Banker extends React.Component {
                                   <Container>
                                     <span> Account Numbers: 9003, 2123 </span>{" "}
                                     <br></br>
-                                    <span> CreditCard Numbers: 999998 </span>{" "}
-                                    <br></br>
                                     <span>
                                       {" "}
-                                      Number of loans: 0{" "}
-                                    </span>
+                                      CreditCard Numbers: 999998{" "}
+                                    </span>{" "}
+                                    <br></br>
+                                    <span> Number of loans: 0 </span>
                                   </Container>
                                 }
                               </div>
@@ -1883,12 +1702,12 @@ class Banker extends React.Component {
                                   <Container>
                                     <span> Account Numbers: 7774 </span>{" "}
                                     <br></br>
-                                    <span> CreditCard Numbers: 8980011 </span>{" "}
-                                    <br></br>
                                     <span>
                                       {" "}
-                                      Number of loans: 1{" "}
-                                    </span>
+                                      CreditCard Numbers: 8980011{" "}
+                                    </span>{" "}
+                                    <br></br>
+                                    <span> Number of loans: 1 </span>
                                   </Container>
                                 }
                               </div>
@@ -1918,8 +1737,6 @@ class Banker extends React.Component {
               </svg>
             </div>
           </section>
-
-          <Download />
         </main>
         <SimpleFooter />
       </>

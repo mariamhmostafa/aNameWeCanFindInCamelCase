@@ -149,6 +149,20 @@ class DemoNavbar extends React.Component {
                       <span className="nav-link-inner--text ml-1">Log out</span>
                     </Button>
                   </NavItem>
+                  <NavItem className="d-none d-lg-block ml-lg-4">
+                    <Button
+                      className="btn-neutral btn-icon"
+                      color="default"
+                      href="/announce-page"
+                    >
+                      <span className="btn-inner--icon">
+                        <i className="ni ni-notification-70"></i>
+                      </span>
+                      <span className="nav-link-inner--text ml-1">
+                        Make an announcement
+                      </span>
+                    </Button>
+                  </NavItem>
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
