@@ -19,7 +19,7 @@ import {
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
 // core components
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
+import HomeNavbar from "components/Navbars/HomeNavBar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 import Login from "./Login.js";
 
@@ -68,7 +68,7 @@ class Register extends React.Component {
   render() {
     return (
       <>
-                        <DemoNavbar />
+        <HomeNavbar />
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">
