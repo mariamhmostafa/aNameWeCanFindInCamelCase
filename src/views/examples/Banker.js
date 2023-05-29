@@ -1831,6 +1831,70 @@ class Banker extends React.Component {
                             </Modal>
                           </td>
                         </tr>
+                        <tr>
+                          <td>Majid</td>
+                          <td>89909898080</td>
+                          <td>17/10/2002</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal15")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal15}
+                              toggle={() => this.toggleModal("defaultModal15")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Majid Elmohandes
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal15")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account Numbers: 7774 </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard Numbers: 8980011 </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 1{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                            </Modal>
+                          </td>
+                        </tr>
                       </table>
                     </div>
                   </Container>
