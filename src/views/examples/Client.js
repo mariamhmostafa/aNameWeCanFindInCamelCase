@@ -530,11 +530,14 @@ class Client extends React.Component {
                                                     View Accounts
                                                 </h5>
                                                 <Row>
-                                                    <Col xs="4">
+                                                    <Col xs="3">
                                                         Account number
                                                     </Col>
-                                                    <Col xs="4">
+                                                    <Col xs="3">
                                                         Type
+                                                    </Col>
+                                                    <Col xs="3">
+                                                        Balance
                                                     </Col>
                                                 </Row>
                                                 <Row><p></p></Row>
@@ -542,8 +545,11 @@ class Client extends React.Component {
                                                     <Col xs="3">
                                                         9479
                                                     </Col>
-                                                    <Col xs="4">
+                                                    <Col xs="3">
                                                         Savings
+                                                    </Col>
+                                                    <Col xs="3">
+                                                        500000
                                                     </Col>
                                                     <Col xs="3">
                                                         <Button
