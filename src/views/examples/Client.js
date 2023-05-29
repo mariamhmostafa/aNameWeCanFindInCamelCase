@@ -56,6 +56,7 @@ class Client extends React.Component {
         defaultModal3: false,
         defaultModal4: false,
         defaultModal5: false,
+        defaultModal6: false,
         value: "Report Type",
         amount: '',
         salary: '',
@@ -65,6 +66,11 @@ class Client extends React.Component {
         receiver: '',
         sender: '',
     };
+
+    setReminder = (e) => {
+        alert("Reminder is set!");
+    }
+
     getAccount = (e) => {
         this.setState({ account: e.target.value });
     }
@@ -328,7 +334,6 @@ class Client extends React.Component {
                                                 size="lg"
                                                 type="button"
                                                 href="/profile-page"
-
                                             >
                                                 Profile
                                             </Button>
@@ -382,6 +387,9 @@ class Client extends React.Component {
                             </Row>
                         </Container>
                     </section>
+
+                    {/* #####ACCOUNTS#### */}
+
                     <section className="section pb-0 bg-gradient-white" ref={this.scollToRef2}>
                         <Container className="d-flex"  >
                             <Col className="row-grid align-items-center" xs="5">
@@ -698,130 +706,134 @@ class Client extends React.Component {
                                                 <Row>
                                                     <p></p><p></p>
                                                 </Row>
-                                                <Row>
-                                                    <h5 className="title text-success" >
-                                                        Open a new Bank Account
-                                                    </h5>
-                                                </Row>
-                                                <Row>
-                                                    <Form>
-                                                        <Row>
-                                                            <FormGroup>
-                                                                <Input
-                                                                    id="exampleFormControlInput1"
-                                                                    placeholder="Name"
-                                                                    type="email"
-                                                                />
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row>
-                                                            <FormGroup>
-                                                                <InputGroup className="input-group-alternative">
-                                                                    <InputGroupAddon addonType="prepend">
-                                                                        <InputGroupText>
-                                                                            <i className="ni ni-calendar-grid-58" />
-                                                                        </InputGroupText>
-                                                                    </InputGroupAddon>
-                                                                    <ReactDatetime
-                                                                        inputProps={{
-                                                                            placeholder: "Date of Birth"
-                                                                        }}
-                                                                        timeFormat={false}
-                                                                        renderDay={(props, currentDate, selectedDate) => {
-                                                                            let classes = props.className;
-                                                                            if (
-                                                                                this.state.startDate &&
-                                                                                this.state.endDate &&
-                                                                                this.state.startDate._d + "" === currentDate._d + ""
-                                                                            ) {
-                                                                                classes += " start-date";
-                                                                            } else if (
-                                                                                this.state.startDate &&
-                                                                                this.state.endDate &&
-                                                                                new Date(this.state.startDate._d + "") <
-                                                                                new Date(currentDate._d + "") &&
-                                                                                new Date(this.state.endDate._d + "") >
-                                                                                new Date(currentDate._d + "")
-                                                                            ) {
-                                                                                classes += " middle-date";
-                                                                            } else if (
-                                                                                this.state.endDate &&
-                                                                                this.state.endDate._d + "" === currentDate._d + ""
-                                                                            ) {
-                                                                                classes += " end-date";
-                                                                            }
-                                                                            return (
-                                                                                <td {...props} className={classes}>
-                                                                                    {currentDate.date()}
-                                                                                </td>
-                                                                            );
-                                                                        }}
-                                                                        onChange={e => this.setState({ startDate: e })}
+                                                <div className="border-top">
+                                                    <Row>
+                                                        <h5 className="title text-primary" >
+                                                            Open a new Bank Account
+                                                        </h5>
+                                                    </Row>
+                                                    <Row>
+                                                        <Form>
+                                                            <Row>
+                                                                <FormGroup>
+                                                                    <Input
+                                                                        id="exampleFormControlInput1"
+                                                                        placeholder="Name"
+                                                                        type="email"
                                                                     />
-                                                                </InputGroup>
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row>
-                                                            <FormGroup>
-                                                                <Input
-                                                                    id="exampleFormControlInput1"
-                                                                    placeholder="Address"
-                                                                    type="email"
-                                                                />
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row>
-                                                            <FormGroup>
-                                                                <Input
-                                                                    id="exampleFormControlInput1"
-                                                                    placeholder="Phone Number"
-                                                                    type="email"
-                                                                />
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row>
-                                                            <FormGroup>
-                                                                <Input
-                                                                    id="exampleFormControlInput1"
-                                                                    placeholder="National ID"
-                                                                    type="email"
-                                                                />
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row>
-                                                            <Col>
-                                                                <input
-                                                                    className="custom-control-input"
-                                                                    id="customCheck1"
-                                                                    type="checkbox"
-                                                                />
-                                                                <label className="custom-control-label" htmlFor="customCheck1">
-                                                                    Married
-                                                                </label>
-                                                            </Col>
-                                                            <Col>
-                                                                <input
-                                                                    className="custom-control-input"
-                                                                    id="customCheck2"
-                                                                    type="checkbox"
-                                                                />
-                                                                <label className="custom-control-label" htmlFor="customCheck2">
-                                                                    Employed
-                                                                </label>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <Button
-                                                                className="ml-auto"
-                                                                color="success"
-                                                                data-dismiss="modal"
-                                                                type="button" onClick={this.handleOpenAccount}
-                                                            >
-                                                                Open Now
-                                                            </Button>
-                                                        </Row>
-                                                    </Form>
-                                                </Row>
+                                                                </FormGroup>
+                                                            </Row>
+                                                            <Row>
+                                                                <FormGroup>
+                                                                    <InputGroup className="input-group-alternative">
+                                                                        <InputGroupAddon addonType="prepend">
+                                                                            <InputGroupText>
+                                                                                <i className="ni ni-calendar-grid-58" />
+                                                                            </InputGroupText>
+                                                                        </InputGroupAddon>
+                                                                        <ReactDatetime
+                                                                            inputProps={{
+                                                                                placeholder: "Date of Birth"
+                                                                            }}
+                                                                            timeFormat={false}
+                                                                            renderDay={(props, currentDate, selectedDate) => {
+                                                                                let classes = props.className;
+                                                                                if (
+                                                                                    this.state.startDate &&
+                                                                                    this.state.endDate &&
+                                                                                    this.state.startDate._d + "" === currentDate._d + ""
+                                                                                ) {
+                                                                                    classes += " start-date";
+                                                                                } else if (
+                                                                                    this.state.startDate &&
+                                                                                    this.state.endDate &&
+                                                                                    new Date(this.state.startDate._d + "") <
+                                                                                    new Date(currentDate._d + "") &&
+                                                                                    new Date(this.state.endDate._d + "") >
+                                                                                    new Date(currentDate._d + "")
+                                                                                ) {
+                                                                                    classes += " middle-date";
+                                                                                } else if (
+                                                                                    this.state.endDate &&
+                                                                                    this.state.endDate._d + "" === currentDate._d + ""
+                                                                                ) {
+                                                                                    classes += " end-date";
+                                                                                }
+                                                                                return (
+                                                                                    <td {...props} className={classes}>
+                                                                                        {currentDate.date()}
+                                                                                    </td>
+                                                                                );
+                                                                            }}
+                                                                            onChange={e => this.setState({ startDate: e })}
+                                                                        />
+                                                                    </InputGroup>
+                                                                </FormGroup>
+                                                            </Row>
+                                                            <Row>
+                                                                <FormGroup>
+                                                                    <Input
+                                                                        id="exampleFormControlInput1"
+                                                                        placeholder="Address"
+                                                                        type="email"
+                                                                    />
+                                                                </FormGroup>
+                                                            </Row>
+                                                            <Row>
+                                                                <FormGroup>
+                                                                    <Input
+                                                                        id="exampleFormControlInput1"
+                                                                        placeholder="Phone Number"
+                                                                        type="email"
+                                                                    />
+                                                                </FormGroup>
+                                                            </Row>
+                                                            <Row>
+                                                                <FormGroup>
+                                                                    <Input
+                                                                        id="exampleFormControlInput1"
+                                                                        placeholder="National ID"
+                                                                        type="email"
+                                                                    />
+                                                                </FormGroup>
+                                                            </Row>
+                                                            <Row>
+                                                                <Col>
+                                                                    <input
+                                                                        className="custom-control-input"
+                                                                        id="customCheck1"
+                                                                        type="checkbox"
+                                                                    />
+                                                                    <label className="custom-control-label" htmlFor="customCheck1">
+                                                                        Married
+                                                                    </label>
+                                                                </Col>
+                                                                <Col>
+                                                                    <input
+                                                                        className="custom-control-input"
+                                                                        id="customCheck2"
+                                                                        type="checkbox"
+                                                                    />
+                                                                    <label className="custom-control-label" htmlFor="customCheck2">
+                                                                        Employed
+                                                                    </label>
+                                                                </Col>
+                                                            </Row>
+                                                            <Row><p></p></Row>
+                                                            <Row><p></p></Row>
+                                                            <Row>
+                                                                <Button
+                                                                    className="ml-auto"
+                                                                    color="success"
+                                                                    data-dismiss="modal"
+                                                                    type="button" onClick={this.handleOpenAccount}
+                                                                >
+                                                                    Open Now
+                                                                </Button>
+                                                            </Row>
+                                                        </Form>
+                                                    </Row>
+                                                </div>
                                             </div>
                                         </div>
                                     </CardBody>
@@ -849,9 +861,9 @@ class Client extends React.Component {
                             </svg>
                         </div>
                     </section>
-                    <section className="section pb-0 bg-gradient-white">
-                        <Container></Container>
-                    </section>
+
+                    {/* #####CREDIT CARDS#### */}
+
                     <section className="section pb-0 bg-gradient-warning" ref={this.scollToRef1}>
                         <Container >
                             <Row className="row-grid align-items-center" >
@@ -1432,11 +1444,11 @@ class Client extends React.Component {
                                                 <TabPane tabId="tabs4">
                                                     <Container>
                                                         <Row>
-                                                            <Col xs="3">
+                                                            <Col xs="2">
                                                                 <span>Bill Type</span>
                                                             </Col>
                                                             <Col xs="3">
-                                                                <span>Amount </span>
+                                                                <span> &nbsp; &nbsp; &nbsp; Amount </span>
                                                             </Col>
                                                             <Col xs="3">
                                                                 <span>Card</span>
@@ -1460,7 +1472,7 @@ class Client extends React.Component {
 
                                                             <Col>
                                                                 <UncontrolledDropdown>
-                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                    <DropdownToggle caret color="primary" placeholder="Choose">
                                                                         Choose card
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
@@ -1478,7 +1490,7 @@ class Client extends React.Component {
                                                             </Col>
                                                             <Col>
                                                                 <UncontrolledDropdown>
-                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                    <DropdownToggle caret color="primary" placeholder="Choose">
                                                                         Pay Now
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
@@ -1491,7 +1503,59 @@ class Client extends React.Component {
                                                                     </DropdownMenu>
                                                                 </UncontrolledDropdown>
                                                             </Col>
-
+                                                            <Col>
+                                                                <Button
+                                                                    block
+                                                                    className="mb-3"
+                                                                    color="primary"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal6")}
+                                                                >
+                                                                    Set Reminder
+                                                                </Button>
+                                                                <Modal
+                                                                    className="modal-dialog-centered"
+                                                                    isOpen={this.state.defaultModal6}
+                                                                    toggle={() => this.toggleModal("defaultModal6")}
+                                                                >
+                                                                    <div className="modal-header">
+                                                                        <h6 className="modal-title" id="modal-title-default">
+                                                                            Set Reminder
+                                                                        </h6>
+                                                                        <button
+                                                                            aria-label="Close"
+                                                                            className="close"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal6")}
+                                                                        >
+                                                                            <span aria-hidden={true}>×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className="modal-body">
+                                                                        <ReactDatetime
+                                                                            inputProps={{
+                                                                                placeholder: "Reminder Date"
+                                                                            }}
+                                                                            timeFormat={false}
+                                                                        />
+                                                                    </div>
+                                                                    <div className="modal-footer">
+                                                                        <Button color="primary" type="button" onClick={() => this.setReminder()}>
+                                                                            Save changes
+                                                                        </Button>
+                                                                        <Button
+                                                                            className="ml-auto"
+                                                                            color="link"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal6")}
+                                                                        >
+                                                                            Close
+                                                                        </Button>
+                                                                    </div>
+                                                                </Modal>
+                                                            </Col>
                                                         </Row>
                                                         <Row>
                                                             <Col>
@@ -1502,7 +1566,7 @@ class Client extends React.Component {
                                                             </Col>
                                                             <Col>
                                                                 <UncontrolledDropdown>
-                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                    <DropdownToggle caret color="primary" placeholder="Choose">
                                                                         Choose card
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
@@ -1520,7 +1584,7 @@ class Client extends React.Component {
                                                             </Col>
                                                             <Col>
                                                                 <UncontrolledDropdown>
-                                                                    <DropdownToggle caret color="secondary" placeholder="Choose" onChange={this.handlePay}>
+                                                                    <DropdownToggle caret color="primary" placeholder="Choose" onChange={this.handlePay}>
                                                                         Pay Now
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
@@ -1532,6 +1596,59 @@ class Client extends React.Component {
                                                                         </DropdownItem>
                                                                     </DropdownMenu>
                                                                 </UncontrolledDropdown>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    block
+                                                                    className="mb-3"
+                                                                    color="primary"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal6")}
+                                                                >
+                                                                    Set Reminder
+                                                                </Button>
+                                                                <Modal
+                                                                    className="modal-dialog-centered"
+                                                                    isOpen={this.state.defaultModal6}
+                                                                    toggle={() => this.toggleModal("defaultModal6")}
+                                                                >
+                                                                    <div className="modal-header">
+                                                                        <h6 className="modal-title" id="modal-title-default">
+                                                                            Set Reminder
+                                                                        </h6>
+                                                                        <button
+                                                                            aria-label="Close"
+                                                                            className="close"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal6")}
+                                                                        >
+                                                                            <span aria-hidden={true}>×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className="modal-body">
+                                                                        <ReactDatetime
+                                                                            inputProps={{
+                                                                                placeholder: "Reminder Date"
+                                                                            }}
+                                                                            timeFormat={false}
+                                                                        />
+                                                                    </div>
+                                                                    <div className="modal-footer">
+                                                                        <Button color="primary" type="button" onClick={() => this.setReminder()}>
+                                                                            Save changes
+                                                                        </Button>
+                                                                        <Button
+                                                                            className="ml-auto"
+                                                                            color="link"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal6")}
+                                                                        >
+                                                                            Close
+                                                                        </Button>
+                                                                    </div>
+                                                                </Modal>
                                                             </Col>
                                                         </Row>
                                                         <Row>
@@ -1543,7 +1660,7 @@ class Client extends React.Component {
                                                             </Col>
                                                             <Col>
                                                                 <UncontrolledDropdown>
-                                                                    <DropdownToggle caret color="secondary" placeholder="Choose">
+                                                                    <DropdownToggle caret color="primary" placeholder="Choose">
                                                                         Choose card
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
@@ -1561,7 +1678,7 @@ class Client extends React.Component {
                                                             </Col>
                                                             <Col>
                                                                 <UncontrolledDropdown>
-                                                                    <DropdownToggle caret color="secondary" placeholder="Choose" onChange={this.handlePay} >
+                                                                    <DropdownToggle caret color="primary" placeholder="Choose" onChange={this.handlePay} >
                                                                         Pay Now
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
@@ -1573,6 +1690,60 @@ class Client extends React.Component {
                                                                         </DropdownItem>
                                                                     </DropdownMenu>
                                                                 </UncontrolledDropdown>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    block
+                                                                    className="mb-3"
+                                                                    color="primary"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal6")}
+                                                                >
+                                                                    Set Reminder
+                                                                </Button>
+                                                                <Modal
+                                                                    className="modal-dialog-centered"
+                                                                    isOpen={this.state.defaultModal6}
+                                                                    toggle={() => this.toggleModal("defaultModal6")}
+                                                                >
+                                                                    <div className="modal-header">
+                                                                        <h6 className="modal-title" id="modal-title-default">
+                                                                            Set Reminder
+                                                                        </h6>
+                                                                        <button
+                                                                            aria-label="Close"
+                                                                            className="close"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal6")}
+                                                                        >
+                                                                            <span aria-hidden={true}>×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className="modal-body">
+                                                                        <ReactDatetime
+                                                                            inputProps={{
+                                                                                placeholder: "Reminder Date"
+                                                                            }}
+                                                                            timeFormat={false}
+                                                                        />
+                                                                    </div>
+                                                                    <div className="modal-footer">
+                                                                        <Button color="primary" type="button" onClick={() => this.setReminder()}>
+                                                                            Save changes
+
+                                                                        </Button>
+                                                                        <Button
+                                                                            className="ml-auto"
+                                                                            color="link"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal6")}
+                                                                        >
+                                                                            Close
+                                                                        </Button>
+                                                                    </div>
+                                                                </Modal>
                                                             </Col>
                                                         </Row>
                                                         <Row>
@@ -1584,7 +1755,7 @@ class Client extends React.Component {
                                                             </Col>
                                                             <Col>
                                                                 <UncontrolledDropdown>
-                                                                    <DropdownToggle caret color="secondary" placeholder="Choose" >
+                                                                    <DropdownToggle caret color="primary" placeholder="Choose" >
                                                                         Choose card
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
@@ -1602,7 +1773,7 @@ class Client extends React.Component {
                                                             </Col>
                                                             <Col>
                                                                 <UncontrolledDropdown>
-                                                                    <DropdownToggle caret color="secondary" placeholder="Choose" onChange={this.handlePay}>
+                                                                    <DropdownToggle caret color="primary" placeholder="Choose" onChange={this.handlePay}>
                                                                         Pay Now
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
@@ -1614,6 +1785,60 @@ class Client extends React.Component {
                                                                         </DropdownItem>
                                                                     </DropdownMenu>
                                                                 </UncontrolledDropdown>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    block
+                                                                    className="mb-3"
+                                                                    color="primary"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal6")}
+                                                                >
+                                                                    Set Reminder
+                                                                </Button>
+                                                                <Modal
+                                                                    className="modal-dialog-centered"
+                                                                    isOpen={this.state.defaultModal6}
+                                                                    toggle={() => this.toggleModal("defaultModal6")}
+                                                                >
+                                                                    <div className="modal-header">
+                                                                        <h6 className="modal-title" id="modal-title-default">
+                                                                            Set Reminder
+                                                                        </h6>
+                                                                        <button
+                                                                            aria-label="Close"
+                                                                            className="close"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal6")}
+                                                                        >
+                                                                            <span aria-hidden={true}>×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className="modal-body">
+                                                                        <ReactDatetime
+                                                                            inputProps={{
+                                                                                placeholder: "Reminder Date"
+                                                                            }}
+                                                                            timeFormat={false}
+                                                                        />
+                                                                    </div>
+                                                                    <div className="modal-footer">
+                                                                        <Button color="primary" type="button" onClick={() => this.setReminder()}>
+                                                                            Save changes
+
+                                                                        </Button>
+                                                                        <Button
+                                                                            className="ml-auto"
+                                                                            color="link"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal6")}
+                                                                        >
+                                                                            Close
+                                                                        </Button>
+                                                                    </div>
+                                                                </Modal>
                                                             </Col>
                                                         </Row>
                                                         <Row><p></p></Row>
@@ -1826,6 +2051,10 @@ class Client extends React.Component {
                             </svg>
                         </div>
                     </section>
+
+
+                    {/* #####TRANSFERS#### */}
+
                     <section className="section pb-0 bg-gradient-white" ref={this.scollToRef4}>
                         <Container >
                             <Row className="d-flex row-grid align-items-center" >
@@ -1915,6 +2144,10 @@ class Client extends React.Component {
                         <Row><p></p></Row>
                         <Row><p></p></Row>
                     </section>
+
+
+                    {/* #####LOANS#### */}
+
                     <section className="section pb-0 bg-gradient-success" ref={this.scollToRef3}>
                         <Container >
                             <Row className="row-grid align-items-center" >
