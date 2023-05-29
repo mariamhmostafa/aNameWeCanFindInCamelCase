@@ -1,7 +1,19 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Card, Container, Row, Col } from "reactstrap";
+import {
+  Button,
+  Card,
+  Container,
+  Row,
+  Col,
+  CardBody,
+  Modal,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
+} from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -14,6 +26,14 @@ class Profile extends React.Component {
     this.refs.main.scrollTop = 0;
     document.title = "Mahfaztak";
   }
+  state = {
+    exampleModal: false,
+  };
+  toggleModal = (state) => {
+    this.setState({
+      [state]: !this.state[state],
+    });
+  };
   render() {
     return (
       <>
@@ -58,7 +78,7 @@ class Profile extends React.Component {
                           <img
                             alt="..."
                             className="rounded-circle"
-                            src={require("assets/img/theme/team-4-800x800.jpg")}
+                            src={require("assets/img/theme/basboosa.jpg")}
                           />
                         </a>
                       </div>
@@ -72,70 +92,166 @@ class Profile extends React.Component {
                           className="mr-4"
                           color="info"
                           href="#pablo"
-                          onClick={(e) => e.preventDefault()}
+                          onClick={() => this.toggleModal("exampleModal")}
                           size="sm"
                         >
-                          Connect
+                          Change Password
                         </Button>
-                        <Button
-                          className="float-right"
-                          color="default"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                          size="sm"
+                        <Modal
+                          className="modal-dialog-centered"
+                          isOpen={this.state.exampleModal}
+                          toggle={() => this.toggleModal("exampleModal")}
                         >
-                          Message
-                        </Button>
+                          <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">
+                              Please Enter Old and New Password
+                            </h5>
+                            <button
+                              aria-label="Close"
+                              className="close"
+                              data-dismiss="modal"
+                              type="button"
+                              onClick={() => this.toggleModal("exampleModal")}
+                            >
+                              <span aria-hidden={true}>×</span>
+                            </button>
+                          </div>
+                          <div className="modal-body">
+                            {" "}
+                            <InputGroup className="input-group-alternative">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-email-83" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input
+                                id="Password"
+                                placeholder="Old Password"
+                                type="Password"
+                                name="Password"
+                              />
+                            </InputGroup>
+                            <InputGroup className="input-group-alternative">
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="ni ni-email-83" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input
+                                id="Password"
+                                placeholder="New Password"
+                                type="Password"
+                                name="Password"
+                              />
+                            </InputGroup>
+                          </div>
+                          <div className="modal-footer">
+                            <Button
+                              color="secondary"
+                              data-dismiss="modal"
+                              type="button"
+                              onClick={() => this.toggleModal("exampleModal")}
+                            >
+                              Close
+                            </Button>
+                            <Button color="primary" type="button">
+                              Save changes
+                            </Button>
+                          </div>
+                        </Modal>
                       </div>
                     </Col>
                     <Col className="order-lg-1" lg="4">
                       <div className="card-profile-stats d-flex justify-content-center">
                         <div>
-                          <span className="heading">22</span>
-                          <span className="description">Friends</span>
+                          <span className="heading">2</span>
+                          <span className="description">Bank Accounts</span>
                         </div>
                         <div>
-                          <span className="heading">10</span>
-                          <span className="description">Photos</span>
+                          <span className="heading">3</span>
+                          <span className="description">Credit Cards</span>
                         </div>
                         <div>
-                          <span className="heading">89</span>
-                          <span className="description">Comments</span>
+                          <span className="heading">1</span>
+                          <span className="description">Loan</span>
                         </div>
                       </div>
                     </Col>
                   </Row>
                   <div className="text-center mt-5">
                     <h3>
-                      Jessica Jones{" "}
+                      Basboosa Smith{" "}
                       <span className="font-weight-light">, 27</span>
                     </h3>
                     <div className="h6 font-weight-300">
                       <i className="ni location_pin mr-2" />
-                      Bucharest, Romania
+                      Meow City, Egypt
                     </div>
                     <div className="h6 mt-4">
                       <i className="ni business_briefcase-24 mr-2" />
-                      Solution Manager - Creative Tim Officer
+                      Proffesional Meowww
                     </div>
                     <div>
                       <i className="ni education_hat mr-2" />
-                      University of Computer Science
+                      University of Meowing
                     </div>
                   </div>
                   <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center">
+                      <Col>
+                        <span>
+                          <h5>Full Name</h5>
+                        </span>
+                      </Col>
+                      <Col>
+                        <span>
+                          <h5>Basboosa Smith</h5>
+                        </span>
+                      </Col>
+                    </Row>
+                    <Row className="justify-content-center">
+                      <Col>
+                        <span>
+                          <h5>DOB:</h5>
+                        </span>
+                      </Col>
+                      <Col>
+                        <span>
+                          <h5> 14/6/2002</h5>
+                        </span>
+                      </Col>
+                    </Row>
+                    <Row className="justify-content-center">
+                      <Col>
+                        <span>
+                          <h5>Phone Number:</h5>
+                        </span>
+                      </Col>
+                      <Col>
+                        <span>
+                          <h5>01555240174</h5>
+                        </span>
+                      </Col>
+                    </Row>
+                    <Row className="justify-content-center">
+                      <Col>
+                        <span>
+                          <h5>e-mail</h5>
+                        </span>
+                      </Col>
+                      <Col>
+                        <span>
+                          <h5>basabeso@gmail.com</h5>
+                        </span>
+                      </Col>
+                    </Row>
+
+                    <Row className="justify-content-center">
                       <Col lg="9">
                         <p>
-                          An artist of considerable range, Ryan — the name taken
-                          by Melbourne-raised, Brooklyn-based Nick Murphy —
-                          writes, performs and records all of his own music,
-                          giving it a warm, intimate feel with a solid groove
-                          structure. An artist of considerable range.
+                          Iam a proffessional Meow.I work with puss and boots
+                          and I gain alot from stealing idiot people hearts.
                         </p>
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          Show more
-                        </a>
                       </Col>
                     </Row>
                   </div>
