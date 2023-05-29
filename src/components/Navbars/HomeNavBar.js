@@ -110,7 +110,12 @@ class HomeNavBar extends React.Component {
                     target="_blank"
                   >
                     <Media body className="ml-3">
-                      <span className="nav-link-inner--text" style={{ color: "white" }}>About Us</span>
+                      <span
+                        className="nav-link-inner--text"
+                        style={{ color: "white" }}
+                      >
+                        About Us
+                      </span>
                     </Media>
                   </Media>
                 </Nav>
@@ -130,6 +135,30 @@ class HomeNavBar extends React.Component {
                     <UncontrolledTooltip delay={0} target="tooltip112445449">
                       Star us on Github
                     </UncontrolledTooltip>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      className="nav-link-icon"
+                      onClick={() => window.history.back()}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <i className="fa fa-arrow-left" />
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        Back
+                      </span>
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      className="nav-link-icon"
+                      onClick={() => window.history.forward()}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <i className="fa fa-arrow-right" />
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        Forward
+                      </span>
+                    </NavLink>
                   </NavItem>
                 </Nav>
               </UncontrolledCollapse>
