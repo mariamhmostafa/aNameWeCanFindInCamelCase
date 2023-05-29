@@ -70,7 +70,10 @@ class Client extends React.Component {
         phoneNum: '',
         nationalID: '',
         message:'',
-        creditCardNum:''
+        creditCardNum:'',
+        email:'',
+        cardName: '',
+        cardSalary:''
     };
 
     setReminder = (e) => {
@@ -118,6 +121,15 @@ class Client extends React.Component {
     getMessage = (e) => {
         this.setState({ message: e.target.value });
     }
+    getEmail = (e) => {
+        this.setState({ email: e.target.value });
+    }
+    getCardName = (e) => {
+        this.setState({ cardName: e.target.value });
+    }
+    getCardSalary = (e) => {
+        this.setState({ cardSalary: e.target.value });
+    }
     handleLoanApplication = (e) => {
         const amount = this.state.amount;
         const reason = this.state.reason;
@@ -133,7 +145,14 @@ class Client extends React.Component {
         alert("Loan Installment Paid successfully!")
     };
     applyForCard= (e) => {
-        alert("CreditCard application sent!")
+        const email = this.state.email;
+        const cardName = this.state.cardName;
+        const cardSalary = this.state.cardSalary;
+        if (email === '' || cardName === '' || cardSalary === '') {
+            alert("Please enter the required information")
+        } else {
+            alert("CreditCard application sent!")
+        }
     };
 
     toggleModal = state => {
@@ -1393,6 +1412,7 @@ class Client extends React.Component {
                                                                         id="exampleFormControlInput1"
                                                                         placeholder="name@example.com"
                                                                         type="email"
+                                                                        onChange={this.getEmail}
                                                                     />
                                                                 </FormGroup>
                                                             </Col>
@@ -1402,7 +1422,8 @@ class Client extends React.Component {
                                                                     <Input
                                                                         id="exampleFormControlInput1"
                                                                         placeholder="$XXXX.XX"
-                                                                        type="email"
+                                                                        type="text"
+                                                                        onChange={this.getCardSalary}
                                                                     />
                                                                 </FormGroup>
                                                             </Col>
@@ -1414,7 +1435,8 @@ class Client extends React.Component {
                                                                     <Input
                                                                         id="exampleFormControlInput1"
                                                                         placeholder="enter your name"
-                                                                        type="email"
+                                                                        type="text"
+                                                                        onChange={this.getCardName}
                                                                     />
                                                                 </FormGroup>
                                                             </Col>
