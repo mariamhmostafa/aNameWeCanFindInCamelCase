@@ -63,47 +63,47 @@ class Client extends React.Component {
         reason: '',
         amountTransfered: '',
         receiver: '',
-        sender:'',
+        sender: '',
     };
     getAccount = (e) => {
         this.setState({ account: e.target.value });
-      }
-    
-      getSalary = (e) => {
+    }
+
+    getSalary = (e) => {
         this.setState({ salary: e.target.value });
-      }
+    }
 
-      getAmount = (e) => {
+    getAmount = (e) => {
         this.setState({ amount: e.target.value });
-      }
+    }
 
-      getReceiver = (e) => {
+    getReceiver = (e) => {
         this.setState({ receiver: e.target.value });
-      }
+    }
 
-      getSender = (e) => {
+    getSender = (e) => {
         this.setState({ sender: e.target.value });
-      }
-    
-      getReason = (e) => {
+    }
+
+    getReason = (e) => {
         this.setState({ reason: e.target.value });
-      }
-      handleLoanApplication = (e) => {
+    }
+    handleLoanApplication = (e) => {
         const amount = this.state.amount;
         const reason = this.state.reason;
         const account = this.state.account;
         const salary = this.state.salary;
-        if (amount === '' || reason === ''|| account === ''|| salary === '') {
-          alert("Please enter the required information")
-        }else{
+        if (amount === '' || reason === '' || account === '' || salary === '') {
+            alert("Please enter the required information")
+        } else {
             alert("Loan Application sent successfully")
         }
-      }
-      payLoan = (e) => {
+    }
+    payLoan = (e) => {
         alert("Loan Installment Paid successfully!")
     };
 
-    
+
 
     toggleModal = state => {
         this.setState({
@@ -126,9 +126,9 @@ class Client extends React.Component {
         const amountTransfered = this.state.amountTransfered;
         const sender = this.state.sender;
         const receiver = this.state.receiver;
-        if (amountTransfered === '' || sender === ''|| receiver === '') {
-          alert("Please enter the required information")
-        }else{
+        if (amountTransfered === '' || sender === '' || receiver === '') {
+            alert("Please enter the required information")
+        } else {
             alert("Amount transfered successfully!")
         }
     };
@@ -367,7 +367,7 @@ class Client extends React.Component {
                                             >
                                                 Loan
                                             </Button>
-                                            
+
                                         </Container>
                                     </div>
                                 </Col>
@@ -477,7 +477,7 @@ class Client extends React.Component {
                                                             onClick={() => this.toggleModal("defaultModal4")}
                                                         >
                                                             View {"  "}
-                                                            <i className="ni ni-basket"></i>
+
                                                         </Button>
                                                         <Modal
                                                             className="modal-dialog-centered"
@@ -588,8 +588,7 @@ class Client extends React.Component {
                                                             type="button"
                                                             onClick={() => this.toggleModal("defaultModal5")}
                                                         >
-                                                            View {"  "}
-                                                            <i className="ni ni-basket"></i>
+                                                            View
                                                         </Button>
                                                         <Modal
                                                             className="modal-dialog-centered"
@@ -1008,8 +1007,7 @@ class Client extends React.Component {
                                                                     type="button"
                                                                     onClick={() => this.toggleModal("defaultModal1")}
                                                                 >
-                                                                    <i className="ni ni-basket"></i>
-                                                                    {" "}View transcations
+                                                                    View transcations
                                                                 </Button>
                                                                 <Modal
                                                                     className="modal-dialog-centered"
@@ -1117,8 +1115,7 @@ class Client extends React.Component {
                                                                     type="button"
                                                                     onClick={() => this.toggleModal("defaultModal2")}
                                                                 >
-                                                                    <i className="ni ni-basket"></i>
-                                                                    {" "}View transcations
+                                                                    View transcations
                                                                 </Button>
                                                                 <Modal
                                                                     className="modal-dialog-centered"
@@ -1226,8 +1223,7 @@ class Client extends React.Component {
                                                                     type="button"
                                                                     onClick={() => this.toggleModal("defaultModal3")}
                                                                 >
-                                                                    <i className="ni ni-basket"></i>
-                                                                    {" "}View transcations
+                                                                    View transcations
                                                                 </Button>
                                                                 <Modal
                                                                     className="modal-dialog-centered"
@@ -1453,7 +1449,7 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <span>1900.00 </span>
                                                             </Col>
-                                                            
+
                                                             <Col>
                                                                 <UncontrolledDropdown>
                                                                     <DropdownToggle caret color="secondary" placeholder="Choose">
@@ -1487,7 +1483,7 @@ class Client extends React.Component {
                                                                     </DropdownMenu>
                                                                 </UncontrolledDropdown>
                                                             </Col>
-                                                            
+
                                                         </Row>
                                                         <Row>
                                                             <Col>
@@ -1806,7 +1802,7 @@ class Client extends React.Component {
                             </Row>
                         </Container>
                         {/* SVG separator */}
-                        <div className="separator separator-bottom separator-skew zindex-100" ref={this.scollToRef4}>
+                        <div className="separator separator-bottom separator-skew zindex-100" >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 preserveAspectRatio="none"
@@ -1822,71 +1818,112 @@ class Client extends React.Component {
                             </svg>
                         </div>
                     </section>
-                    <div><h4 className="display-3 text-black">Transfers</h4>
-                                        <p className="text-black">
-                                        A banking transfer is a process of moving money from one bank account to another. It can be done electronically through online banking or by physically visiting a bank branch and filling out a transfer form. The transfer can be between accounts held at the same bank or between different banks. Banking transfers are commonly used to pay bills, make purchases, and send money to family and friends.
-                                        </p></div>
-                    <Form>
-            <Row>
-              <Col md="6">
-                <FormGroup>
-                  <Input
-                    id="exampleFormControlInput1"
-                    placeholder="transfering account number"
-                    type="text"
-                    onChange={this.getSender}
-                  />
-                </FormGroup>
-              </Col>
-              <Col md="6">
-                <FormGroup>
-                  <Input placeholder="receiving account number" type="text" onChange={this.getReceiver}/>
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col md="6">
-                <FormGroup>
-                  <Input placeholder="amount" type="text" onChange={this.getAmountTransfered}/>
-                </FormGroup>
-              </Col>
-              <Col md="6">
-                <FormGroup>
-                  <Input placeholder="transaction date" type="date"/>
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row> 
-            <Button
-                block
-                className="btn-round"
-                color="default"
-                size="sm"
-                type="button"
-                onClick={this.handleTransfer}
-
-            >
-                Transfer 
-            </Button> 
-            </Row>
-          </Form>
-          <section className="section pb-0 bg-gradient-success" ref={this.scollToRef3}>
+                    <section className="section pb-0 bg-gradient-white" ref={this.scollToRef4}>
+                        <Container >
+                            <Row className="d-flex row-grid align-items-center" >
+                                <div className="d-flex px-3" >
+                                    <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                                        <i className="fa fa-exchange text-primary" />
+                                    </div>
+                                    <div className="pl-4">
+                                        <h4 className="display-3 text-primary">Transfers</h4>
+                                        <p className="text-primary">
+                                            A banking transfer is a process of moving money from one bank account
+                                            to another. It can be done electronically through online banking or
+                                            by physically visiting a bank branch and filling out a transfer form.
+                                            The transfer can be between accounts held at the same bank or between
+                                            different banks. Banking transfers are commonly used to pay bills, make
+                                            purchases, and send money to family and friends.
+                                        </p>
+                                    </div>
+                                </div>
+                                <section className="d-flex">
+                                    <Card className="shadow shadow-lg--hover mt-5">
+                                        <CardBody >
+                                            <Form>
+                                                <Row>
+                                                    <Col xs="10">
+                                                        <FormGroup>
+                                                            <Input
+                                                                id="exampleFormControlInput1"
+                                                                placeholder="transfering account number"
+                                                                type="text"
+                                                                onChange={this.getSender}
+                                                            />
+                                                        </FormGroup>
+                                                    </Col>
+                                                    <Col md="10">
+                                                        <FormGroup>
+                                                            <Input placeholder="receiving account number" type="text" onChange={this.getReceiver} />
+                                                        </FormGroup>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col md="10">
+                                                        <FormGroup>
+                                                            <Input placeholder="amount" type="text" onChange={this.getAmountTransfered} />
+                                                        </FormGroup>
+                                                    </Col>
+                                                    <Col md="10">
+                                                        <FormGroup>
+                                                            <Input placeholder="transaction date" type="date" />
+                                                        </FormGroup>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Button
+                                                        block
+                                                        className="btn-round"
+                                                        color="primary"
+                                                        type="button"
+                                                        onClick={this.handleTransfer}
+                                                    >
+                                                        Transfer
+                                                    </Button>
+                                                </Row>
+                                            </Form>
+                                        </CardBody>
+                                    </Card>
+                                </section>
+                            </Row>
+                        </Container>
+                        <div className="separator separator-bottom separator-skew zindex-100">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                preserveAspectRatio="none"
+                                version="1.1"
+                                viewBox="0 0 2560 100"
+                                x="0"
+                                y="0"
+                            >
+                                <polygon
+                                    className="fill-white"
+                                    points="2560 0 2560 100 0 100"
+                                />
+                            </svg>
+                        </div>
+                        <Row><p></p></Row>
+                        <Row><p></p></Row>
+                        <Row><p></p></Row>
+                        <Row><p></p></Row>
+                    </section>
+                    <section className="section pb-0 bg-gradient-success" ref={this.scollToRef3}>
                         <Container >
                             <Row className="row-grid align-items-center" >
                                 <div className="d-flex px-3" >
                                     <div >
                                         <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                                        <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                                            <i class="fa fa-handshake-o" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                     <div className="pl-4">
                                         <h4 className="display-3 text-white">Loans</h4>
                                         <p className="text-white">
-                                        A loan is a sum of money borrowed from a lender, such as a bank or financial institution, that must be repaid with interest over 
-                                        a set period of time. Loans can be used for a variety of purposes, such as purchasing a home or car,
-                                        starting a business, or paying for education expenses. The terms of a loan, including the amount borrowed,
-                                        interest rate, and repayment schedule, are typically outlined in a loan agreement between the borrower and lender. 
-                                        Failure to repay a loan can result in penalties, fees, and damage to the borrower's credit score.
+                                            A loan is a sum of money borrowed from a lender, such as a bank or financial institution, that must be repaid with interest over
+                                            a set period of time. Loans can be used for a variety of purposes, such as purchasing a home or car,
+                                            starting a business, or paying for education expenses. The terms of a loan, including the amount borrowed,
+                                            interest rate, and repayment schedule, are typically outlined in a loan agreement between the borrower and lender.
+                                            Failure to repay a loan can result in penalties, fees, and damage to the borrower's credit score.
                                         </p>
                                     </div>
                                 </div>
@@ -1908,7 +1945,7 @@ class Client extends React.Component {
                                                     href="#pablo"
                                                     role="tab"
                                                 >
-                                                    <i className="fa fa-handshake-o"/>
+                                                    <i className="fa fa-handshake-o" />
                                                     View Loans
                                                 </NavLink>
                                             </NavItem>
@@ -1961,7 +1998,7 @@ class Client extends React.Component {
                                             <TabContent activeTab={"tabs" + this.state.tabs}>
                                                 <TabPane tabId="tabs1">
                                                     <Container>
-                                                    <Row>
+                                                        <Row>
                                                             <Col>
                                                                 <span>Account number</span>
                                                             </Col>
@@ -1981,7 +2018,7 @@ class Client extends React.Component {
                                                         </Row>
                                                         <Row>
                                                             <Col>
-                                                            <span>9479</span>
+                                                                <span>9479</span>
                                                             </Col>
                                                             <Col>
                                                                 <span>Car Loan</span>
@@ -1990,10 +2027,10 @@ class Client extends React.Component {
                                                                 <span>500000</span>
                                                             </Col>
                                                             <Col>
-                                                            <span>3000</span>
+                                                                <span>3000</span>
                                                             </Col>
                                                         </Row>
-                                                        
+
                                                     </Container>
                                                 </TabPane>
                                                 <TabPane tabId="tabs2">
@@ -2021,8 +2058,8 @@ class Client extends React.Component {
                                                                     />
                                                                 </FormGroup>
                                                             </Col>
-                                                            </Row>
-                                                            <Row>
+                                                        </Row>
+                                                        <Row>
                                                             <Col md="4">
                                                                 <FormGroup>
                                                                     Loan amount:
@@ -2062,7 +2099,7 @@ class Client extends React.Component {
                                                             </Col>
                                                         </Row>
                                                         <Row>
-                                                           
+
                                                             <Col md="6">
                                                                 <FormGroup>
                                                                     <p>
@@ -2163,7 +2200,7 @@ class Client extends React.Component {
                                                                 <span>500000</span>
                                                             </Col>
                                                             <Col>
-                                                            <span>3000</span>
+                                                                <span>3000</span>
                                                             </Col>
                                                             <Col>
                                                                 <Button block color="primary" size="sm" type="button" onClick={this.payLoan}>
@@ -2202,11 +2239,11 @@ class Client extends React.Component {
                         <Row><p></p></Row>
                         <Row><p></p></Row>
                         <Row><p></p></Row>
-                    </section> 
+                    </section>
 
 
 
-                </main>
+                </main >
                 <SimpleFooter />
             </>
         );
