@@ -1457,10 +1457,100 @@ class Client extends React.Component {
                                                                 <span></span>
                                                             </Col>
                                                         </Row>
+                                                        <Row><p></p></Row>
                                                         <Row>
-                                                            <p>
-
-                                                            </p>
+                                                            <Col>
+                                                                <span>Credit Card</span>
+                                                            </Col>
+                                                            <Col>
+                                                                <span>13985.00 </span>
+                                                            </Col>
+                                                            <Col>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="primary" placeholder="Choose">
+                                                                        Choose card
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
+                                                                            Basboosa el amoora
+                                                                        </DropdownItem>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
+                                                                            Basboosa a7la ota fl denya
+                                                                        </DropdownItem>
+                                                                        <DropdownItem onClick={e => e.preventDefault()}>
+                                                                            Basboosy
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
+                                                            </Col>
+                                                            <Col>
+                                                                <UncontrolledDropdown>
+                                                                    <DropdownToggle caret color="primary" placeholder="Choose" onChange={this.handlePay}>
+                                                                        Pay Bill
+                                                                    </DropdownToggle>
+                                                                    <DropdownMenu>
+                                                                        <DropdownItem onClick={this.handlePay}>
+                                                                            Partially
+                                                                        </DropdownItem>
+                                                                        <DropdownItem onClick={this.handlePay}>
+                                                                            Fully
+                                                                        </DropdownItem>
+                                                                    </DropdownMenu>
+                                                                </UncontrolledDropdown>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    block
+                                                                    className="mb-3"
+                                                                    color="primary"
+                                                                    type="button"
+                                                                    onClick={() => this.toggleModal("defaultModal6")}
+                                                                >
+                                                                    Set Reminder
+                                                                </Button>
+                                                                <Modal
+                                                                    className="modal-dialog-centered"
+                                                                    isOpen={this.state.defaultModal6}
+                                                                    toggle={() => this.toggleModal("defaultModal6")}
+                                                                >
+                                                                    <div className="modal-header">
+                                                                        <h6 className="modal-title" id="modal-title-default">
+                                                                            Set Reminder
+                                                                        </h6>
+                                                                        <button
+                                                                            aria-label="Close"
+                                                                            className="close"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal6")}
+                                                                        >
+                                                                            <span aria-hidden={true}>×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className="modal-body">
+                                                                        <ReactDatetime
+                                                                            inputProps={{
+                                                                                placeholder: "Reminder Date"
+                                                                            }}
+                                                                            timeFormat={false}
+                                                                        />
+                                                                    </div>
+                                                                    <div className="modal-footer">
+                                                                        <Button color="primary" type="button" onClick={() => this.setReminder()}>
+                                                                            Save changes
+                                                                        </Button>
+                                                                        <Button
+                                                                            className="ml-auto"
+                                                                            color="link"
+                                                                            data-dismiss="modal"
+                                                                            type="button"
+                                                                            onClick={() => this.toggleModal("defaultModal6")}
+                                                                        >
+                                                                            Close
+                                                                        </Button>
+                                                                    </div>
+                                                                </Modal>
+                                                            </Col>
                                                         </Row>
                                                         <Row>
                                                             <Col>
@@ -1491,7 +1581,7 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <UncontrolledDropdown>
                                                                     <DropdownToggle caret color="primary" placeholder="Choose">
-                                                                        Pay Now
+                                                                        Pay Bill
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
                                                                         <DropdownItem onClick={this.handlePay}>
@@ -1585,7 +1675,7 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <UncontrolledDropdown>
                                                                     <DropdownToggle caret color="primary" placeholder="Choose" onChange={this.handlePay}>
-                                                                        Pay Now
+                                                                        Pay Bill
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
                                                                         <DropdownItem onClick={this.handlePay}>
@@ -1679,7 +1769,7 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <UncontrolledDropdown>
                                                                     <DropdownToggle caret color="primary" placeholder="Choose" onChange={this.handlePay} >
-                                                                        Pay Now
+                                                                        Pay Bill
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
                                                                         <DropdownItem onClick={this.handlePay}>
@@ -1774,7 +1864,7 @@ class Client extends React.Component {
                                                             <Col>
                                                                 <UncontrolledDropdown>
                                                                     <DropdownToggle caret color="primary" placeholder="Choose" onChange={this.handlePay}>
-                                                                        Pay Now
+                                                                        Pay Bill
                                                                     </DropdownToggle>
                                                                     <DropdownMenu>
                                                                         <DropdownItem onClick={this.handlePay}>
