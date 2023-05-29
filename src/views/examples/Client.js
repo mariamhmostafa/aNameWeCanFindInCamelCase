@@ -660,8 +660,11 @@ class Client extends React.Component {
                                                     <Col xs="3">
                                                         4872
                                                     </Col>
-                                                    <Col xs="4">
+                                                    <Col xs="3">
                                                         Current
+                                                    </Col>
+                                                    <Col xs="3">
+                                                        600000
                                                     </Col>
                                                     <Col xs="3">
                                                         <Button
