@@ -198,54 +198,64 @@ class Profile extends React.Component {
                   </div>
                   <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center">
-                      <Col>
+                      <Col xs="2"></Col>
+                      <Col xs="3">
                         <span>
-                          <h5>Full Name</h5>
+                          <h5>Full Name: </h5>
                         </span>
                       </Col>
-                      <Col>
+                      <Col xs="3">
                         <span>
                           <h5>Basboosa Smith</h5>
                         </span>
                       </Col>
+                      <Col xs="2"></Col>
                     </Row>
                     <Row className="justify-content-center">
-                      <Col>
+                      <Col xs="2"></Col>
+                      <Col xs="3">
                         <span>
-                          <h5>DOB:</h5>
+                          <h5>Date Of Birth:</h5>
                         </span>
                       </Col>
-                      <Col>
+                      <Col xs="3">
                         <span>
                           <h5> 14/6/2002</h5>
                         </span>
                       </Col>
+                      <Col xs="2"></Col>
                     </Row>
                     <Row className="justify-content-center">
-                      <Col>
+                      <Col xs="2"></Col>
+                      <Col xs="3">
                         <span>
                           <h5>Phone Number:</h5>
                         </span>
                       </Col>
-                      <Col>
+                      <Col xs="3">
                         <span>
                           <h5>01555240174</h5>
                         </span>
                       </Col>
+                      <Col xs="2"></Col>
                     </Row>
                     <Row className="justify-content-center">
-                      <Col>
+                      <Col xs="2"></Col>
+                      <Col xs="3">
                         <span>
                           <h5>e-mail</h5>
                         </span>
                       </Col>
-                      <Col>
+                      <Col xs="3">
                         <span>
                           <h5>basabeso@gmail.com</h5>
                         </span>
                       </Col>
+                      <Col xs="2"></Col>
                     </Row>
-
+                  </div>
+                  <div className="text-center border-top">
+                    <Row><p></p></Row>
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p>
