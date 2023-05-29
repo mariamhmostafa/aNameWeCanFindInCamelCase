@@ -55,6 +55,12 @@ class Banker extends React.Component {
     defaultModal7: false,
     defaultModal8: false,
     defaultModal9: false,
+    defaultModal10: false,
+    defaultModal11: false,
+    defaultModal13: false,
+    defaultModal14: false,
+    defaultModal15: false
+
   };
   toggleModal = (state) => {
     this.setState({
@@ -972,7 +978,7 @@ class Banker extends React.Component {
                     <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>
-                    <h3>Our customers</h3>
+                    <h3>Clients</h3>
                     <p className="lead">
                       Don't let your uses guess by attaching tooltips and
                       popoves to any element. Just make sure you enable them
@@ -983,11 +989,7 @@ class Banker extends React.Component {
                       started faster. You can change the text and images and
                       you're good to go.
                     </p>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
+                    
                     <a
                       className="font-weight-bold text-warning mt-5"
                       href="#pablo"
@@ -1462,6 +1464,397 @@ class Banker extends React.Component {
               </Row>
             </Container>
           </section>
+
+          <section
+            className="section pb-0 bg-gradient-warning"
+            ref={this.scollToRef1}
+          >
+            <Container>
+              <div className="d-flex px-3">
+                <div>
+                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                    <i class="fa fa-file-o" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div className="pl-4">
+                  <h4 className="display-3 text-white">Clients</h4>
+                  <p className="text-white">
+                    You can find details of all the customers here.
+                  </p>
+                </div>
+              </div>
+
+              <Card className="shadow shadow-lg--hover mt-5">
+                <CardBody>
+                  <Container>
+                    <div className="d-flex px-3"></div>
+                    <div className="px-4">
+                      <img
+                        alt="..."
+                        className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                        src={require("assets/img/brand/CreditCard.jpeg")}
+                        style={{ width: "200px" }}
+                      />
+                    </div>
+
+                    <div class="panel panel-success">
+                      <div class="panel-heading">Clients</div>
+
+                      <table class="table">
+                        <tr>
+                          <th>Name</th>
+                          <th>Namtional ID</th>
+                          <th>Date of Birth</th>
+                          <th>More Details</th>
+                        </tr>
+                        <tr>
+                          <td>Basboosa</td>
+                          <td>7709795757</td>
+                          <td>23/2/1998</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal10")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal10}
+                              toggle={() => this.toggleModal("defaultModal10")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Basboosa Smith
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal10")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account Numbers: 9479, 4872  </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard Numbers: 99999999999, 100100100100, 123456789  </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 1{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                             
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Meghan</td>
+                          <td>5500795757</td>
+                          <td>21/3/2002</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal13")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal13}
+                              toggle={() => this.toggleModal("defaultModal13")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Meghan Micheal
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal13")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account Numbers: 1111, 1223, 9990  </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard Numbers: 52778, 88980  </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 0{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                             
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Mariouma</td>
+                          <td>5500000757</td>
+                          <td>21/12/2002</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal14")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal14}
+                              toggle={() => this.toggleModal("defaultModal14")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Mariouma Marmora
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal14")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account Numbers: 5656  </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard Numbers:   </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 1{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                             
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                          <td>Hamada</td>
+                          <td>7875693568</td>
+                          <td>19/5/2077</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal11")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal11}
+                              toggle={() => this.toggleModal("defaultModal11")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Hamada Levi
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal11")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account numbers: 8988, 7777 </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard numbers: 5256777</span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 0{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                            </Modal>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Helal</td>
+                          <td>89909898780</td>
+                          <td>16/10/2002</td>
+                          <td>
+                            <div>
+                              <Button
+                                block
+                                className="mb-3"
+                                size="sm"
+                                color="primary"
+                                type="button"
+                                onClick={() =>
+                                  this.toggleModal("defaultModal12")
+                                }
+                              >
+                                <i
+                                  class="fa fa-address-card"
+                                  aria-hidden="true"
+                                ></i>{" "}
+                                View Details
+                              </Button>
+                            </div>
+                            <Modal
+                              className="modal-dialog-centered"
+                              isOpen={this.state.defaultModal12}
+                              toggle={() => this.toggleModal("defaultModal12")}
+                            >
+                              <div className="modal-header">
+                                <h6
+                                  className="modal-title"
+                                  id="modal-title-default"
+                                >
+                                  Helal Shams
+                                </h6>
+                                <button
+                                  aria-label="Close"
+                                  className="close"
+                                  data-dismiss="modal"
+                                  type="button"
+                                  onClick={() =>
+                                    this.toggleModal("defaultModal12")
+                                  }
+                                >
+                                  <span aria-hidden={true}>×</span>
+                                </button>
+                              </div>
+                              <div className="modal-body">
+                                {
+                                  <Container>
+                                    <span> Account Numbers: 9003, 2123 </span>{" "}
+                                    <br></br>
+                                    <span> CreditCard Numbers: 999998 </span>{" "}
+                                    <br></br>
+                                    <span>
+                                      {" "}
+                                      Number of loans: 0{" "}
+                                    </span>
+                                  </Container>
+                                }
+                              </div>
+                            </Modal>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </Container>
+                </CardBody>
+              </Card>
+            </Container>
+            {/* SVG separator */}
+            <div className="separator separator-bottom separator-skew zindex-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+                version="1.1"
+                viewBox="0 0 2560 100"
+                x="0"
+                y="0"
+              >
+                <polygon
+                  className="fill-white"
+                  points="2560 0 2560 100 0 100"
+                />
+              </svg>
+            </div>
+          </section>
+
           <Download />
         </main>
         <SimpleFooter />
