@@ -18,6 +18,8 @@ import Admin from "views/examples/Admin.js";
 import Banker from "views/examples/Banker.js";
 import TechnicalIssue from "views/examples/TechnicalIssue.js";
 import Home from "views/examples/Home.js";
+import Announce from "views/examples/Announce.js";
+import VisuallyImpaired from "views/examples/VisuallyImpaired.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
