@@ -321,9 +321,17 @@ class Client extends React.Component {
                                                 <i className="fa fa-hand-o-up" />
                                             </div>
                                             <h3 className="mb-1">Explore</h3>
-                                            <p className="mt-0">
-                                                Select...
-                                            </p>
+                                            <Button
+                                                block
+                                                className="btn-round"
+                                                color="default"
+                                                size="lg"
+                                                type="button"
+                                                href="/profile-page"
+
+                                            >
+                                                Profile
+                                            </Button>
                                             <Button
                                                 block
                                                 className="btn-round"
