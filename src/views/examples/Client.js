@@ -132,8 +132,9 @@ class Client extends React.Component {
     payLoan = (e) => {
         alert("Loan Installment Paid successfully!")
     };
-
-
+    applyForCard= (e) => {
+        alert("CreditCard application sent!")
+    };
 
     toggleModal = state => {
         this.setState({
@@ -192,7 +193,7 @@ class Client extends React.Component {
         if (creditCardNum === ''   || message === '') {
             alert("Please enter the required information")
         } else {
-            alert("Report sent ")
+            alert("Report sent!")
         }
     }
 
@@ -1422,8 +1423,9 @@ class Client extends React.Component {
                                                                     <p>
 
                                                                     </p>
-                                                                    <Button block color="primary" size="lg" type="button">
+                                                                    <Button block color="primary" size="lg" type="button"  onClick={this.applyForCard}>
                                                                         Apply Now!
+                                                                    
                                                                     </Button>
                                                                 </FormGroup>
                                                             </Col>
